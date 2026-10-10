@@ -1,0 +1,111 @@
+backend:
+  name: github
+  repo: jorbites/events
+  branch: main
+  open_authoring: true # Allows non-technical contributors without write access to submit PRs via CMS
+
+# Editorial workflow: drafts -> in review -> published
+publish_mode: editorial_workflow
+
+media_folder: 'images'
+public_folder: '/images/events'
+
+collections:
+  - name: 'events_ca'
+    label: 'Events (Català)'
+    folder: 'content/ca'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Start Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'End Date', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Badge', name: 'badge', widget: 'image', required: false }
+      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false }
+      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false }
+      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false }
+      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown' }
+
+  - name: 'events_es'
+    label: 'Events (Español)'
+    folder: 'content/es'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Start Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'End Date', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Badge', name: 'badge', widget: 'image', required: false }
+      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false }
+      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false }
+      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false }
+      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown' }
+
+  - name: 'events_en'
+    label: 'Events (English)'
+    folder: 'content/en'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Start Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'End Date', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Badge', name: 'badge', widget: 'image', required: false }
+      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false }
+      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false }
+      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false }
+      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown' }
+
+  - name: 'challenges'
+    label: 'Weekly Challenges'
+    files:
+      - file: 'content/weekly-challenges.json'
+        name: 'weekly_challenges'
+        label: 'Weekly Challenges Settings'
+        fields:
+          - label: 'Ingredient Challenges'
+            name: 'ingredientChallenges'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Type', name: 'type', widget: 'hidden', default: 'ingredient' }
+              - { label: 'Ingredients', name: 'ingredients', widget: 'list' }
+          - label: 'Cuisine Challenges'
+            name: 'cuisineChallenges'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Type', name: 'type', widget: 'hidden', default: 'cuisine' }
+              - { label: 'Cuisines', name: 'cuisines', widget: 'list' }
+          - label: 'Recipe Challenges'
+            name: 'recipeChallenges'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Type', name: 'type', widget: 'hidden', default: 'recipe' }
+              - { label: 'Recipes', name: 'recipes', widget: 'list' }
+          - label: 'Technique Challenges'
+            name: 'techniqueChallenges'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Type', name: 'type', widget: 'hidden', default: 'technique' }
+              - { label: 'Techniques', name: 'techniques', widget: 'list' }
+          - label: 'Dietary Challenges'
+            name: 'dietaryChallenges'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
+              - { label: 'Type', name: 'type', widget: 'hidden', default: 'dietary' }
+              - { label: 'Dietary Options', name: 'dietary', widget: 'list' }
