@@ -2,6 +2,8 @@ backend:
   name: github
   repo: jorbites/events
   branch: main
+  base_url: https://jorbites.com
+  auth_endpoint: api/decap/auth
   open_authoring: true # Allows non-technical contributors without write access to submit PRs via CMS
 
 # Editorial workflow: drafts -> in review -> published
