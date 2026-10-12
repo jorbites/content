@@ -1,15 +1,19 @@
 {
   "name": "@jorbites/events",
   "version": "1.0.0",
-  "description": "Jorbites events content, weekly challenges, and images repository",
+  "description": "Jorbites events content, weekly challenges, images, and badges repository",
   "private": true,
   "scripts": {
     "validate": "tsx scripts/validate.ts",
-    "format": "prettier --write \"**/*.{md,json,yml}\""
+    "process:cover": "tsx scripts/process-asset.ts --cover",
+    "process:badge": "tsx scripts/process-asset.ts --badge",
+    "process:test": "tsx scripts/process-asset.ts --test",
+    "format": "prettier --write \"**/*.{md,json,yml,yaml}\""
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",
     "prettier": "^3.8.3",
+    "sharp": "^0.35.4",
     "tsx": "^4.19.2",
     "typescript": "^5.8.2"
   }

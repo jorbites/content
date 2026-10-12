@@ -2,67 +2,42 @@ backend:
   name: github
   repo: jorbites/events
   branch: main
-  base_url: https://jorbites.com
-  auth_endpoint: api/decap/auth
-  open_authoring: true # Allows non-technical contributors without write access to submit PRs via CMS
+  # Set base_url to your Cloudflare Worker URL (e.g. https://jorbites-cms-auth.<your-subdomain>.workers.dev)
+  base_url: https://jorbites-cms-auth.jbonetv5.workers.dev
+  auth_endpoint: auth
 
 # Editorial workflow: drafts -> in review -> published
 publish_mode: editorial_workflow
 
+# Multilingual configuration for Sveltia CMS (side-by-side editing)
+i18n:
+  structure: multiple_folders
+  locales: [ca, es, en]
+  default_locale: es
+
+# Media storage: images/ folder mapped to /images/events for main app
 media_folder: 'images'
 public_folder: '/images/events'
 
 collections:
-  - name: 'events_ca'
-    label: 'Events (Català)'
-    folder: 'content/ca'
+  - name: 'events'
+    label: 'Events'
+    label_singular: 'Event'
+    folder: 'content/{{locale}}'
     create: true
     slug: '{{slug}}'
+    i18n: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Start Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
-      - { label: 'End Date', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
-      - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Badge', name: 'badge', widget: 'image', required: false }
-      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false }
-      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false }
-      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false }
-      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown' }
-
-  - name: 'events_es'
-    label: 'Events (Español)'
-    folder: 'content/es'
-    create: true
-    slug: '{{slug}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Start Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
-      - { label: 'End Date', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
-      - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Badge', name: 'badge', widget: 'image', required: false }
-      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false }
-      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false }
-      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false }
-      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown' }
-
-  - name: 'events_en'
-    label: 'Events (English)'
-    folder: 'content/en'
-    create: true
-    slug: '{{slug}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Start Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
-      - { label: 'End Date', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSSZ', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
-      - { label: 'Cover Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Badge', name: 'badge', widget: 'image', required: false }
-      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false }
-      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false }
-      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false }
-      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown' }
+      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+      - { label: 'Description', name: 'description', widget: 'text', i18n: true }
+      - { label: 'Start Date (YYYY-MM-DD)', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false, required: false, i18n: duplicate }
+      - { label: 'End Date (YYYY-MM-DDTHH:mm:ss)', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', required: false, i18n: duplicate }
+      - { label: 'Cover Image (750x750 WebP <100KB)', name: 'image', widget: 'image', media_folder: 'images', public_folder: '/images/events', required: false, i18n: duplicate }
+      - { label: 'Badge Asset (256x256 transparent WebP)', name: 'badge', widget: 'image', media_folder: 'badges', public_folder: '/badges', required: false, i18n: duplicate }
+      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false, i18n: duplicate }
+      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false, i18n: duplicate }
+      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false, i18n: duplicate }
+      - { label: 'Content (Markdown)', name: 'body', widget: 'markdown', i18n: true }
 
   - name: 'challenges'
     label: 'Weekly Challenges'
