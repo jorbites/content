@@ -1,9 +1,9 @@
 ---
-title: 🎄 Christmas Contest 2025 🎄
-date: 2025-12-24
-endDate: 2025-12-29T23:59:59
-image: /images/events/christmas_contest.webp
-description: A festive, delicious contest to celebrate Christmas on Jorbites
+title: "\U0001F384 Christmas Contest 2025 \U0001F384"
+date: 2025-12-24T00:00:00.000Z
+endDate: 2025-12-29T23:59:59.000Z
+image: /images/events/christmas_contest_2025.webp
+description: 'A festive, delicious contest to celebrate Christmas on Jorbites'
 ---
 
 # 🎄 Christmas Contest 2025 🎄

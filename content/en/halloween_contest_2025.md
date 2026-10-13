@@ -1,9 +1,9 @@
 ---
-title: 🎃 Halloween Contest 🎃
-date: 2026-10-31
-endDate: 2026-10-31T21:59:59
-image: /images/events/halloween_contest.webp
-description: A spooky, tasty contest to celebrate Halloween on Jorbites
+title: "\U0001F383 Halloween Contest \U0001F383"
+date: 2026-10-31T00:00:00.000Z
+endDate: 2026-10-31T21:59:59.000Z
+image: /images/events/halloween_contest_2025.webp
+description: 'A spooky, tasty contest to celebrate Halloween on Jorbites'
 ---
 
 # 🎃 Halloween Contest 🎃

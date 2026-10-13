@@ -2,7 +2,7 @@
 title: "\U0001F42D\U0001F345 Ratatouille Recipes \U0001F345\U0001F42D"
 date: 2025-06-15T00:00:00.000Z
 endDate: 2025-06-30T00:00:00.000Z
-image: /images/events/ratatouille_recipes.webp
+image: /images/events/ratatouille-recipes.webp
 description: Ratatouille Recipes Event - Cook like a chef from Gusteau's kitchen!
 ---
 

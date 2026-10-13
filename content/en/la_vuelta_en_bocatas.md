@@ -1,9 +1,11 @@
 ---
-title: 🥖 Tour of Spain in Sandwiches
-date: 2026-09-21
-endDate: 2027-05-16T23:59:59
-image: /images/events/la_vuelta_espana_en_bocatas.webp
-description: Explore the 17 Autonomous Communities of Spain through their most iconic sandwiches!
+title: "\U0001F956 Tour of Spain in Sandwiches"
+date: 2026-09-21T00:00:00.000Z
+endDate: 2027-05-16T23:59:59.000Z
+image: /images/events/la_vuelta_en_bocatas.webp
+description: >-
+  Explore the 17 Autonomous Communities of Spain through their most iconic
+  sandwiches!
 ---
 
 # 🥖 Tour of Spain in Sandwiches

@@ -1,8 +1,8 @@
 ---
-title: 🥦 Vegetarian Day 🥦
-date: 2026-10-01
-endDate: 2026-10-01T21:59:59
-image: /images/events/vegetarian_day.webp
+title: "\U0001F966 Vegetarian Day \U0001F966"
+date: 2026-10-01T00:00:00.000Z
+endDate: 2026-10-01T21:59:59.000Z
+image: /images/events/world_vegetarian_day.webp
 description: Celebrate World Vegetarian Day with veg-forward creativity
 ---
 
