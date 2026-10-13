@@ -108,6 +108,79 @@ ${body || ''}`;
     });
 }
 
+function getTargetSlugs(): Set<string> {
+    const args = process.argv.slice(2);
+    const explicitSlug = args.find((a) => !a.startsWith('--'));
+    if (explicitSlug) {
+        console.log(`🎯 [translate-events] Processing single event from argument: ${explicitSlug}`);
+        return new Set([explicitSlug]);
+    }
+
+    if (args.includes('--all')) {
+        console.log('🌐 [translate-events] Processing all events in repository (--all flag)');
+        const allSlugs = new Set<string>();
+        for (const loc of LOCALES) {
+            const dir = path.join(CONTENT_DIR, loc);
+            if (fs.existsSync(dir)) {
+                for (const file of fs.readdirSync(dir)) {
+                    if (file.endsWith('.md')) {
+                        allSlugs.add(file.replace(/\.md$/, ''));
+                    }
+                }
+            }
+        }
+        return allSlugs;
+    }
+
+    const { execSync } = require('child_process');
+    const changedSlugs = new Set<string>();
+    const diffTargets = [
+        process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}...HEAD` : null,
+        'origin/main...HEAD',
+        'HEAD~1...HEAD',
+    ].filter(Boolean) as string[];
+
+    for (const target of diffTargets) {
+        try {
+            const output = execSync(`git diff --name-only ${target}`, {
+                encoding: 'utf8',
+                stdio: ['pipe', 'pipe', 'ignore'],
+            });
+            for (const line of output.split('\n')) {
+                const m = line.trim().match(/^content\/(?:es|ca|en)\/(.+)\.md$/);
+                if (m) {
+                    changedSlugs.add(m[1]);
+                }
+            }
+            if (changedSlugs.size > 0) {
+                console.log(
+                    `🎯 [translate-events] Detected ${changedSlugs.size} changed event(s) via git diff (${target}): ${Array.from(changedSlugs).join(', ')}`
+                );
+                return changedSlugs;
+            }
+        } catch {}
+    }
+
+    try {
+        const status = execSync('git status --porcelain', {
+            encoding: 'utf8',
+            stdio: ['pipe', 'pipe', 'ignore'],
+        });
+        for (const line of status.split('\n')) {
+            const file = line.trim().slice(3).trim();
+            const m = file.match(/^content\/(?:es|ca|en)\/(.+)\.md$/);
+            if (m) {
+                changedSlugs.add(m[1]);
+            }
+        }
+        if (changedSlugs.size > 0) {
+            return changedSlugs;
+        }
+    } catch {}
+
+    return new Set<string>();
+}
+
 export async function translateEvents(dryRun = false) {
     console.log('🌐 [translate-events] Checking for missing event translations across locales...\n');
 
@@ -118,17 +191,10 @@ export async function translateEvents(dryRun = false) {
         );
     }
 
-    // Collect all event slugs
-    const slugs = new Set<string>();
-    for (const loc of LOCALES) {
-        const dir = path.join(CONTENT_DIR, loc);
-        if (fs.existsSync(dir)) {
-            for (const file of fs.readdirSync(dir)) {
-                if (file.endsWith('.md')) {
-                    slugs.add(file.replace(/\.md$/, ''));
-                }
-            }
-        }
+    const slugs = getTargetSlugs();
+    if (slugs.size === 0) {
+        console.log('✅ [translate-events] No changed events to translate.\n');
+        return;
     }
 
     let translatedCount = 0;
