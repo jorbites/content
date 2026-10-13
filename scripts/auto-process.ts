@@ -33,20 +33,102 @@ function cleanFrontmatter(data: Record<string, any>): Record<string, any> {
     return cleaned;
 }
 
-export async function autoProcessAssets() {
-    console.log('🚀 [auto-process] Checking for images and badges to process...\n');
+/**
+ * Determine which event slugs to process.
+ * Priority:
+ * 1. CLI explicit slug: npm run process:auto <slug>
+ * 2. CLI flag --all: process every event in repository
+ * 3. Git diff: only process new or modified events in current branch / commit
+ */
+function getTargetSlugs(): Set<string> {
+    // 1. Explicit slug passed via CLI
+    const args = process.argv.slice(2);
+    const explicitSlug = args.find((a) => !a.startsWith('--'));
+    if (explicitSlug) {
+        console.log(`🎯 [auto-process] Processing single event from argument: ${explicitSlug}`);
+        return new Set([explicitSlug]);
+    }
 
-    // Collect all slugs across all locales
-    const slugs = new Set<string>();
-    for (const locale of LOCALES) {
-        const locDir = path.join(CONTENT_DIR, locale);
-        if (fs.existsSync(locDir)) {
-            for (const file of fs.readdirSync(locDir)) {
-                if (file.endsWith('.md')) {
-                    slugs.add(file.replace(/\.md$/, ''));
+    // 2. Explicit --all flag
+    if (args.includes('--all')) {
+        console.log('🌐 [auto-process] Processing all events in repository (--all flag)');
+        const allSlugs = new Set<string>();
+        for (const loc of LOCALES) {
+            const locDir = path.join(CONTENT_DIR, loc);
+            if (fs.existsSync(locDir)) {
+                for (const file of fs.readdirSync(locDir)) {
+                    if (file.endsWith('.md')) {
+                        allSlugs.add(file.replace(/\.md$/, ''));
+                    }
                 }
             }
         }
+        return allSlugs;
+    }
+
+    // 3. Detect changed events via Git diff
+    const changedSlugs = new Set<string>();
+    const diffTargets = [
+        process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}...HEAD` : null,
+        'origin/main...HEAD',
+        'HEAD~1...HEAD',
+    ].filter(Boolean) as string[];
+
+    for (const target of diffTargets) {
+        try {
+            const output = execSync(`git diff --name-only ${target}`, {
+                encoding: 'utf8',
+                stdio: ['pipe', 'pipe', 'ignore'],
+            });
+            for (const line of output.split('\n')) {
+                const m = line.trim().match(/^content\/(?:es|ca|en)\/(.+)\.md$/);
+                if (m) {
+                    changedSlugs.add(m[1]);
+                }
+            }
+            if (changedSlugs.size > 0) {
+                console.log(
+                    `🎯 [auto-process] Detected ${changedSlugs.size} changed event(s) via git diff (${target}): ${Array.from(changedSlugs).join(', ')}`
+                );
+                return changedSlugs;
+            }
+        } catch {
+            // Target branch might not exist locally, continue to next
+        }
+    }
+
+    // 4. Check uncommitted working tree changes
+    try {
+        const status = execSync('git status --porcelain', {
+            encoding: 'utf8',
+            stdio: ['pipe', 'pipe', 'ignore'],
+        });
+        for (const line of status.split('\n')) {
+            const file = line.trim().slice(3).trim();
+            const m = file.match(/^content\/(?:es|ca|en)\/(.+)\.md$/);
+            if (m) {
+                changedSlugs.add(m[1]);
+            }
+        }
+        if (changedSlugs.size > 0) {
+            console.log(
+                `🎯 [auto-process] Detected ${changedSlugs.size} uncommitted event(s): ${Array.from(changedSlugs).join(', ')}`
+            );
+            return changedSlugs;
+        }
+    } catch {}
+
+    console.log('ℹ️ [auto-process] No changed events detected in Git. Use --all to process entire repository.');
+    return new Set<string>();
+}
+
+export async function autoProcessAssets() {
+    console.log('🚀 [auto-process] Starting asset optimization...\n');
+
+    const targetSlugs = getTargetSlugs();
+    if (targetSlugs.size === 0) {
+        console.log('✅ [auto-process] Nothing to process.\n');
+        return;
     }
 
     const rembgAvailable = isRembgInstalled();
@@ -60,8 +142,7 @@ export async function autoProcessAssets() {
     let generatedBadgeCount = 0;
     let updatedEventsCount = 0;
 
-    for (const slug of Array.from(slugs).sort()) {
-        // Find existing files across locales
+    for (const slug of Array.from(targetSlugs).sort()) {
         const localeFiles: Record<string, { path: string; data: any; content: string }> = {};
         for (const loc of LOCALES) {
             const locPath = path.join(CONTENT_DIR, loc, `${slug}.md`);
@@ -83,7 +164,6 @@ export async function autoProcessAssets() {
 
         if (rawImageRef) {
             const rawBase = path.basename(rawImageRef);
-            const rawExt = path.extname(rawBase).toLowerCase();
             const rawName = path.parse(rawBase).name;
 
             // Search for candidate image file across root images/ and content/*/images/
@@ -150,34 +230,41 @@ export async function autoProcessAssets() {
         }
 
         // 2. Process Badge Asset
-        // Check if badge is declared and exists
-        let badgeFileExists = false;
-        if (frontmatter.badge) {
-            const badgeBase = path.basename(frontmatter.badge);
-            const badgePath = path.join(BADGES_DIR, badgeBase);
-            badgeFileExists = fs.existsSync(badgePath);
-        } else {
-            // Check default <slug>.webp in badges/
-            const defaultBadgePath = path.join(BADGES_DIR, `${slug}.webp`);
-            if (fs.existsSync(defaultBadgePath)) {
-                frontmatter.badge = `/badges/${slug}.webp`;
-                badgeFileExists = true;
-                modified = true;
-            }
-        }
+        // ONLY generate badge if explicitly requested:
+        // - frontmatter.badge === '' (contributor left badge blank in CMS for auto-generation)
+        // - OR frontmatter.badge is explicitly declared but file does not exist yet
+        // If frontmatter.badge is undefined/null (old contests without badges), NEVER auto-generate!
+        const wantsBadge =
+            frontmatter.badge === '' ||
+            (typeof frontmatter.badge === 'string' && frontmatter.badge.trim() !== '');
 
-        // If badge does not exist, auto-generate from cover image
-        if (!badgeFileExists) {
-            if (resolvedCoverPath && fs.existsSync(resolvedCoverPath)) {
-                if (rembgAvailable) {
-                    console.log(`🏅 [auto-process] Auto-generating missing badge for "${slug}"...`);
-                    try {
-                        await generateBadgeFromCover(resolvedCoverPath, slug);
-                        frontmatter.badge = `/badges/${slug}.webp`;
-                        generatedBadgeCount++;
-                        modified = true;
-                    } catch (err: any) {
-                        console.error(`❌ [auto-process] Failed to generate badge for ${slug}: ${err.message}`);
+        if (wantsBadge) {
+            let badgeFileExists = false;
+            if (frontmatter.badge && frontmatter.badge.trim() !== '') {
+                const badgeBase = path.basename(frontmatter.badge);
+                const badgePath = path.join(BADGES_DIR, badgeBase);
+                badgeFileExists = fs.existsSync(badgePath);
+            } else {
+                const defaultBadgePath = path.join(BADGES_DIR, `${slug}.webp`);
+                if (fs.existsSync(defaultBadgePath)) {
+                    frontmatter.badge = `/badges/${slug}.webp`;
+                    badgeFileExists = true;
+                    modified = true;
+                }
+            }
+
+            if (!badgeFileExists) {
+                if (resolvedCoverPath && fs.existsSync(resolvedCoverPath)) {
+                    if (rembgAvailable) {
+                        console.log(`🏅 [auto-process] Auto-generating missing badge for "${slug}"...`);
+                        try {
+                            await generateBadgeFromCover(resolvedCoverPath, slug);
+                            frontmatter.badge = `/badges/${slug}.webp`;
+                            generatedBadgeCount++;
+                            modified = true;
+                        } catch (err: any) {
+                            console.error(`❌ [auto-process] Failed to generate badge for ${slug}: ${err.message}`);
+                        }
                     }
                 }
             }
