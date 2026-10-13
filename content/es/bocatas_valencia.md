@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Comunitat Valenciana 🍊
-date: 2026-10-19
-endDate: 2026-11-01T23:59:59
+title: "\U0001F956 Bocatas de Comunitat Valenciana \U0001F34A"
+date: 2026-10-19T00:00:00.000Z
+endDate: 2026-11-01T23:59:59.000Z
 image: /images/events/bocatas_valencia.webp
-description: Entramos en el templo del esmorzaret. En la Comunidad Valenciana el bocadillo a media mañana es una auténtica religión que se disfruta con cacau del collaret y un buen carajillo.
+description: >-
+  Entramos en el templo del esmorzaret. En la Comunidad Valenciana el bocadillo
+  a media mañana es una auténtica religión que se disfruta con cacau del
+  collaret y un buen carajillo.
+badge: /badges/bocatas_valencia.webp
 ---
 
 # 🥖 Bocatas de Comunitat Valenciana 🍊

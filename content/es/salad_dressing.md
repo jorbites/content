@@ -1,9 +1,10 @@
 ---
-title: 🥗 Evento de Aliños 🥗
-date: 2026-04-17
-endDate: 2026-05-01T21:59:59
+title: "\U0001F957 Evento de Aliños \U0001F957"
+date: 2026-04-17T00:00:00.000Z
+endDate: 2026-05-01T21:59:59.000Z
 image: /images/events/salad_dressing.webp
 description: Domina el arte de los aliños y las vinagretas para ensaladas
+badge: /badges/salad_dressing.webp
 ---
 
 # 🥗 Evento de Aliños 🥗

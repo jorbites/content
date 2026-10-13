@@ -1,9 +1,12 @@
 ---
-title: 🥖 Bocatas de Asturias 🍏
-date: 2027-02-08
-endDate: 2027-02-21T23:59:59
+title: "\U0001F956 Bocatas de Asturias \U0001F34F"
+date: 2027-02-08T00:00:00.000Z
+endDate: 2027-02-21T23:59:59.000Z
 image: /images/events/bocatas_asturias.webp
-description: ¡Paraíso natural y gastronómico! De las fiestas populares con bollos preñaos a las tabernas de sidra y los quesos más potentes de Europa.
+description: >-
+  ¡Paraíso natural y gastronómico! De las fiestas populares con bollos preñaos a
+  las tabernas de sidra y los quesos más potentes de Europa.
+badge: /badges/bocatas_asturias.webp
 ---
 
 # 🥖 Bocatas de Asturias 🍏

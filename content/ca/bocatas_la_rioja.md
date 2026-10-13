@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de La Rioja 🍷
-date: 2026-12-28
-endDate: 2027-01-10T23:59:59
+title: "\U0001F956 Entrepans de La Rioja \U0001F377"
+date: 2026-12-28T00:00:00.000Z
+endDate: 2027-01-10T23:59:59.000Z
 image: /images/events/bocatas_la_rioja.webp
-description: Benvinguts a la terra del bon vi i les tapes inacabables! A La Rioja els entrepans se serveixen generosos i plens de caràcter.
+description: >-
+  Benvinguts a la terra del bon vi i les tapes inacabables! A La Rioja els
+  entrepans se serveixen generosos i plens de caràcter.
+badge: /badges/bocatas_la_rioja.webp
 ---
 
 # 🥖 Entrepans de La Rioja 🍷

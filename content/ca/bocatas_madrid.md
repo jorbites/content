@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de la Comunitat de Madrid 🐻
-date: 2027-03-22
-endDate: 2027-04-04T23:59:59
+title: "\U0001F956 Entrepans de la Comunitat de Madrid \U0001F43B"
+date: 2027-03-22T00:00:00.000Z
+endDate: 2027-04-04T23:59:59.000Z
 image: /images/events/bocatas_madrid.webp
-description: L'aroma inconfusible de calamars acabats de fregir a la Plaza Mayor! Madrid ha convertit l'entrepà de taverna en una autèntica icona popular.
+description: >-
+  L'aroma inconfusible de calamars acabats de fregir a la Plaza Mayor! Madrid ha
+  convertit l'entrepà de taverna en una autèntica icona popular.
+badge: /badges/bocatas_madrid.webp
 ---
 
 # 🥖 Entrepans de la Comunitat de Madrid 🐻

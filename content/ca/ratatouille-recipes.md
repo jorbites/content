@@ -1,9 +1,11 @@
 ---
-title: 🐭🍅 Receptes de Ratatouille 🍅🐭
-date: 2025-06-15
-endDate: 2025-06-30
+title: "\U0001F42D\U0001F345 Receptes de Ratatouille \U0001F345\U0001F42D"
+date: 2025-06-15T00:00:00.000Z
+endDate: 2025-06-30T00:00:00.000Z
 image: /images/events/ratatouille_recipes.webp
-description: Esdeveniment Receptes de Ratatouille - Cuina com un chef de la cuina de Gusteau!
+description: >-
+  Esdeveniment Receptes de Ratatouille - Cuina com un chef de la cuina de
+  Gusteau!
 ---
 
 ### 🐭✨ Nou Esdeveniment a Jorbites: Receptes de Ratatouille! ✨🐭

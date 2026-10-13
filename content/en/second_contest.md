@@ -1,7 +1,7 @@
 ---
-title: 🎄 Jorbites Contest 2 🎄
-date: 2024-12-22
-endDate: 2024-12-22
+title: "\U0001F384 Jorbites Contest 2 \U0001F384"
+date: 2024-12-22T00:00:00.000Z
+endDate: 2024-12-22T00:00:00.000Z
 image: /images/events/second_contest.webp
 description: Second Jorbites Contest
 ---

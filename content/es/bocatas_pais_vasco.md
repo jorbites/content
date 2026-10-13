@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de País Vasco 🐟
-date: 2027-01-11
-endDate: 2027-01-24T23:59:59
+title: "\U0001F956 Bocatas de País Vasco \U0001F41F"
+date: 2027-01-11T00:00:00.000Z
+endDate: 2027-01-24T23:59:59.000Z
 image: /images/events/bocatas_pais_vasco.webp
-description: Cultura gastronómica con mayúsculas. Del Cantábrico a los asadores tradicionales, Euskadi convierte cada combinación entre panes en un bocado digno de estrella.
+description: >-
+  Cultura gastronómica con mayúsculas. Del Cantábrico a los asadores
+  tradicionales, Euskadi convierte cada combinación entre panes en un bocado
+  digno de estrella.
+badge: /badges/bocatas_pais_vasco.webp
 ---
 
 # 🥖 Bocatas de País Vasco 🐟

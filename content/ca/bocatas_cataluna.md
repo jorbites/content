@@ -1,9 +1,13 @@
 ---
-title: 🥖 Entrepans de Catalunya 🍅
-date: 2026-11-16
-endDate: 2026-11-29T23:59:59
+title: "\U0001F956 Entrepans de Catalunya \U0001F345"
+date: 2026-11-16T00:00:00.000Z
+endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/bocatas_cataluna.webp
-description: "Homenatge a la joia de la nostra gastronomia: el pa amb tomàquet. Una bona llesca de pa de pagès sucat amb tomàquet de penjar i oli verge extra eleva qualsevol embotit a una altra dimensió."
+description: >-
+  Homenatge a la joia de la nostra gastronomia: el pa amb tomàquet. Una bona
+  llesca de pa de pagès sucat amb tomàquet de penjar i oli verge extra eleva
+  qualsevol embotit a una altra dimensió.
+badge: /badges/bocatas_cataluna.webp
 ---
 
 # 🥖 Entrepans de Catalunya 🍅

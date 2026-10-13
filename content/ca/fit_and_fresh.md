@@ -1,9 +1,12 @@
 ---
-title: "🌿 Sa i Fresc 🌿"
-date: 2026-06-15
-endDate: 2026-06-30T23:59:59
+title: "\U0001F33F Sa i Fresc \U0001F33F"
+date: 2026-06-15T00:00:00.000Z
+endDate: 2026-06-30T23:59:59.000Z
 image: /images/events/fit_and_fresh.webp
-description: Alimenta el teu cos amb creacions vibrants i plenes de nutrients que fan del menjar sa una celebració!
+description: >-
+  Alimenta el teu cos amb creacions vibrants i plenes de nutrients que fan del
+  menjar sa una celebració!
+badge: /badges/fit_and_fresh.webp
 ---
 
 # 🌿 Sa i Fresc 🌿

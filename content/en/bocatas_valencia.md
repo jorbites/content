@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Valencian Community 🍊
-date: 2026-10-19
-endDate: 2026-11-01T23:59:59
+title: "\U0001F956 Sandwiches of Valencian Community \U0001F34A"
+date: 2026-10-19T00:00:00.000Z
+endDate: 2026-11-01T23:59:59.000Z
 image: /images/events/bocatas_valencia.webp
-description: Welcome to the capital of the esmorzaret! In the Valencian Community, the mid-morning sandwich is a sacred ritual best enjoyed with olives, peanuts, and good company.
+description: >-
+  Welcome to the capital of the esmorzaret! In the Valencian Community, the
+  mid-morning sandwich is a sacred ritual best enjoyed with olives, peanuts, and
+  good company.
+badge: /badges/bocatas_valencia.webp
 ---
 
 # 🥖 Sandwiches of Valencian Community 🍊

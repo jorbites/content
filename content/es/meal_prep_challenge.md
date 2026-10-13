@@ -1,9 +1,12 @@
 ---
-title: 🥗 Desafío de Prep de Comidas 🍱
-date: 2026-09-03
-endDate: 2026-09-14T21:59:59
+title: "\U0001F957 Desafío de Prep de Comidas \U0001F371"
+date: 2026-09-03T00:00:00.000Z
+endDate: 2026-09-14T21:59:59.000Z
 image: /images/events/meal_prep_challenge.webp
-description: ¡Domina la cocina por lotes saludable y comparte tus mejores recetas de meal prep!
+description: >-
+  ¡Domina la cocina por lotes saludable y comparte tus mejores recetas de meal
+  prep!
+badge: /badges/meal_prep_challenge.webp
 ---
 
 # 🥗 Desafío de Prep de Comidas 🍱

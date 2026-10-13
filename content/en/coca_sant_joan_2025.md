@@ -1,9 +1,10 @@
 ---
-title: 🥧 Coca Sant Joan 2025 🥧
-date: 2025-06-23
-endDate: 2025-06-23T21:59:59
+title: "\U0001F967 Coca Sant Joan 2025 \U0001F967"
+date: 2025-06-23T00:00:00.000Z
+endDate: 2025-06-23T21:59:59.000Z
 image: /images/events/coca_sant_joan_2025.webp
 description: Event of Coca Sant Joan 2025
+badge: /badges/coca_sant_joan_2025.webp
 ---
 
 # 🥧 Coca Sant Joan 2025 🥧

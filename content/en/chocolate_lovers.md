@@ -1,9 +1,10 @@
 ---
-title: 🍫 Chocolate Lovers! 🍫
-date: 2026-05-16
-endDate: 2026-05-31T23:59:59
+title: "\U0001F36B Chocolate Lovers! \U0001F36B"
+date: 2026-05-16T00:00:00.000Z
+endDate: 2026-05-31T23:59:59.000Z
 image: /images/events/chocolate_lovers.webp
 description: Indulge in the ultimate chocolate celebration!
+badge: /badges/chocolate_lovers.webp
 ---
 
 # 🍫 Chocolate Lovers! 🍫

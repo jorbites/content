@@ -1,9 +1,10 @@
 ---
-title: 🍲 Sopes i Guisats Reconfortants 🥣
-date: 2026-10-02
-endDate: 2026-10-12T21:59:59
+title: "\U0001F372 Sopes i Guisats Reconfortants \U0001F963"
+date: 2026-10-02T00:00:00.000Z
+endDate: 2026-10-12T21:59:59.000Z
 image: /images/events/cozy_soups_and_stews.webp
-description: Escalfat aquesta tardor amb cremes, sopes casolanes i guisats reconfortants!
+description: 'Escalfat aquesta tardor amb cremes, sopes casolanes i guisats reconfortants!'
+badge: /badges/cozy_soups_and_stews.webp
 ---
 
 # 🍲 Sopes i Guisats Reconfortants 🥣

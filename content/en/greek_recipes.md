@@ -1,9 +1,10 @@
 ---
-title: 🇬🇷 Greek Recipes 🍽️
-date: 2026-07-01
-endDate: 2026-07-31T21:59:59
+title: "\U0001F1EC\U0001F1F7 Greek Recipes \U0001F37D️"
+date: 2026-07-01T00:00:00.000Z
+endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/greek_recipes.webp
 description: Discover the fresh and Mediterranean flavors of Greek cuisine
+badge: /badges/greek_recipes.webp
 ---
 
 # 🇬🇷 Greek Recipes 🍽️

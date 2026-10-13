@@ -1,9 +1,10 @@
 ---
-title: 🇩🇪 Receptes Alemanyes 🍽️
-date: 2026-04-01
-endDate: 2026-04-30T21:59:59
+title: "\U0001F1E9\U0001F1EA Receptes Alemanyes \U0001F37D️"
+date: 2026-04-01T00:00:00.000Z
+endDate: 2026-04-30T21:59:59.000Z
 image: /images/events/german_recipes.webp
 description: Descobreix els sabors contundents i diversos de la cuina alemanya
+badge: /badges/german_recipes.webp
 ---
 
 # 🇩🇪 Receptes Alemanyes 🍽️

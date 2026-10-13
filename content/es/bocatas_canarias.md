@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Canarias 🌴
-date: 2027-05-03
-endDate: 2027-05-16T23:59:59
+title: "\U0001F956 Bocatas de Canarias \U0001F334"
+date: 2027-05-03T00:00:00.000Z
+endDate: 2027-05-16T23:59:59.000Z
 image: /images/events/bocatas_canarias.webp
-description: ¡Etapa final y broche de oro en las Islas Afortunadas! La pata asada y los mojos canarios aportan frescura, exotismo y sabor para despedir La Vuelta por todo lo alto.
+description: >-
+  ¡Etapa final y broche de oro en las Islas Afortunadas! La pata asada y los
+  mojos canarios aportan frescura, exotismo y sabor para despedir La Vuelta por
+  todo lo alto.
+badge: /badges/bocatas_canarias.webp
 ---
 
 # 🥖 Bocatas de Canarias 🌴

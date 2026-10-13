@@ -1,9 +1,12 @@
 ---
-title: 🍝 Perfección de la Pasta 🍅
-date: 2026-10-15
-endDate: 2026-10-28T21:59:59
+title: "\U0001F35D Perfección de la Pasta \U0001F345"
+date: 2026-10-15T00:00:00.000Z
+endDate: 2026-10-28T21:59:59.000Z
 image: /images/events/pasta_perfection.webp
-description: ¡Celebra el arte de la pasta, las salsas caseras y las deliciosas recetas inspiradas en Italia!
+description: >-
+  ¡Celebra el arte de la pasta, las salsas caseras y las deliciosas recetas
+  inspiradas en Italia!
+badge: /badges/pasta_perfection.webp
 ---
 
 # 🍝 Perfección de la Pasta 🍅

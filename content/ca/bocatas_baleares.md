@@ -1,9 +1,13 @@
 ---
-title: 🥖 Entrepans de les Illes Balears 🌊
-date: 2026-11-02
-endDate: 2026-11-15T23:59:59
+title: "\U0001F956 Entrepans de les Illes Balears \U0001F30A"
+date: 2026-11-02T00:00:00.000Z
+endDate: 2026-11-15T23:59:59.000Z
 image: /images/events/bocatas_baleares.webp
-description: Naveguem cap a les Illes Balears! Aquí mana el llonguet, el panet tradicional de crosta fina i molla flonja perfecte per acollir els millors embotits i formatges illencs.
+description: >-
+  Naveguem cap a les Illes Balears! Aquí mana el llonguet, el panet tradicional
+  de crosta fina i molla flonja perfecte per acollir els millors embotits i
+  formatges illencs.
+badge: /badges/bocatas_baleares.webp
 ---
 
 # 🥖 Entrepans de les Illes Balears 🌊

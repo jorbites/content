@@ -1,9 +1,10 @@
 ---
-title: 🏝️ Receptes de Mallorca 🍽️
-date: 2026-08-01
-endDate: 2026-08-31T21:59:59
+title: "\U0001F3DD️ Receptes de Mallorca \U0001F37D️"
+date: 2026-08-01T00:00:00.000Z
+endDate: 2026-08-31T21:59:59.000Z
 image: /images/events/mallorca_recipes.webp
 description: Descobreix els sabors autèntics i mediterranis de Mallorca
+badge: /badges/mallorca_recipes.webp
 ---
 
 # 🏝️ Receptes de Mallorca 🍽️

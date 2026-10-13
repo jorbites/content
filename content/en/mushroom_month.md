@@ -1,9 +1,10 @@
 ---
-title: 🍄 Mushroom Month 🍄
-date: 2026-09-01
-endDate: 2026-09-30T21:59:59
+title: "\U0001F344 Mushroom Month \U0001F344"
+date: 2026-09-01T00:00:00.000Z
+endDate: 2026-09-30T21:59:59.000Z
 image: /images/events/mushroom_month.webp
 description: Celebrate National Mushroom Month with creative mushroom recipes
+badge: /badges/mushroom_month.webp
 ---
 
 # 🍄 Mushroom Month 🍄

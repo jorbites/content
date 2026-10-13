@@ -1,9 +1,12 @@
 ---
-title: 🧆 Festival de Tapes Mediterrànies 🍷
-date: 2026-09-15
-endDate: 2026-09-28T21:59:59
+title: "\U0001F9C6 Festival de Tapes Mediterrànies \U0001F377"
+date: 2026-09-15T00:00:00.000Z
+endDate: 2026-09-28T21:59:59.000Z
 image: /images/events/mediterranean_tapas.webp
-description: Celebra la vibrant cultura dels petits plats i tapes mediterrànies per compartir!
+description: >-
+  Celebra la vibrant cultura dels petits plats i tapes mediterrànies per
+  compartir!
+badge: /badges/mediterranean_tapas.webp
 ---
 
 # 🧆 Festival de Tapes Mediterrànies 🍷

@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Andalusia ☀️
-date: 2026-09-21
-endDate: 2026-10-04T23:59:59
+title: "\U0001F956 Sandwiches of Andalusia ☀️"
+date: 2026-09-21T00:00:00.000Z
+endDate: 2026-10-04T23:59:59.000Z
 image: /images/events/bocatas_andalucia.webp
-description: "First stop on our culinary journey! Head south to discover the vibrant flavors of Andalusia: crusty rolls, sizzling grilled meats, and slow-cooked stews served between slices of fresh bread."
+description: >-
+  First stop on our culinary journey! Head south to discover the vibrant flavors
+  of Andalusia: crusty rolls, sizzling grilled meats, and slow-cooked stews
+  served between slices of fresh bread.
+badge: /badges/bocatas_andalucia.webp
 ---
 
 # 🥖 Sandwiches of Andalusia ☀️

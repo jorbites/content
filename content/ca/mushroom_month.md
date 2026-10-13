@@ -1,9 +1,10 @@
 ---
-title: 🍄 Mes dels Bolets 🍄
-date: 2026-09-01
-endDate: 2026-09-30T21:59:59
+title: "\U0001F344 Mes dels Bolets \U0001F344"
+date: 2026-09-01T00:00:00.000Z
+endDate: 2026-09-30T21:59:59.000Z
 image: /images/events/mushroom_month.webp
 description: Celebra el Mes Nacional dels Bolets amb receptes creatives de bolets
+badge: /badges/mushroom_month.webp
 ---
 
 # 🍄 Mes dels Bolets 🍄

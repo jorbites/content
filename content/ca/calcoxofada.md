@@ -1,9 +1,12 @@
 ---
-title: 🔥 La Calçoxofada 🧅
-date: 2026-02-01
-endDate: 2026-02-28T23:59:59
+title: "\U0001F525 La Calçoxofada \U0001F9C5"
+date: 2026-02-01T00:00:00.000Z
+endDate: 2026-02-28T23:59:59.000Z
 image: /images/events/calcoxofada.webp
-description: Uneix-te a la fusió definitiva d'hivern, Calçots i Carxofes en la seva màxima esplendor a la brasa.
+description: >-
+  Uneix-te a la fusió definitiva d'hivern, Calçots i Carxofes en la seva màxima
+  esplendor a la brasa.
+badge: /badges/calcoxofada.webp
 ---
 
 # 🔥 La Calçoxofada: Festa de la Brasa 🧅

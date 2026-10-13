@@ -1,9 +1,10 @@
 ---
-title: 📱 TikTok Recipes 🍳
-date: 2026-07-21
-endDate: 2026-08-21T21:59:59
+title: "\U0001F4F1 TikTok Recipes \U0001F373"
+date: 2026-07-21T00:00:00.000Z
+endDate: 2026-08-21T21:59:59.000Z
 image: /images/events/tiktok_recipes.webp
 description: Share and recreate the most viral and trending recipes from TikTok!
+badge: /badges/tiktok_recipes.webp
 ---
 
 # 📱 TikTok Recipes 🍳

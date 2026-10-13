@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Navarre 🌶️
-date: 2026-12-14
-endDate: 2026-12-27T23:59:59
+title: "\U0001F956 Sandwiches of Navarre \U0001F336️"
+date: 2026-12-14T00:00:00.000Z
+endDate: 2026-12-27T23:59:59.000Z
 image: /images/events/bocatas_navarra.webp
-description: A land of renowned vegetable gardens and legendary sausages! The sizzle of fresh Navarre chistorra in a skillet is one of Spain's greatest simple culinary pleasures.
+description: >-
+  A land of renowned vegetable gardens and legendary sausages! The sizzle of
+  fresh Navarre chistorra in a skillet is one of Spain's greatest simple
+  culinary pleasures.
+badge: /badges/bocatas_navarra.webp
 ---
 
 # 🥖 Sandwiches of Navarre 🌶️

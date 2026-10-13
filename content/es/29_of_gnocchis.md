@@ -1,11 +1,12 @@
 ---
-title: 🥟 29 de Ñoquis 🥟
-date: 2025-01-29
-endDate: 2025-01-29T21:59:59
+title: "\U0001F95F 29 de Ñoquis \U0001F95F"
+date: 2025-01-29T00:00:00.000Z
+endDate: 2025-01-29T21:59:59.000Z
 image: /images/events/29_of_gnocchis.webp
 description: ¡Celebra el tradicional Día de los Ñoquis el 29 de cada mes!
 recurrent: true
 dayOfMonth: 29
+badge: /badges/29_of_gnocchis.webp
 ---
 
 # 🥟 29 de Ñoquis 🥟

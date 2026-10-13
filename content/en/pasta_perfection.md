@@ -1,9 +1,12 @@
 ---
-title: 🍝 Pasta Perfection 🍅
-date: 2026-10-15
-endDate: 2026-10-28T21:59:59
+title: "\U0001F35D Pasta Perfection \U0001F345"
+date: 2026-10-15T00:00:00.000Z
+endDate: 2026-10-28T21:59:59.000Z
 image: /images/events/pasta_perfection.webp
-description: Celebrate the art of pasta making, homemade sauces, and delicious Italian-inspired creations!
+description: >-
+  Celebrate the art of pasta making, homemade sauces, and delicious
+  Italian-inspired creations!
+badge: /badges/pasta_perfection.webp
 ---
 
 # 🍝 Pasta Perfection 🍅

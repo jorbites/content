@@ -1,9 +1,10 @@
 ---
-title: 🍔 Campeonato de Hamburguesas Jorbites 1 🍔
-date: 2025-09-27
-endDate: 2025-09-27T20:59:59
+title: "\U0001F354 Campeonato de Hamburguesas Jorbites 1 \U0001F354"
+date: 2025-09-27T00:00:00.000Z
+endDate: 2025-09-27T20:59:59.000Z
 image: /images/events/first_burger_championship.webp
 description: Primer Campeonato de Hamburguesas Jorbites
+badge: /badges/first_burger_championship.webp
 ---
 
 # 🍔 Primer Campeonato de Hamburguesas Jorbites 🍔

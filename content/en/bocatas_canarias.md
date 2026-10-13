@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Canary Islands 🌴
-date: 2027-05-03
-endDate: 2027-05-16T23:59:59
+title: "\U0001F956 Sandwiches of Canary Islands \U0001F334"
+date: 2027-05-03T00:00:00.000Z
+endDate: 2027-05-16T23:59:59.000Z
 image: /images/events/bocatas_canarias.webp
-description: Grand Finale in the sunny Canary Islands! Slow-roasted pata asada pork and zesty mojos bring vibrant island flavors to conclude our Tour of Spain on the highest note.
+description: >-
+  Grand Finale in the sunny Canary Islands! Slow-roasted pata asada pork and
+  zesty mojos bring vibrant island flavors to conclude our Tour of Spain on the
+  highest note.
+badge: /badges/bocatas_canarias.webp
 ---
 
 # 🥖 Sandwiches of Canary Islands 🌴

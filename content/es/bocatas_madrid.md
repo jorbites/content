@@ -1,9 +1,12 @@
 ---
-title: 🥖 Bocatas de Comunidad de Madrid 🐻
-date: 2027-03-22
-endDate: 2027-04-04T23:59:59
+title: "\U0001F956 Bocatas de Comunidad de Madrid \U0001F43B"
+date: 2027-03-22T00:00:00.000Z
+endDate: 2027-04-04T23:59:59.000Z
 image: /images/events/bocatas_madrid.webp
-description: ¡El olor a calamares recién fritos en la Plaza Mayor! Madrid ha elevado el bocadillo de taberna a símbolo cultural imprescindible.
+description: >-
+  ¡El olor a calamares recién fritos en la Plaza Mayor! Madrid ha elevado el
+  bocadillo de taberna a símbolo cultural imprescindible.
+badge: /badges/bocatas_madrid.webp
 ---
 
 # 🥖 Bocatas de Comunidad de Madrid 🐻

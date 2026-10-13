@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de les Canàries 🌴
-date: 2027-05-03
-endDate: 2027-05-16T23:59:59
+title: "\U0001F956 Entrepans de les Canàries \U0001F334"
+date: 2027-05-03T00:00:00.000Z
+endDate: 2027-05-16T23:59:59.000Z
 image: /images/events/bocatas_canarias.webp
-description: Etapa final i gran comiat a les Illes Afortunades! La pata asada i els mojos canaris aporten exotisme i sabor per tancar La Volta amb magnificència.
+description: >-
+  Etapa final i gran comiat a les Illes Afortunades! La pata asada i els mojos
+  canaris aporten exotisme i sabor per tancar La Volta amb magnificència.
+badge: /badges/bocatas_canarias.webp
 ---
 
 # 🥖 Entrepans de les Canàries 🌴

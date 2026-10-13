@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Región de Murcia 🍋
-date: 2026-10-05
-endDate: 2026-10-18T23:59:59
+title: "\U0001F956 Bocatas de Región de Murcia \U0001F34B"
+date: 2026-10-05T00:00:00.000Z
+endDate: 2026-10-18T23:59:59.000Z
 image: /images/events/bocatas_murcia.webp
-description: Llegamos a la huerta de Europa. Murcia combina como nadie los productos frescos del campo con las mejores carnes y embutidos en panes que son pura tentación.
+description: >-
+  Llegamos a la huerta de Europa. Murcia combina como nadie los productos
+  frescos del campo con las mejores carnes y embutidos en panes que son pura
+  tentación.
+badge: /badges/bocatas_murcia.webp
 ---
 
 # 🥖 Bocatas de Región de Murcia 🍋

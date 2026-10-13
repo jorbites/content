@@ -123,6 +123,72 @@ export async function processBadgeAsset(
     };
 }
 
+/**
+ * Automatically generate a transparent 256x256 badge from a cover image using rembg:
+ * 1. Executes rembg to isolate foreground subject and create transparent alpha mask
+ * 2. Uses Sharp to resize to exactly 256x256 WebP
+ * 3. Saves to badges/<slug>.webp
+ */
+export async function generateBadgeFromCover(
+    coverPath: string,
+    slug: string
+): Promise<ProcessResult> {
+    if (!fs.existsSync(coverPath)) {
+        throw new Error(`Cover image does not exist: ${coverPath}`);
+    }
+
+    fs.mkdirSync(BADGES_DIR, { recursive: true });
+    const outputPath = path.join(BADGES_DIR, `${slug}.webp`);
+    const tempNoBgPath = path.join(BADGES_DIR, `temp-${slug}-nobg.png`);
+
+    console.log(`🤖 [generateBadge] Isolating subject from cover with rembg: ${coverPath}...`);
+
+    try {
+        const { execSync } = require('child_process');
+        execSync(`rembg i "${coverPath}" "${tempNoBgPath}"`, { stdio: 'inherit' });
+    } catch (err: any) {
+        throw new Error(
+            `rembg execution failed. Ensure rembg is installed via 'pip install rembg[cli] onnxruntime': ${err.message}`
+        );
+    }
+
+    if (!fs.existsSync(tempNoBgPath)) {
+        throw new Error(`rembg did not generate expected output at ${tempNoBgPath}`);
+    }
+
+    // Resize isolated cutout to 256x256 WebP with clean transparent background
+    const buffer = await sharp(tempNoBgPath)
+        .resize({
+            width: TARGET_BADGE_SIZE,
+            height: TARGET_BADGE_SIZE,
+            fit: 'contain',
+            background: { r: 0, g: 0, b: 0, alpha: 0 },
+        })
+        .webp({ quality: 90, alphaQuality: 100, effort: 6 })
+        .toBuffer();
+
+    fs.writeFileSync(outputPath, buffer);
+
+    if (fs.existsSync(tempNoBgPath)) {
+        fs.unlinkSync(tempNoBgPath);
+    }
+
+    const metadata = await sharp(outputPath).metadata();
+    const sizeKb = Math.round((buffer.length / 1024) * 10) / 10;
+    console.log(`✅ Badge auto-generated: ${outputPath}`);
+    console.log(`   Dimensions: ${metadata.width}x${metadata.height}px`);
+    console.log(`   Has alpha: ${Boolean(metadata.hasAlpha)}`);
+    console.log(`   Size: ${sizeKb} KB`);
+
+    return {
+        outputPath,
+        width: metadata.width || 0,
+        height: metadata.height || 0,
+        sizeKb,
+        hasAlpha: Boolean(metadata.hasAlpha),
+    };
+}
+
 async function runCli() {
     const args = process.argv.slice(2);
 
@@ -174,6 +240,17 @@ async function runCli() {
         return;
     }
 
+    if (args[0] === '--generate-badge' || args[0] === '-g') {
+        const input = args[1];
+        const slug = args[2];
+        if (!input || !slug) {
+            console.error('Usage: npm run process:generate-badge <cover_image_path> <event_slug>');
+            process.exit(1);
+        }
+        await generateBadgeFromCover(path.resolve(input), slug);
+        return;
+    }
+
     console.log(`
 Jorbites Asset Processing Tool 🥑
 
@@ -182,7 +259,10 @@ Commands:
     -> Resizes to 750x750, converts to WebP (<100KB), saves to images/<slug>.webp
 
   npm run process:badge <image_path> <event_slug>
-    -> Resizes to 256x256, preserves transparency, saves to badges/<slug>.webp
+    -> Resizes transparent image to 256x256 WebP, saves to badges/<slug>.webp
+
+  npm run process:generate-badge <cover_image_path> <event_slug>
+    -> Removes background using rembg, resizes to 256x256 WebP, saves to badges/<slug>.webp
 
   npm run process:test
     -> Verifies the Sharp processing pipeline

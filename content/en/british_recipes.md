@@ -1,9 +1,10 @@
 ---
-title: 🇬🇧 British Recipes 🎄
-date: 2025-12-01
-endDate: 2025-12-15T21:59:59
+title: "\U0001F1EC\U0001F1E7 British Recipes \U0001F384"
+date: 2025-12-01T00:00:00.000Z
+endDate: 2025-12-15T21:59:59.000Z
 image: /images/events/british_recipes.webp
 description: Join our British Recipes event and share your favorite classic dishes!
+badge: /badges/british_recipes.webp
 ---
 
 # 🇬🇧 British Recipes Festival 🎄

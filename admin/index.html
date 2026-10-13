@@ -4,9 +4,60 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jorbites Events Manager</title>
-  <link rel="icon" type="image/x-icon" href="https://jorbites.com/favicon.ico" />
+  <style>
+    #jorbites-helper-tip {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      max-width: 360px;
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      line-height: 1.45;
+      z-index: 999999;
+      border: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    #jorbites-helper-tip .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #4ade80;
+    }
+    #jorbites-helper-tip .close-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    #jorbites-helper-tip .close-btn:hover {
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
+  <div id="jorbites-helper-tip">
+    <div class="header">
+      <span>🥑 Zero-Friction Publishing</span>
+      <button class="close-btn" onclick="document.getElementById('jorbites-helper-tip').remove()">×</button>
+    </div>
+    <div>
+      • <strong>Write 1 Language:</strong> Fill in Spanish or English. Missing languages are translated automatically on publish.<br/>
+      • <strong>Cover Image:</strong> Upload any image. It is converted to 750x750 WebP &lt;100KB.<br/>
+      • <strong>Badge Asset:</strong> Leave blank! It is automatically isolated from your cover image.
+    </div>
+  </div>
+
   <!-- Sveltia CMS Core (Modern, lightweight, side-by-side i18n Git CMS) -->
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 </body>

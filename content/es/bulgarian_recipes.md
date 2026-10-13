@@ -1,9 +1,10 @@
 ---
-title: 🇧🇬 Recetas Búlgaras 🍽️
-date: 2025-09-19
-endDate: 2025-09-30T21:59:59
+title: "\U0001F1E7\U0001F1EC Recetas Búlgaras \U0001F37D️"
+date: 2025-09-19T00:00:00.000Z
+endDate: 2025-09-30T21:59:59.000Z
 image: /images/events/bulgarian_recipes.webp
 description: Celebra la cocina búlgara con clásicos regionales y toques modernos
+badge: /badges/bulgarian_recipes.webp
 ---
 
 # 🇧🇬 Recetas Búlgaras 🍽️

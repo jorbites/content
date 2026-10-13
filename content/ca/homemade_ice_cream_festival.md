@@ -1,9 +1,10 @@
 ---
-title: 🍦 Festival de Gelats Casolans 🍦
-date: 2026-06-01
-endDate: 2026-06-30T21:59:59
+title: "\U0001F366 Festival de Gelats Casolans \U0001F366"
+date: 2026-06-01T00:00:00.000Z
+endDate: 2026-06-30T21:59:59.000Z
 image: /images/events/homemade_ice_cream_festival.webp
 description: Celebra l'estiu amb les creacions de gelat casolà més fresques i originals!
+badge: /badges/homemade_ice_cream_festival.webp
 ---
 
 # 🍦 Festival de Gelats Casolans 🍦

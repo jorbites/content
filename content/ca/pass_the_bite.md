@@ -1,9 +1,10 @@
 ---
-title: 🤝 Pass the Bite 🤝
-date: 2026-07-02
-endDate: 2026-07-31T21:59:59
+title: "\U0001F91D Pass the Bite \U0001F91D"
+date: 2026-07-02T00:00:00.000Z
+endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/pass_the_bite.webp
 description: Un mes per connectar amb la teva gent i compartir receptes.
+badge: /badges/pass_the_bite.webp
 ---
 
 # 🤝 Pass the Bite 🤝

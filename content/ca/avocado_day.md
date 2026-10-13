@@ -1,9 +1,10 @@
 ---
-title: 🥑 Dia Internacional de l'Alvocat 🥑
-date: 2026-07-31
-endDate: 2026-07-31T21:59:59
+title: "\U0001F951 Dia Internacional de l'Alvocat \U0001F951"
+date: 2026-07-31T00:00:00.000Z
+endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/avocado_day.webp
 description: Esdeveniment del Dia Internacional de l'Alvocat
+badge: /badges/avocado_day.webp
 ---
 
 # 🥑 Dia Internacional de l'Alvocat 🥑

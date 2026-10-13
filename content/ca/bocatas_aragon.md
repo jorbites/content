@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans d'Aragó 🏔️
-date: 2026-11-30
-endDate: 2026-12-13T23:59:59
+title: "\U0001F956 Entrepans d'Aragó \U0001F3D4️"
+date: 2026-11-30T00:00:00.000Z
+endDate: 2026-12-13T23:59:59.000Z
 image: /images/events/bocatas_aragon.webp
-description: Dels Pirineus a les serres de Terol! La gastronomia aragonesa ens regala carns excepcionals i sabors robustos que queden de luxe dins d'un bon pa de fogassa.
+description: >-
+  Dels Pirineus a les serres de Terol! La gastronomia aragonesa ens regala carns
+  excepcionals i sabors robustos que queden de luxe dins d'un bon pa de fogassa.
+badge: /badges/bocatas_aragon.webp
 ---
 
 # 🥖 Entrepans d'Aragó 🏔️

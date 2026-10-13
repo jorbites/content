@@ -1,9 +1,10 @@
 ---
-title: 🥂 Dos Anys de Jorbites 🥂
-date: 2025-06-28
-endDate: 2025-06-28T21:59:59
+title: "\U0001F942 Dos Anys de Jorbites \U0001F942"
+date: 2025-06-28T00:00:00.000Z
+endDate: 2025-06-28T21:59:59.000Z
 image: /images/events/two_years_contest/two_years_contest.webp
 description: Dos Anys de Jorbites
+badge: /badges/two_years_contest.webp
 ---
 
 # 🥂 Dos Anys de Jorbites 🥂

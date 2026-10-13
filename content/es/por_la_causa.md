@@ -1,9 +1,12 @@
 ---
-title: 🇵🇪 Por la Causa 🍋
-date: 2026-02-07
-endDate: 2026-03-07T23:59:59
+title: "\U0001F1F5\U0001F1EA Por la Causa \U0001F34B"
+date: 2026-02-07T00:00:00.000Z
+endDate: 2026-03-07T23:59:59.000Z
 image: /images/events/por_la_causa.webp
-description: Un viaje gastronómico al corazón de Perú. Celebra la amistad y el sabor con las mejores recetas andinas, criollas y nikkei.
+description: >-
+  Un viaje gastronómico al corazón de Perú. Celebra la amistad y el sabor con
+  las mejores recetas andinas, criollas y nikkei.
+badge: /badges/por_la_causa.webp
 ---
 
 # 🇵🇪 Por la Causa: Sabor y Amistad 🍋

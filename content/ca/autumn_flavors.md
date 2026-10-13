@@ -1,9 +1,12 @@
 ---
-title: 🍂 Sabors de Tardor 🍎
-date: 2026-10-07
-endDate: 2026-10-30T21:59:59
+title: "\U0001F342 Sabors de Tardor \U0001F34E"
+date: 2026-10-07T00:00:00.000Z
+endDate: 2026-10-30T21:59:59.000Z
 image: /images/events/autumn_flavors.webp
-description: Celebra la tardor amb receptes de temporada utilitzant els millors ingredients de la tardor
+description: >-
+  Celebra la tardor amb receptes de temporada utilitzant els millors ingredients
+  de la tardor
+badge: /badges/autumn_flavors.webp
 ---
 
 # 🍂 Festival de Sabors de Tardor 🍎

@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Navarra 🌶️
-date: 2026-12-14
-endDate: 2026-12-27T23:59:59
+title: "\U0001F956 Bocatas de Navarra \U0001F336️"
+date: 2026-12-14T00:00:00.000Z
+endDate: 2026-12-27T23:59:59.000Z
 image: /images/events/bocatas_navarra.webp
-description: Tierra de huerta privilegiada y embutidos inolvidables. La chistorra navarra chisporroteando en la sartén es uno de los mayores placeres de nuestra gastronomía.
+description: >-
+  Tierra de huerta privilegiada y embutidos inolvidables. La chistorra navarra
+  chisporroteando en la sartén es uno de los mayores placeres de nuestra
+  gastronomía.
+badge: /badges/bocatas_navarra.webp
 ---
 
 # 🥖 Bocatas de Navarra 🌶️

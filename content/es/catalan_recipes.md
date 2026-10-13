@@ -1,9 +1,10 @@
 ---
-title: 🏴 Recetas Catalanas 🥘
-date: 2026-09-10
-endDate: 2026-09-12T21:59:59
+title: "\U0001F3F4 Recetas Catalanas \U0001F958"
+date: 2026-09-10T00:00:00.000Z
+endDate: 2026-09-12T21:59:59.000Z
 image: /images/events/catalan_recipes.webp
 description: Celebra la cocina catalana y ayuda a preservar la lengua catalana
+badge: /badges/catalan_recipes.webp
 ---
 
 # 🏴 Recetas Catalanas 🥘

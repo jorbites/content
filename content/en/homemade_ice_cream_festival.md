@@ -1,9 +1,12 @@
 ---
-title: 🍦 Homemade Ice Cream Festival 🍦
-date: 2026-06-01
-endDate: 2026-06-30T21:59:59
+title: "\U0001F366 Homemade Ice Cream Festival \U0001F366"
+date: 2026-06-01T00:00:00.000Z
+endDate: 2026-06-30T21:59:59.000Z
 image: /images/events/homemade_ice_cream_festival.webp
-description: Celebrate the summer with the freshest and most original homemade ice cream creations!
+description: >-
+  Celebrate the summer with the freshest and most original homemade ice cream
+  creations!
+badge: /badges/homemade_ice_cream_festival.webp
 ---
 
 # 🍦 Homemade Ice Cream Festival 🍦

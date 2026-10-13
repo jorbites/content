@@ -1,9 +1,10 @@
 ---
-title: 🐟 SeaBites 🦐
-date: 2026-04-14
-endDate: 2026-04-28T21:59:59
+title: "\U0001F41F SeaBites \U0001F990"
+date: 2026-04-14T00:00:00.000Z
+endDate: 2026-04-28T21:59:59.000Z
 image: /images/events/seabites.webp
 description: Submergeix-te en un món de sabors marins d'arreu del món!
+badge: /badges/seabites.webp
 ---
 
 # 🐟 SeaBites 🦐

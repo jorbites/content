@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Aragon 🏔️
-date: 2026-11-30
-endDate: 2026-12-13T23:59:59
+title: "\U0001F956 Sandwiches of Aragon \U0001F3D4️"
+date: 2026-11-30T00:00:00.000Z
+endDate: 2026-12-13T23:59:59.000Z
 image: /images/events/bocatas_aragon.webp
-description: From the snowy Pyrenean peaks to the hills of Teruel! Aragon brings hearty, comforting flavors and prime roasted meats that fit beautifully in warm rustic loaves.
+description: >-
+  From the snowy Pyrenean peaks to the hills of Teruel! Aragon brings hearty,
+  comforting flavors and prime roasted meats that fit beautifully in warm rustic
+  loaves.
+badge: /badges/bocatas_aragon.webp
 ---
 
 # 🥖 Sandwiches of Aragon 🏔️

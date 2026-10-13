@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de Castella i Lleó 🏰
-date: 2027-03-08
-endDate: 2027-03-21T23:59:59
+title: "\U0001F956 Entrepans de Castella i Lleó \U0001F3F0"
+date: 2027-03-08T00:00:00.000Z
+endDate: 2027-03-21T23:59:59.000Z
 image: /images/events/bocatas_castilla_y_leon.webp
-description: Castella és terra de bon pa candeal daurat, de rostits tradicionals, de l'hornazo de Salamanca i del torrezno cruixent de Sòria.
+description: >-
+  Castella és terra de bon pa candeal daurat, de rostits tradicionals, de
+  l'hornazo de Salamanca i del torrezno cruixent de Sòria.
+badge: /badges/bocatas_castilla_y_leon.webp
 ---
 
 # 🥖 Entrepans de Castella i Lleó 🏰

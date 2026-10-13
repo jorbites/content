@@ -1,9 +1,10 @@
 ---
-title: 🇻🇪 Sabors Veneçolans 🫓
-date: 2026-01-05
-endDate: 2026-01-31T21:59:59
+title: "\U0001F1FB\U0001F1EA Sabors Veneçolans \U0001FAD3"
+date: 2026-01-05T00:00:00.000Z
+endDate: 2026-01-31T21:59:59.000Z
 image: /images/events/venezuelan_recipes.webp
 description: Celebra la rica i diversa cuina de Veneçuela amb receptes tradicionals!
+badge: /badges/venezuelan_recipes.webp
 ---
 
 # 🇻🇪 Festival de Sabors Veneçolans 🫓

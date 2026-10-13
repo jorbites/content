@@ -1,9 +1,10 @@
 ---
-title: 🥗 Meal Prep Challenge 🍱
-date: 2026-09-03
-endDate: 2026-09-14T21:59:59
+title: "\U0001F957 Meal Prep Challenge \U0001F371"
+date: 2026-09-03T00:00:00.000Z
+endDate: 2026-09-14T21:59:59.000Z
 image: /images/events/meal_prep_challenge.webp
 description: Master healthy batch cooking and share your best weekly meal prep recipes!
+badge: /badges/meal_prep_challenge.webp
 ---
 
 # 🥗 Meal Prep Challenge 🍱

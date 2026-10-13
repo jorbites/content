@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans del País Basc 🐟
-date: 2027-01-11
-endDate: 2027-01-24T23:59:59
+title: "\U0001F956 Entrepans del País Basc \U0001F41F"
+date: 2027-01-11T00:00:00.000Z
+endDate: 2027-01-24T23:59:59.000Z
 image: /images/events/bocatas_pais_vasco.webp
-description: Cultura gastronòmica en majúscules! Del mar Cantàbric a les sidreries tradicionals, Euskadi converteix cada mos en una autèntica meravella.
+description: >-
+  Cultura gastronòmica en majúscules! Del mar Cantàbric a les sidreries
+  tradicionals, Euskadi converteix cada mos en una autèntica meravella.
+badge: /badges/bocatas_pais_vasco.webp
 ---
 
 # 🥖 Entrepans del País Basc 🐟

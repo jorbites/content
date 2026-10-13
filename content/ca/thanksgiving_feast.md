@@ -1,9 +1,12 @@
 ---
-title: 🦃 Festí d'Acció de Gràcies 🥧
-date: 2025-11-25
-endDate: 2025-11-30T21:59:59
+title: "\U0001F983 Festí d'Acció de Gràcies \U0001F967"
+date: 2025-11-25T00:00:00.000Z
+endDate: 2025-11-30T21:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
-description: Uneix-te a nosaltres per a una celebració d'Acció de Gràcies plena de gratitud i menjar deliciós!
+description: >-
+  Uneix-te a nosaltres per a una celebració d'Acció de Gràcies plena de gratitud
+  i menjar deliciós!
+badge: /badges/thanksgiving_feast.webp
 ---
 
 # 🦃 Festí d'Acció de Gràcies 🥧

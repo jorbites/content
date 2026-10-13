@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Aragón 🏔️
-date: 2026-11-30
-endDate: 2026-12-13T23:59:59
+title: "\U0001F956 Bocatas de Aragón \U0001F3D4️"
+date: 2026-11-30T00:00:00.000Z
+endDate: 2026-12-13T23:59:59.000Z
 image: /images/events/bocatas_aragon.webp
-description: Del Pirineo a las sierras de Teruel. La cocina aragonesa aporta sabores contundentes y reconfortantes, con carnes de primer nivel que hacen las delicias de los amantes del buen pan.
+description: >-
+  Del Pirineo a las sierras de Teruel. La cocina aragonesa aporta sabores
+  contundentes y reconfortantes, con carnes de primer nivel que hacen las
+  delicias de los amantes del buen pan.
+badge: /badges/bocatas_aragon.webp
 ---
 
 # 🥖 Bocatas de Aragón 🏔️

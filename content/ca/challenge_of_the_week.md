@@ -1,10 +1,11 @@
 ---
-title: 🏆 Repte de la Setmana 🏆
-date: 2024-03-20
-endDate: 2024-12-31
+title: "\U0001F3C6 Repte de la Setmana \U0001F3C6"
+date: 2024-03-20T00:00:00.000Z
+endDate: 2024-12-31T00:00:00.000Z
 image: /images/events/challenge_of_the_week.webp
 description: Reptes setmanals de cuina per mostrar les teves habilitats culinàries
 permanent: true
+badge: /badges/challenge_of_the_week.webp
 ---
 
 # 🏆 Repte de la Setmana 🏆

@@ -1,10 +1,11 @@
 ---
-title: 🏆 Challenge of the Week 🏆
-date: 2024-03-20
-endDate: 2024-12-31
+title: "\U0001F3C6 Challenge of the Week \U0001F3C6"
+date: 2024-03-20T00:00:00.000Z
+endDate: 2024-12-31T00:00:00.000Z
 image: /images/events/challenge_of_the_week.webp
 description: Weekly cooking challenges to showcase your culinary skills
 permanent: true
+badge: /badges/challenge_of_the_week.webp
 ---
 
 # 🏆 Challenge of the Week 🏆

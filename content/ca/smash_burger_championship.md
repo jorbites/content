@@ -1,9 +1,12 @@
 ---
-title: "🍔 Campionat d'Hamburgueses: Hora del Smash! 🍔"
-date: 2026-10-05
-endDate: 2026-10-05T21:59:59
+title: "\U0001F354 Campionat d'Hamburgueses: Hora del Smash! \U0001F354"
+date: 2026-10-05T00:00:00.000Z
+endDate: 2026-10-05T21:59:59.000Z
 image: /images/events/smash_burger_championship.webp
-description: L'enfrontament definitiu de smash burgers en viu. Vores cruixents, formatge fos i acció culinària en directe!
+description: >-
+  L'enfrontament definitiu de smash burgers en viu. Vores cruixents, formatge
+  fos i acció culinària en directe!
+badge: /badges/smash_burger_championship.webp
 ---
 
 # 🍔 Jorbites Burger Championship: Hora del Smash! 🍔

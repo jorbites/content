@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of La Rioja 🍷
-date: 2026-12-28
-endDate: 2027-01-10T23:59:59
+title: "\U0001F956 Sandwiches of La Rioja \U0001F377"
+date: 2026-12-28T00:00:00.000Z
+endDate: 2027-01-10T23:59:59.000Z
 image: /images/events/bocatas_la_rioja.webp
-description: Welcome to Spain's wine capital and tapas haven! In Logroño and across La Rioja, sandwiches are served generously, packed with local cured meats and garden vegetables.
+description: >-
+  Welcome to Spain's wine capital and tapas haven! In Logroño and across La
+  Rioja, sandwiches are served generously, packed with local cured meats and
+  garden vegetables.
+badge: /badges/bocatas_la_rioja.webp
 ---
 
 # 🥖 Sandwiches of La Rioja 🍷

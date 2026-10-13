@@ -1,9 +1,10 @@
 ---
-title: 🪡 The Silk Feast 🪡
-date: 2026-03-14
-endDate: 2026-03-14T21:59:59
+title: "\U0001FAA1 The Silk Feast \U0001FAA1"
+date: 2026-03-14T00:00:00.000Z
+endDate: 2026-03-14T21:59:59.000Z
 image: /images/events/silk_feast.webp
 description: A culinary journey through the flavors of the Silk Road on Jorbites
+badge: /badges/silk_feast.webp
 ---
 
 # 🪡 The Silk Feast 🪡

@@ -1,9 +1,12 @@
 ---
-title: 🥖 Sandwiches of Asturias 🍏
-date: 2027-02-08
-endDate: 2027-02-21T23:59:59
+title: "\U0001F956 Sandwiches of Asturias \U0001F34F"
+date: 2027-02-08T00:00:00.000Z
+endDate: 2027-02-21T23:59:59.000Z
 image: /images/events/bocatas_asturias.webp
-description: A natural and culinary haven! From village festivals serving fresh bollos preñaos to cozy cider houses and legendary mountain cheeses.
+description: >-
+  A natural and culinary haven! From village festivals serving fresh bollos
+  preñaos to cozy cider houses and legendary mountain cheeses.
+badge: /badges/bocatas_asturias.webp
 ---
 
 # 🥖 Sandwiches of Asturias 🍏

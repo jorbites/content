@@ -1,9 +1,10 @@
 ---
-title: 🇬🇷 Recetas Griegas 🍽️
-date: 2026-07-01
-endDate: 2026-07-31T21:59:59
+title: "\U0001F1EC\U0001F1F7 Recetas Griegas \U0001F37D️"
+date: 2026-07-01T00:00:00.000Z
+endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/greek_recipes.webp
 description: Descubre los sabores frescos y mediterráneos de la cocina griega
+badge: /badges/greek_recipes.webp
 ---
 
 # 🇬🇷 Recetas Griegas 🍽️

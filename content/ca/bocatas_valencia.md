@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de la Comunitat Valenciana 🍊
-date: 2026-10-19
-endDate: 2026-11-01T23:59:59
+title: "\U0001F956 Entrepans de la Comunitat Valenciana \U0001F34A"
+date: 2026-10-19T00:00:00.000Z
+endDate: 2026-11-01T23:59:59.000Z
 image: /images/events/bocatas_valencia.webp
-description: Entrem al temple sagrat de l'esmorzaret valencià! Aquí l'entrepà de mig matí és tota una tradició que s'acompanya de cacauets i un bon cremadet.
+description: >-
+  Entrem al temple sagrat de l'esmorzaret valencià! Aquí l'entrepà de mig matí
+  és tota una tradició que s'acompanya de cacauets i un bon cremadet.
+badge: /badges/bocatas_valencia.webp
 ---
 
 # 🥖 Entrepans de la Comunitat Valenciana 🍊

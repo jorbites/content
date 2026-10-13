@@ -1,9 +1,10 @@
 ---
-title: 🥗 Salad Dressing Event 🥗
-date: 2026-04-17
-endDate: 2026-05-01T21:59:59
+title: "\U0001F957 Salad Dressing Event \U0001F957"
+date: 2026-04-17T00:00:00.000Z
+endDate: 2026-05-01T21:59:59.000Z
 image: /images/events/salad_dressing.webp
 description: Master the art of salad dressings and vinaigrettes
+badge: /badges/salad_dressing.webp
 ---
 
 # 🥗 Salad Dressing Event 🥗

@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de Navarra 🌶️
-date: 2026-12-14
-endDate: 2026-12-27T23:59:59
+title: "\U0001F956 Entrepans de Navarra \U0001F336️"
+date: 2026-12-14T00:00:00.000Z
+endDate: 2026-12-27T23:59:59.000Z
 image: /images/events/bocatas_navarra.webp
-description: Terra d'horta privilegiada i embotits llegendaris! La txistorra navarresa crepitant a la paella és una temptació irresistible.
+description: >-
+  Terra d'horta privilegiada i embotits llegendaris! La txistorra navarresa
+  crepitant a la paella és una temptació irresistible.
+badge: /badges/bocatas_navarra.webp
 ---
 
 # 🥖 Entrepans de Navarra 🌶️

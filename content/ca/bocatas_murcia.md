@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de la Regió de Múrcia 🍋
-date: 2026-10-05
-endDate: 2026-10-18T23:59:59
+title: "\U0001F956 Entrepans de la Regió de Múrcia \U0001F34B"
+date: 2026-10-05T00:00:00.000Z
+endDate: 2026-10-18T23:59:59.000Z
 image: /images/events/bocatas_murcia.webp
-description: Arribem a l'horta d'Europa! Múrcia combina com ningú els productes frescos de la terra amb carns delicioses i embotits tradicionals.
+description: >-
+  Arribem a l'horta d'Europa! Múrcia combina com ningú els productes frescos de
+  la terra amb carns delicioses i embotits tradicionals.
+badge: /badges/bocatas_murcia.webp
 ---
 
 # 🥖 Entrepans de la Regió de Múrcia 🍋

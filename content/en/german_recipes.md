@@ -1,9 +1,10 @@
 ---
-title: 🇩🇪 German Recipes 🍽️
-date: 2026-04-01
-endDate: 2026-04-30T21:59:59
+title: "\U0001F1E9\U0001F1EA German Recipes \U0001F37D️"
+date: 2026-04-01T00:00:00.000Z
+endDate: 2026-04-30T21:59:59.000Z
 image: /images/events/german_recipes.webp
 description: Discover the hearty and diverse flavors of German cuisine
+badge: /badges/german_recipes.webp
 ---
 
 # 🇩🇪 German Recipes 🍽️

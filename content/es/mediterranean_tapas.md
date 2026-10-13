@@ -1,9 +1,12 @@
 ---
-title: 🧆 Festival de Tapas Mediterráneas 🍷
-date: 2026-09-15
-endDate: 2026-09-28T21:59:59
+title: "\U0001F9C6 Festival de Tapas Mediterráneas \U0001F377"
+date: 2026-09-15T00:00:00.000Z
+endDate: 2026-09-28T21:59:59.000Z
 image: /images/events/mediterranean_tapas.webp
-description: ¡Celebra la vibrante cultura de los platillos y tapas mediterráneas para compartir!
+description: >-
+  ¡Celebra la vibrante cultura de los platillos y tapas mediterráneas para
+  compartir!
+badge: /badges/mediterranean_tapas.webp
 ---
 
 # 🧆 Festival de Tapas Mediterráneas 🍷

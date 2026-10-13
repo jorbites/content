@@ -1,9 +1,10 @@
 ---
-title: 🇻🇪 Venezuelan Flavors 🫓
-date: 2026-01-05
-endDate: 2026-01-31T21:59:59
+title: "\U0001F1FB\U0001F1EA Venezuelan Flavors \U0001FAD3"
+date: 2026-01-05T00:00:00.000Z
+endDate: 2026-01-31T21:59:59.000Z
 image: /images/events/venezuelan_recipes.webp
 description: Celebrate the rich and diverse cuisine of Venezuela with traditional recipes!
+badge: /badges/venezuelan_recipes.webp
 ---
 
 # 🇻🇪 Venezuelan Flavors Festival 🫓

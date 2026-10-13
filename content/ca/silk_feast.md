@@ -1,9 +1,10 @@
 ---
-title: 🪡 La Festa de la Seda 🪡
-date: 2026-03-14
-endDate: 2026-03-14T21:59:59
+title: "\U0001FAA1 La Festa de la Seda \U0001FAA1"
+date: 2026-03-14T00:00:00.000Z
+endDate: 2026-03-14T21:59:59.000Z
 image: /images/events/silk_feast.webp
 description: Un viatge culinari a través dels sabors de la Ruta de la Seda a Jorbites
+badge: /badges/silk_feast.webp
 ---
 
 # 🪡 La Festa de la Seda 🪡

@@ -1,9 +1,12 @@
 ---
-title: 🔥 The Calçoxofada 🧅
-date: 2026-02-01
-endDate: 2026-02-28T23:59:59
+title: "\U0001F525 The Calçoxofada \U0001F9C5"
+date: 2026-02-01T00:00:00.000Z
+endDate: 2026-02-28T23:59:59.000Z
 image: /images/events/calcoxofada.webp
-description: Join the ultimate winter fusion, Calçots and Artichokes in their maximum charred splendor.
+description: >-
+  Join the ultimate winter fusion, Calçots and Artichokes in their maximum
+  charred splendor.
+badge: /badges/calcoxofada.webp
 ---
 
 # 🔥 The Calçoxofada: Feast of the Embers 🧅

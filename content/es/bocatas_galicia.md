@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Galicia 🐙
-date: 2027-02-22
-endDate: 2027-03-07T23:59:59
+title: "\U0001F956 Bocatas de Galicia \U0001F419"
+date: 2027-02-22T00:00:00.000Z
+endDate: 2027-03-07T23:59:59.000Z
 image: /images/events/bocatas_galicia.webp
-description: "Galicia calidade. El pan gallego de moña o de Cea es uno de los mejores del mundo: corteza tostada y crujiente, y una miga alveolada que abraza carnes adobadas y mariscos."
+description: >-
+  Galicia calidade. El pan gallego de moña o de Cea es uno de los mejores del
+  mundo: corteza tostada y crujiente, y una miga alveolada que abraza carnes
+  adobadas y mariscos.
+badge: /badges/bocatas_galicia.webp
 ---
 
 # 🥖 Bocatas de Galicia 🐙

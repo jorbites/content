@@ -1,9 +1,10 @@
 ---
-title: 🇨🇱 Receptes Xilenes 🇨🇱
-date: 2026-09-18
-endDate: 2026-09-19T23:59:59
+title: "\U0001F1E8\U0001F1F1 Receptes Xilenes \U0001F1E8\U0001F1F1"
+date: 2026-09-18T00:00:00.000Z
+endDate: 2026-09-19T23:59:59.000Z
 image: /images/events/chilean_recipes.webp
 description: Celebra la gastronomia de Xile i les Festes Pàtries amb receptes tradicionals!
+badge: /badges/chilean_recipes.webp
 ---
 
 # 🇨🇱 Receptes Xilenes 🇨🇱

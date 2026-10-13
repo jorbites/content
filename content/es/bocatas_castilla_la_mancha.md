@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Castilla-La Mancha 🌾
-date: 2027-04-05
-endDate: 2027-04-18T23:59:59
+title: "\U0001F956 Bocatas de Castilla-La Mancha \U0001F33E"
+date: 2027-04-05T00:00:00.000Z
+endDate: 2027-04-18T23:59:59.000Z
 image: /images/events/bocatas_castilla_la_mancha.webp
-description: ¡En un lugar de la Mancha... el pan y el queso son leyenda! Las ventas manchegas que inmortalizó Cervantes siguen ofreciendo delicias cocinadas a fuego lento.
+description: >-
+  ¡En un lugar de la Mancha... el pan y el queso son leyenda! Las ventas
+  manchegas que inmortalizó Cervantes siguen ofreciendo delicias cocinadas a
+  fuego lento.
+badge: /badges/bocatas_castilla_la_mancha.webp
 ---
 
 # 🥖 Bocatas de Castilla-La Mancha 🌾

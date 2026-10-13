@@ -1,9 +1,12 @@
 ---
-title: 🥖 Sandwiches of Community of Madrid 🐻
-date: 2027-03-22
-endDate: 2027-04-04T23:59:59
+title: "\U0001F956 Sandwiches of Community of Madrid \U0001F43B"
+date: 2027-03-22T00:00:00.000Z
+endDate: 2027-04-04T23:59:59.000Z
 image: /images/events/bocatas_madrid.webp
-description: The irresistible scent of golden fried calamari around Plaza Mayor! Madrid has elevated the tavern roll into a cherished cultural trademark.
+description: >-
+  The irresistible scent of golden fried calamari around Plaza Mayor! Madrid has
+  elevated the tavern roll into a cherished cultural trademark.
+badge: /badges/bocatas_madrid.webp
 ---
 
 # 🥖 Sandwiches of Community of Madrid 🐻

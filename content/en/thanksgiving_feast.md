@@ -1,9 +1,10 @@
 ---
-title: 🦃 Thanksgiving Feast 🥧
-date: 2025-11-25
-endDate: 2025-11-30T21:59:59
+title: "\U0001F983 Thanksgiving Feast \U0001F967"
+date: 2025-11-25T00:00:00.000Z
+endDate: 2025-11-30T21:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
 description: Join us for a Thanksgiving celebration of gratitude and delicious food!
+badge: /badges/thanksgiving_feast.webp
 ---
 
 # 🦃 Thanksgiving Feast 🥧

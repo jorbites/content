@@ -8,77 +8,48 @@ Non-technical contributors can create and edit events directly via our visual we
 
 ## 🎨 Event Creation Workflow (Step-by-Step)
 
-### Step 1: Generate or Write the Markdown Content
-An event consists of 3 localized files with matching filenames (`<event_slug>.md`):
-- `content/ca/<event_slug>.md` (Catalan)
-- `content/es/<event_slug>.md` (Spanish)
-- `content/en/<event_slug>.md` (English)
+## ⚡ Zero-Friction Event Publishing (Automated Pipeline)
 
-#### Frontmatter Specifications:
-```markdown
----
-title: "🥑 Avocado Day 🥑"
-date: 2026-07-31
-endDate: 2026-08-01T23:59:59
-image: /images/events/avocado_day.webp
-badge: /badges/avocado_day.webp
-description: Celebrate the avocado season by creating amazing recipes!
-permanent: false
-recurrent: false
----
+You do **not** need to manually format multiple languages or cut out badges! Our automated CI pipeline handles everything:
 
-# 🥑 Avocado Day Celebration!
-
-Content goes here...
-```
-
-> [!IMPORTANT]
-> - **Dates**: Use `YYYY-MM-DD` for `date` and `YYYY-MM-DDTHH:mm:ss` for `endDate`. Do **not** append a `Z` or timezone offset, to avoid UTC date shifting in cron notifications.
-> - **Titles**: Always wrap titles containing colons or special characters in quotes (`"Title: Subtitle"`).
+1. **Write 1 Language (e.g. Spanish or English)**:
+   - Fill in Title, Description, and Content in your preferred language.
+   - Missing languages are automatically translated into Catalan, Spanish, and English using AI on publish.
+2. **Upload Cover Image**:
+   - Upload your AI-generated event image (PNG, JPG, or WebP).
+   - The pipeline automatically resizes it to 750x750, encodes as WebP, and optimizes size to `< 100 KB`.
+3. **Leave Badge Asset Blank**:
+   - The pipeline isolates the subject from your cover image using AI background removal (`rembg`), resizes it to 256x256 transparent WebP, and saves `badges/<slug>.webp` automatically.
 
 ---
 
-### Step 2: Generate the Badge / Event Image (AI Prompt)
+## 🎨 Event Creation Workflow (Manual CLI Option)
 
-When generating the event badge artwork with an AI image generator (e.g., Midjourney, DALL-E, Gemini), use this standard prompt template:
+If you are developing locally or prefer using the command line:
 
+### Step 1: AI Prompt for Event Artwork
+When generating artwork with an AI generator (Midjourney, DALL-E, Gemini), use this prompt:
 ```text
 can you generate me a vintage minimalist cartoon badge for my website call Jorbites about recipes, the logo is an avocado. The badge is for an event of "XXXXXX". avoid beige colors. avoid the avocada as a mascot (put the avocado with the "jorbites", like "🥑 Jorbites"). avoid white and green background
 ```
-*(Replace `XXXXXX` with your event theme, e.g. "Mexican Tacos", "Pasta Perfection", "Autumn Flavors").*
 
----
-
-### Step 3: Create the Cover Image (`images/`)
-The main event image is displayed on event cards and headers:
-- **Format**: `.webp`
-- **Resolution**: ~`750x750px`
-- **File Size**: **< 100 KB** (required)
-- **Destination**: `images/<event_slug>.webp` (referenced in markdown as `/images/events/<event_slug>.webp`)
-
-#### ⚡ Automated Script:
-You can automatically resize and optimize the cover image using our CLI tool:
+### Step 2: Auto-Process Assets & Badges Locally
 ```bash
+# 1. Optimize cover image:
 npm run process:cover /path/to/raw-image.png <event_slug>
+
+# 2. Automatically generate badge from cover image using rembg:
+npm run process:generate-badge images/<event_slug>.webp <event_slug>
+
+# 3. Or run the full repository auto-processor:
+npm run process:auto
 ```
-This automatically resizes to 750x750, converts to WebP, and adjusts quality until the file is under 100 KB.
 
----
-
-### Step 4: Create the Badge Asset (`badges/`)
-The badge asset is awarded to users upon completing the event:
-- **Format**: `.webp`
-- **Resolution**: Exactly `256x256px`
-- **Background**: **Transparent** (alpha channel)
-- **Destination**: `badges/<event_slug>.webp` (referenced in markdown as `/badges/<event_slug>.webp`)
-
-#### Procedure:
-1. Remove the background from the badge (using tools like remove.bg, Photoshop, or your preferred tool).
-2. Process with our CLI tool:
+### Step 3: Auto-Translate Locales
 ```bash
-npm run process:badge /path/to/transparent-badge.png <event_slug>
+# Translates missing locales using Gemini 2.0 Flash
+GEMINI_API_KEY=<your_key> npm run translate
 ```
-This automatically resizes to 256x256 WebP while preserving full transparency.
 
 ---
 
@@ -86,9 +57,12 @@ This automatically resizes to 256x256 WebP while preserving full transparency.
 
 1. Open [Jorbites Events Admin](https://jorbites.github.io/events/admin/).
 2. Click **Sign in with GitHub**.
-3. Sveltia CMS lets you edit Catalan, Spanish, and English side-by-side!
-4. Upload your cover image (`images/`) and badge asset (`badges/`).
-5. Save your draft. When ready, publish the changes!
+3. Create a **New Event**:
+   - Fill in your preferred language (Spanish or English).
+   - Upload your AI-generated cover image.
+   - Leave Badge blank (or upload custom badge if you prefer).
+4. Click **Publish**!
+5. GitHub Actions automatically optimizes images, extracts the transparent badge, translates into missing languages, and triggers a production deploy on Jorbites!
 
 ---
 

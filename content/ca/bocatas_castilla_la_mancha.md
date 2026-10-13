@@ -1,9 +1,13 @@
 ---
-title: 🥖 Entrepans de Castella - la Manxa 🌾
-date: 2027-04-05
-endDate: 2027-04-18T23:59:59
+title: "\U0001F956 Entrepans de Castella - la Manxa \U0001F33E"
+date: 2027-04-05T00:00:00.000Z
+endDate: 2027-04-18T23:59:59.000Z
 image: /images/events/bocatas_castilla_la_mancha.webp
-description: A un indret de la Manxa... el pa i el formatge són llegendaris! Les històriques vendes manxegues continuen oferint receptes tradicionals cuinades a foc lent.
+description: >-
+  A un indret de la Manxa... el pa i el formatge són llegendaris! Les
+  històriques vendes manxegues continuen oferint receptes tradicionals cuinades
+  a foc lent.
+badge: /badges/bocatas_castilla_la_mancha.webp
 ---
 
 # 🥖 Entrepans de Castella - la Manxa 🌾

@@ -1,9 +1,13 @@
 ---
-title: 🥖 Entrepans d'Andalusia ☀️
-date: 2026-09-21
-endDate: 2026-10-04T23:59:59
+title: "\U0001F956 Entrepans d'Andalusia ☀️"
+date: 2026-09-21T00:00:00.000Z
+endDate: 2026-10-04T23:59:59.000Z
 image: /images/events/bocatas_andalucia.webp
-description: "Primera parada de la nostra ruta gastronòmica! Descobreix els sabors autèntics del sud: molletes cruixents, carns a la brasa i guisats tradicionals transformats en entrepà."
+description: >-
+  Primera parada de la nostra ruta gastronòmica! Descobreix els sabors autèntics
+  del sud: molletes cruixents, carns a la brasa i guisats tradicionals
+  transformats en entrepà.
+badge: /badges/bocatas_andalucia.webp
 ---
 
 # 🥖 Entrepans d'Andalusia ☀️

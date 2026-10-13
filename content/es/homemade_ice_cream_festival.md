@@ -1,9 +1,12 @@
 ---
-title: 🍦 Festival de Helados Caseros 🍦
-date: 2026-06-01
-endDate: 2026-06-30T21:59:59
+title: "\U0001F366 Festival de Helados Caseros \U0001F366"
+date: 2026-06-01T00:00:00.000Z
+endDate: 2026-06-30T21:59:59.000Z
 image: /images/events/homemade_ice_cream_festival.webp
-description: ¡Celebra el verano con las creaciones de helado casero más frescas y originales!
+description: >-
+  ¡Celebra el verano con las creaciones de helado casero más frescas y
+  originales!
+badge: /badges/homemade_ice_cream_festival.webp
 ---
 
 # 🍦 Festival de Helados Caseros 🍦

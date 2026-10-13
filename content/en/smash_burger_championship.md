@@ -1,9 +1,12 @@
 ---
-title: '🍔 Burger Championship: Smash Time! 🍔'
-date: 2026-10-05
-endDate: 2026-10-05T21:59:59
+title: "\U0001F354 Burger Championship: Smash Time! \U0001F354"
+date: 2026-10-05T00:00:00.000Z
+endDate: 2026-10-05T21:59:59.000Z
 image: /images/events/smash_burger_championship.webp
-description: The ultimate live smash burger showdown. Crisp edges, gooey cheese, and live culinary action!
+description: >-
+  The ultimate live smash burger showdown. Crisp edges, gooey cheese, and live
+  culinary action!
+badge: /badges/smash_burger_championship.webp
 ---
 
 # 🍔 Jorbites Burger Championship: Smash Time! 🍔

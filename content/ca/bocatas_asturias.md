@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans d'Astúries 🍏
-date: 2027-02-08
-endDate: 2027-02-21T23:59:59
+title: "\U0001F956 Entrepans d'Astúries \U0001F34F"
+date: 2027-02-08T00:00:00.000Z
+endDate: 2027-02-21T23:59:59.000Z
 image: /images/events/bocatas_asturias.webp
-description: El paradís natural i gastronòmic! De les festes tradicionals amb bollos preñaos a les tavernes de sidra i els formatges més intensos.
+description: >-
+  El paradís natural i gastronòmic! De les festes tradicionals amb bollos
+  preñaos a les tavernes de sidra i els formatges més intensos.
+badge: /badges/bocatas_asturias.webp
 ---
 
 # 🥖 Entrepans d'Astúries 🍏

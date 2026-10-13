@@ -1,7 +1,7 @@
 ---
-title: 🎄 Concurso Jorbites 2 🎄
-date: 2024-12-22
-endDate: 2024-12-22
+title: "\U0001F384 Concurso Jorbites 2 \U0001F384"
+date: 2024-12-22T00:00:00.000Z
+endDate: 2024-12-22T00:00:00.000Z
 image: /images/events/second_contest.webp
 description: Segunda Edición del Concurso Jorbites
 ---

@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de Cantàbria ⚓
-date: 2027-01-25
-endDate: 2027-02-07T23:59:59
+title: "\U0001F956 Entrepans de Cantàbria ⚓"
+date: 2027-01-25T00:00:00.000Z
+endDate: 2027-02-07T23:59:59.000Z
 image: /images/events/bocatas_cantabria.webp
-description: Sabors purs del mar i de les valls pasiegues! A Cantàbria les rabas de calamar són sagrades i les anxoves de Santoña són una autèntica delícia mundial.
+description: >-
+  Sabors purs del mar i de les valls pasiegues! A Cantàbria les rabas de calamar
+  són sagrades i les anxoves de Santoña són una autèntica delícia mundial.
+badge: /badges/bocatas_cantabria.webp
 ---
 
 # 🥖 Entrepans de Cantàbria ⚓

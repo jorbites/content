@@ -1,7 +1,7 @@
 ---
-title: 🧧 Chinese New Year 2026 🧧
-date: 2026-02-17
-endDate: 2026-03-03T21:59:59
+title: "\U0001F9E7 Chinese New Year 2026 \U0001F9E7"
+date: 2026-02-17T00:00:00.000Z
+endDate: 2026-03-03T21:59:59.000Z
 image: /images/events/chinese_new_year.webp
 description: Celebrate Chinese New Year 2026 on Jorbites
 ---

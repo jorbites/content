@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Balearic Islands 🌊
-date: 2026-11-02
-endDate: 2026-11-15T23:59:59
+title: "\U0001F956 Sandwiches of Balearic Islands \U0001F30A"
+date: 2026-11-02T00:00:00.000Z
+endDate: 2026-11-15T23:59:59.000Z
 image: /images/events/bocatas_baleares.webp
-description: Setting sail for the Mediterranean islands! Meet the llonguet, Mallorca's beloved crusty white roll that pairs perfectly with island cheeses and savory cured sobrasada.
+description: >-
+  Setting sail for the Mediterranean islands! Meet the llonguet, Mallorca's
+  beloved crusty white roll that pairs perfectly with island cheeses and savory
+  cured sobrasada.
+badge: /badges/bocatas_baleares.webp
 ---
 
 # 🥖 Sandwiches of Balearic Islands 🌊

@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Catalunya 🍅
-date: 2026-11-16
-endDate: 2026-11-29T23:59:59
+title: "\U0001F956 Bocatas de Catalunya \U0001F345"
+date: 2026-11-16T00:00:00.000Z
+endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/bocatas_cataluna.webp
-description: "Homenaje a la sencillez perfecta: el pa amb tomàquet. Frotar un tomate maduro sobre una rebanada de pan de payés tostado transforma cualquier embutido o carne en una obra de arte."
+description: >-
+  Homenaje a la sencillez perfecta: el pa amb tomàquet. Frotar un tomate maduro
+  sobre una rebanada de pan de payés tostado transforma cualquier embutido o
+  carne en una obra de arte.
+badge: /badges/bocatas_cataluna.webp
 ---
 
 # 🥖 Bocatas de Catalunya 🍅

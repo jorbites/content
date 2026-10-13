@@ -1,11 +1,12 @@
 ---
-title: 🥟 29 of Gnocchis 🥟
-date: 2025-01-29
-endDate: 2025-01-29T21:59:59
+title: "\U0001F95F 29 of Gnocchis \U0001F95F"
+date: 2025-01-29T00:00:00.000Z
+endDate: 2025-01-29T21:59:59.000Z
 image: /images/events/29_of_gnocchis.webp
 description: Celebrate the traditional Gnocchi Day on the 29th of each month!
 recurrent: true
 dayOfMonth: 29
+badge: /badges/29_of_gnocchis.webp
 ---
 
 # 🥟 29 of Gnocchis 🥟

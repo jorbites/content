@@ -1,9 +1,10 @@
 ---
-title: 🥪 Dia Mundial del Sandvitx 🥪
-date: 2025-11-03
-endDate: 2025-11-03T21:59:59
+title: "\U0001F96A Dia Mundial del Sandvitx \U0001F96A"
+date: 2025-11-03T00:00:00.000Z
+endDate: 2025-11-03T21:59:59.000Z
 image: /images/events/world_sandwich_day.webp
 description: Esdeveniment del Dia Mundial del Sandvitx
+badge: /badges/world_sandwich_day.webp
 ---
 
 # 🥪 Dia Mundial del Sandvitx 2025 🥪

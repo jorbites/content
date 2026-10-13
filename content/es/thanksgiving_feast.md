@@ -1,9 +1,12 @@
 ---
-title: 🦃 Festín de Acción de Gracias 🥧
-date: 2025-11-25
-endDate: 2025-11-30T21:59:59
+title: "\U0001F983 Festín de Acción de Gracias \U0001F967"
+date: 2025-11-25T00:00:00.000Z
+endDate: 2025-11-30T21:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
-description: ¡Únete a nosotros para una celebración de Acción de Gracias llena de gratitud y comida deliciosa!
+description: >-
+  ¡Únete a nosotros para una celebración de Acción de Gracias llena de gratitud
+  y comida deliciosa!
+badge: /badges/thanksgiving_feast.webp
 ---
 
 # 🦃 Festín de Acción de Gracias 🥧

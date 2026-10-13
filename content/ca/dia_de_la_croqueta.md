@@ -1,9 +1,10 @@
 ---
-title: 🥔 Dia de la Croqueta 🥔
-date: 2026-01-15
-endDate: 2026-01-18T21:59:59
+title: "\U0001F954 Dia de la Croqueta \U0001F954"
+date: 2026-01-15T00:00:00.000Z
+endDate: 2026-01-18T21:59:59.000Z
 image: /images/events/dia_de_la_croqueta.webp
 description: Esdeveniment del Dia de la Croqueta
+badge: /badges/dia_de_la_croqueta.webp
 ---
 
 # 🥔 Dia de la Croqueta 🥔

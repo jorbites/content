@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Andalucía ☀️
-date: 2026-09-21
-endDate: 2026-10-04T23:59:59
+title: "\U0001F956 Bocatas de Andalucía ☀️"
+date: 2026-09-21T00:00:00.000Z
+endDate: 2026-10-04T23:59:59.000Z
 image: /images/events/bocatas_andalucia.webp
-description: "¡Primera parada de la ruta! Cruzamos Despeñaperros para descubrir los sabores inigualables del sur: molletes crujientes, carnes a la brasa y guisos de toda la vida convertidos en bocadillo."
+description: >-
+  ¡Primera parada de la ruta! Cruzamos Despeñaperros para descubrir los sabores
+  inigualables del sur: molletes crujientes, carnes a la brasa y guisos de toda
+  la vida convertidos en bocadillo.
+badge: /badges/bocatas_andalucia.webp
 ---
 
 # 🥖 Bocatas de Andalucía ☀️

@@ -1,9 +1,12 @@
 ---
-title: 🥖 Sandwiches of Region of Murcia 🍋
-date: 2026-10-05
-endDate: 2026-10-18T23:59:59
+title: "\U0001F956 Sandwiches of Region of Murcia \U0001F34B"
+date: 2026-10-05T00:00:00.000Z
+endDate: 2026-10-18T23:59:59.000Z
 image: /images/events/bocatas_murcia.webp
-description: Welcome to Europe's garden! Murcia pairs pristine sun-ripened produce with tender meats and traditional savory sausages.
+description: >-
+  Welcome to Europe's garden! Murcia pairs pristine sun-ripened produce with
+  tender meats and traditional savory sausages.
+badge: /badges/bocatas_murcia.webp
 ---
 
 # 🥖 Sandwiches of Region of Murcia 🍋

@@ -1,9 +1,12 @@
 ---
-title: "🍹 Tragos de Verano: Concurso de Cócteles 🍹"
-date: 2026-07-11
-endDate: 2026-07-11T23:59:59
+title: "\U0001F379 Tragos de Verano: Concurso de Cócteles \U0001F379"
+date: 2026-07-11T00:00:00.000Z
+endDate: 2026-07-11T23:59:59.000Z
 image: /images/events/summer_sips_contest.webp
-description: ¡Combate el calor en el enfrentamiento definitivo de coctelería y mocktails del verano!
+description: >-
+  ¡Combate el calor en el enfrentamiento definitivo de coctelería y mocktails
+  del verano!
+badge: /badges/summer_sips_contest.webp
 ---
 
 # 🍹 Tragos de Verano: Concurso de Cócteles Jorbites 🍹

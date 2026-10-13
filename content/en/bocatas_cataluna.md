@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Catalonia 🍅
-date: 2026-11-16
-endDate: 2026-11-29T23:59:59
+title: "\U0001F956 Sandwiches of Catalonia \U0001F345"
+date: 2026-11-16T00:00:00.000Z
+endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/bocatas_cataluna.webp
-description: "Celebrating the world's most brilliant culinary invention: pa amb tomàquet. Rubbing a juicy ripe tomato and rich olive oil onto rustic bread elevates every single filling."
+description: >-
+  Celebrating the world's most brilliant culinary invention: pa amb tomàquet.
+  Rubbing a juicy ripe tomato and rich olive oil onto rustic bread elevates
+  every single filling.
+badge: /badges/bocatas_cataluna.webp
 ---
 
 # 🥖 Sandwiches of Catalonia 🍅

@@ -1,0 +1,67 @@
+name: Auto Process Events & Assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'images/**'
+      - 'badges/**'
+      - 'scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python rembg
+        run: pip install "rembg[cli]" onnxruntime
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Optimize Images & Auto-Generate Badges
+        run: npm run process:auto
+
+      - name: Auto-Translate Missing Locales
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run translate
+
+      - name: Validate Integrity
+        run: npm run validate
+
+      - name: Commit & Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(automation): optimize images, generate badges & translate locales [skip ci]'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Trigger Vercel Deploy Hook
+        if: env.VERCEL_DEPLOY_HOOK_URL != ''
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          echo "Triggering Vercel deployment hook..."
+          curl -s -S -X POST "$VERCEL_DEPLOY_HOOK_URL"

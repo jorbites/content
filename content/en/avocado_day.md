@@ -1,9 +1,10 @@
 ---
-title: 🥑 International Avocado Day 🥑
-date: 2026-07-31
-endDate: 2026-07-31T21:59:59
+title: "\U0001F951 International Avocado Day \U0001F951"
+date: 2026-07-31T00:00:00.000Z
+endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/avocado_day.webp
 description: International Avocado Day event
+badge: /badges/avocado_day.webp
 ---
 
 # 🥑 International Avocado Day 🥑

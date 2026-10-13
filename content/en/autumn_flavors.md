@@ -1,9 +1,10 @@
 ---
-title: 🍂 Autumn Flavors 🍎
-date: 2026-10-07
-endDate: 2026-10-30T21:59:59
+title: "\U0001F342 Autumn Flavors \U0001F34E"
+date: 2026-10-07T00:00:00.000Z
+endDate: 2026-10-30T21:59:59.000Z
 image: /images/events/autumn_flavors.webp
 description: Celebrate fall with seasonal recipes featuring autumn's best ingredients
+badge: /badges/autumn_flavors.webp
 ---
 
 # 🍂 Autumn Flavors Festival 🍎

@@ -7,6 +7,9 @@
     "validate": "tsx scripts/validate.ts",
     "process:cover": "tsx scripts/process-asset.ts --cover",
     "process:badge": "tsx scripts/process-asset.ts --badge",
+    "process:generate-badge": "tsx scripts/process-asset.ts --generate-badge",
+    "process:auto": "tsx scripts/auto-process.ts",
+    "translate": "tsx scripts/translate-events.ts",
     "process:test": "tsx scripts/process-asset.ts --test",
     "format": "prettier --write \"**/*.{md,json,yml,yaml}\""
   },

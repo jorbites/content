@@ -1,9 +1,12 @@
 ---
-title: "🌿 Sano y Fresco 🌿"
-date: 2026-06-15
-endDate: 2026-06-30T23:59:59
+title: "\U0001F33F Sano y Fresco \U0001F33F"
+date: 2026-06-15T00:00:00.000Z
+endDate: 2026-06-30T23:59:59.000Z
 image: /images/events/fit_and_fresh.webp
-description: ¡Alimenta tu cuerpo con creaciones vibrantes y llenas de nutrientes que hacen de comer sano una celebración!
+description: >-
+  ¡Alimenta tu cuerpo con creaciones vibrantes y llenas de nutrientes que hacen
+  de comer sano una celebración!
+badge: /badges/fit_and_fresh.webp
 ---
 
 # 🌿 Sano y Fresco 🌿

@@ -1,9 +1,10 @@
 ---
-title: 🥂 Tres Años de Jorbites 🥂
-date: 2026-05-30
-endDate: 2026-05-30T21:59:59
+title: "\U0001F942 Tres Años de Jorbites \U0001F942"
+date: 2026-05-30T00:00:00.000Z
+endDate: 2026-05-30T21:59:59.000Z
 image: /images/events/three_years_contest/three_years_contest.webp
-description: Celebrando tres años de recetas, comunidad y creatividad culinaria.
+description: 'Celebrando tres años de recetas, comunidad y creatividad culinaria.'
+badge: /badges/three_years_contest.webp
 ---
 
 # 🥂 Tres Años de Jorbites 🥂

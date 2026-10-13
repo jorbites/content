@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Extremadura 🌳
-date: 2027-04-19
-endDate: 2027-05-02T23:59:59
+title: "\U0001F956 Sandwiches of Extremadura \U0001F333"
+date: 2027-04-19T00:00:00.000Z
+endDate: 2027-05-02T23:59:59.000Z
 image: /images/events/bocatas_extremadura.webp
-description: Rolling oak meadows and pristine Iberian dehesa pastures! World-famous acorn-fed ham and decadent melting Torta del Casar cheese make unmatched sandwiches.
+description: >-
+  Rolling oak meadows and pristine Iberian dehesa pastures! World-famous
+  acorn-fed ham and decadent melting Torta del Casar cheese make unmatched
+  sandwiches.
+badge: /badges/bocatas_extremadura.webp
 ---
 
 # 🥖 Sandwiches of Extremadura 🌳

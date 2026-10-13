@@ -1,9 +1,12 @@
 ---
-title: 🥖 Sandwiches of Castile and León 🏰
-date: 2027-03-08
-endDate: 2027-03-21T23:59:59
+title: "\U0001F956 Sandwiches of Castile and León \U0001F3F0"
+date: 2027-03-08T00:00:00.000Z
+endDate: 2027-03-21T23:59:59.000Z
 image: /images/events/bocatas_castilla_y_leon.webp
-description: The historic heartland of dense candeal bread, centuries-old roasts, Salamanca's rich hornazo pie, and sizzling Soria pork cracklings.
+description: >-
+  The historic heartland of dense candeal bread, centuries-old roasts,
+  Salamanca's rich hornazo pie, and sizzling Soria pork cracklings.
+badge: /badges/bocatas_castilla_y_leon.webp
 ---
 
 # 🥖 Sandwiches of Castile and León 🏰

@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Basque Country 🐟
-date: 2027-01-11
-endDate: 2027-01-24T23:59:59
+title: "\U0001F956 Sandwiches of Basque Country \U0001F41F"
+date: 2027-01-11T00:00:00.000Z
+endDate: 2027-01-24T23:59:59.000Z
 image: /images/events/bocatas_pais_vasco.webp
-description: Gastronomy at its finest! From the Cantabrian Sea to traditional cider houses, the Basque Country turns simple sandwich ingredients into culinary masterpieces.
+description: >-
+  Gastronomy at its finest! From the Cantabrian Sea to traditional cider houses,
+  the Basque Country turns simple sandwich ingredients into culinary
+  masterpieces.
+badge: /badges/bocatas_pais_vasco.webp
 ---
 
 # 🥖 Sandwiches of Basque Country 🐟

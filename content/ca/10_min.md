@@ -1,7 +1,7 @@
 ---
-title: ⏱️🔥 10 MINUTS 🔥⏱️
-date: 2026-03-31
-endDate: 2026-04-14T21:59:59
+title: "⏱️\U0001F525 10 MINUTS \U0001F525⏱️"
+date: 2026-03-31T00:00:00.000Z
+endDate: 2026-04-14T21:59:59.000Z
 image: /images/events/10_min_event.webp
 description: Event de receptes en 10 minuts
 ---

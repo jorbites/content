@@ -1,9 +1,10 @@
 ---
-title: 🍄 Mes de las Setas 🍄
-date: 2026-09-01
-endDate: 2026-09-30T21:59:59
+title: "\U0001F344 Mes de las Setas \U0001F344"
+date: 2026-09-01T00:00:00.000Z
+endDate: 2026-09-30T21:59:59.000Z
 image: /images/events/mushroom_month.webp
 description: Celebra el Mes Nacional de las Setas con recetas creativas de setas
+badge: /badges/mushroom_month.webp
 ---
 
 # 🍄 Mes de las Setas 🍄

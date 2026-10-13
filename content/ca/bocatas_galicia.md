@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans de Galícia 🐙
-date: 2027-02-22
-endDate: 2027-03-07T23:59:59
+title: "\U0001F956 Entrepans de Galícia \U0001F419"
+date: 2027-02-22T00:00:00.000Z
+endDate: 2027-03-07T23:59:59.000Z
 image: /images/events/bocatas_galicia.webp
-description: Galícia calidade! El pa gallec de crosta torrada i molla alveolada és un dels millors del món per acollir carns adobades i marisc excepcional.
+description: >-
+  Galícia calidade! El pa gallec de crosta torrada i molla alveolada és un dels
+  millors del món per acollir carns adobades i marisc excepcional.
+badge: /badges/bocatas_galicia.webp
 ---
 
 # 🥖 Entrepans de Galícia 🐙

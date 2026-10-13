@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de La Rioja 🍷
-date: 2026-12-28
-endDate: 2027-01-10T23:59:59
+title: "\U0001F956 Bocatas de La Rioja \U0001F377"
+date: 2026-12-28T00:00:00.000Z
+endDate: 2027-01-10T23:59:59.000Z
 image: /images/events/bocatas_la_rioja.webp
-description: ¡Bienvenidos a la tierra del vino y el tapeo sin fin! En Logroño y por toda la región, el bocadillo se disfruta en formato generoso con embutidos de calidad insuperable.
+description: >-
+  ¡Bienvenidos a la tierra del vino y el tapeo sin fin! En Logroño y por toda la
+  región, el bocadillo se disfruta en formato generoso con embutidos de calidad
+  insuperable.
+badge: /badges/bocatas_la_rioja.webp
 ---
 
 # 🥖 Bocatas de La Rioja 🍷

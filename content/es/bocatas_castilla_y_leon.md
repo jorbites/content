@@ -1,9 +1,12 @@
 ---
-title: 🥖 Bocatas de Castilla y León 🏰
-date: 2027-03-08
-endDate: 2027-03-21T23:59:59
+title: "\U0001F956 Bocatas de Castilla y León \U0001F3F0"
+date: 2027-03-08T00:00:00.000Z
+endDate: 2027-03-21T23:59:59.000Z
 image: /images/events/bocatas_castilla_y_leon.webp
-description: Castilla es tierra de panes candeales blancos y dorados, de asados centenarios, del hornazo de Salamanca y del torrezno crujiente de Soria.
+description: >-
+  Castilla es tierra de panes candeales blancos y dorados, de asados
+  centenarios, del hornazo de Salamanca y del torrezno crujiente de Soria.
+badge: /badges/bocatas_castilla_y_leon.webp
 ---
 
 # 🥖 Bocatas de Castilla y León 🏰

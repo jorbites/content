@@ -1,9 +1,13 @@
 ---
-title: 🥖 Bocatas de Illes Balears 🌊
-date: 2026-11-02
-endDate: 2026-11-15T23:59:59
+title: "\U0001F956 Bocatas de Illes Balears \U0001F30A"
+date: 2026-11-02T00:00:00.000Z
+endDate: 2026-11-15T23:59:59.000Z
 image: /images/events/bocatas_baleares.webp
-description: Navegamos al archipiélago balear. Aquí manda el llonguet, un panecillo blanco y suave con una hendidura central ideal para recibir los mejores embutidos y quesos de las islas.
+description: >-
+  Navegamos al archipiélago balear. Aquí manda el llonguet, un panecillo blanco
+  y suave con una hendidura central ideal para recibir los mejores embutidos y
+  quesos de las islas.
+badge: /badges/bocatas_baleares.webp
 ---
 
 # 🥖 Bocatas de Illes Balears 🌊

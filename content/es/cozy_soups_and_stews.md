@@ -1,9 +1,10 @@
 ---
-title: 🍲 Sopas y Guisos Reconfortantes 🥣
-date: 2026-10-02
-endDate: 2026-10-12T21:59:59
+title: "\U0001F372 Sopas y Guisos Reconfortantes \U0001F963"
+date: 2026-10-02T00:00:00.000Z
+endDate: 2026-10-12T21:59:59.000Z
 image: /images/events/cozy_soups_and_stews.webp
-description: ¡Entra en calor este otoño con cremas, sopas caseras y guisos reconfortantes!
+description: '¡Entra en calor este otoño con cremas, sopas caseras y guisos reconfortantes!'
+badge: /badges/cozy_soups_and_stews.webp
 ---
 
 # 🍲 Sopas y Guisos Reconfortantes 🥣

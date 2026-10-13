@@ -1,9 +1,12 @@
 ---
-title: "🌿 Fit & Fresh 🌿"
-date: 2026-06-15
-endDate: 2026-06-30T23:59:59
+title: "\U0001F33F Fit & Fresh \U0001F33F"
+date: 2026-06-15T00:00:00.000Z
+endDate: 2026-06-30T23:59:59.000Z
 image: /images/events/fit_and_fresh.webp
-description: Fuel your body with vibrant, nutrient-packed creations that make healthy eating a celebration!
+description: >-
+  Fuel your body with vibrant, nutrient-packed creations that make healthy
+  eating a celebration!
+badge: /badges/fit_and_fresh.webp
 ---
 
 # 🌿 Fit & Fresh 🌿

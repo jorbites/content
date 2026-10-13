@@ -1,9 +1,10 @@
 ---
-title: 🇮🇳 Recetas Indias 🍽️
-date: 2026-03-04
-endDate: 2026-03-31T23:59:59
+title: "\U0001F1EE\U0001F1F3 Recetas Indias \U0001F37D️"
+date: 2026-03-04T00:00:00.000Z
+endDate: 2026-03-31T23:59:59.000Z
 image: /images/events/indian_recipes.webp
 description: Descubre el vibrante y aromático mundo de la cocina india
+badge: /badges/indian_recipes.webp
 ---
 
 # 🇮🇳 Recetas Indias 🍽️

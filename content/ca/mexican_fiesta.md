@@ -1,9 +1,10 @@
 ---
-title: 🌮 Festa Mexicana 🌮
-date: 2026-05-02
-endDate: 2026-05-31T23:59:59
+title: "\U0001F32E Festa Mexicana \U0001F32E"
+date: 2026-05-02T00:00:00.000Z
+endDate: 2026-05-31T23:59:59.000Z
 image: /images/events/mexican_fiesta.webp
 description: Celebra els vibrants sabors de Mèxic!
+badge: /badges/mexican_fiesta.webp
 ---
 
 # 🌮 Festa Mexicana 🌮

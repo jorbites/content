@@ -1,9 +1,12 @@
 ---
-title: "🍹 Summer Sips: Cocktail Contest 🍹"
-date: 2026-07-11
-endDate: 2026-07-11T23:59:59
+title: "\U0001F379 Summer Sips: Cocktail Contest \U0001F379"
+date: 2026-07-11T00:00:00.000Z
+endDate: 2026-07-11T23:59:59.000Z
 image: /images/events/summer_sips_contest.webp
-description: Beat the heat with the ultimate summer cocktail and mocktail mixology showdown!
+description: >-
+  Beat the heat with the ultimate summer cocktail and mocktail mixology
+  showdown!
+badge: /badges/summer_sips_contest.webp
 ---
 
 # 🍹 Summer Sips: Jorbites Cocktail Contest 🍹

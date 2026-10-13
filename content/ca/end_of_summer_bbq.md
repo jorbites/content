@@ -1,9 +1,12 @@
 ---
-title: 🔥 Barbacoa de Final d'Estiu 🍢
-date: 2026-08-22
-endDate: 2026-08-31T21:59:59
+title: "\U0001F525 Barbacoa de Final d'Estiu \U0001F362"
+date: 2026-08-22T00:00:00.000Z
+endDate: 2026-08-31T21:59:59.000Z
 image: /images/events/end_of_summer_bbq.webp
-description: Acomiada els últims dies càlids de l'estiu amb delicioses receptes a la barbacoa!
+description: >-
+  Acomiada els últims dies càlids de l'estiu amb delicioses receptes a la
+  barbacoa!
+badge: /badges/end_of_summer_bbq.webp
 ---
 
 # 🔥 Barbacoa de Final d'Estiu 🍢

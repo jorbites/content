@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Cantabria ⚓
-date: 2027-01-25
-endDate: 2027-02-07T23:59:59
+title: "\U0001F956 Sandwiches of Cantabria ⚓"
+date: 2027-01-25T00:00:00.000Z
+endDate: 2027-02-07T23:59:59.000Z
 image: /images/events/bocatas_cantabria.webp
-description: Pure sea breezes and mountain valleys! In Cantabria, crispy fried calamari rabas are an essential ritual and Santoña anchovies are the black gold of the Bay of Biscay.
+description: >-
+  Pure sea breezes and mountain valleys! In Cantabria, crispy fried calamari
+  rabas are an essential ritual and Santoña anchovies are the black gold of the
+  Bay of Biscay.
+badge: /badges/bocatas_cantabria.webp
 ---
 
 # 🥖 Sandwiches of Cantabria ⚓

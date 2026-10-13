@@ -1,9 +1,12 @@
 ---
-title: 🥖 Bocatas de Cantabria ⚓
-date: 2027-01-25
-endDate: 2027-02-07T23:59:59
+title: "\U0001F956 Bocatas de Cantabria ⚓"
+date: 2027-01-25T00:00:00.000Z
+endDate: 2027-02-07T23:59:59.000Z
 image: /images/events/bocatas_cantabria.webp
-description: Sabores del mar y de los valles pasiegos. En Cantabria las rabas de calamar son sagradas y las anchoas de Santoña son el oro negro del Cantábrico.
+description: >-
+  Sabores del mar y de los valles pasiegos. En Cantabria las rabas de calamar
+  son sagradas y las anchoas de Santoña son el oro negro del Cantábrico.
+badge: /badges/bocatas_cantabria.webp
 ---
 
 # 🥖 Bocatas de Cantabria ⚓

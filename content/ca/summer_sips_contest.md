@@ -1,9 +1,12 @@
 ---
-title: "🍹 Glops d'Estiu: Concurs de Còctels 🍹"
-date: 2026-07-11
-endDate: 2026-07-11T23:59:59
+title: "\U0001F379 Glops d'Estiu: Concurs de Còctels \U0001F379"
+date: 2026-07-11T00:00:00.000Z
+endDate: 2026-07-11T23:59:59.000Z
 image: /images/events/summer_sips_contest.webp
-description: Combat la calor en l'enfrontament definitiu de cocteleria i mocktails de l'estiu!
+description: >-
+  Combat la calor en l'enfrontament definitiu de cocteleria i mocktails de
+  l'estiu!
+badge: /badges/summer_sips_contest.webp
 ---
 
 # 🍹 Glops d'Estiu: Concurs de Còctels Jorbites 🍹

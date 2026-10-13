@@ -1,9 +1,12 @@
 ---
-title: "🍣 Sabors del Japó 🍣"
-date: 2026-06-02
-endDate: 2026-06-30T23:59:59
+title: "\U0001F363 Sabors del Japó \U0001F363"
+date: 2026-06-02T00:00:00.000Z
+endDate: 2026-06-30T23:59:59.000Z
 image: /images/events/taste_of_japan.webp
-description: Embarca't en un viatge culinari al Japó! Descobreix l'harmonia de sabors, des del sushi clàssic fins al ramen reconfortant.
+description: >-
+  Embarca't en un viatge culinari al Japó! Descobreix l'harmonia de sabors, des
+  del sushi clàssic fins al ramen reconfortant.
+badge: /badges/taste_of_japan.webp
 ---
 
 # 🍣 Sabors del Japó 🍣

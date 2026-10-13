@@ -1,9 +1,13 @@
 ---
-title: 🥖 Sandwiches of Galicia 🐙
-date: 2027-02-22
-endDate: 2027-03-07T23:59:59
+title: "\U0001F956 Sandwiches of Galicia \U0001F419"
+date: 2027-02-22T00:00:00.000Z
+endDate: 2027-03-07T23:59:59.000Z
 image: /images/events/bocatas_galicia.webp
-description: Galician excellence! Renowned rustic Galician bread with its crackling golden crust and airy crumb provides the ultimate canvas for marinated meats and seafood.
+description: >-
+  Galician excellence! Renowned rustic Galician bread with its crackling golden
+  crust and airy crumb provides the ultimate canvas for marinated meats and
+  seafood.
+badge: /badges/bocatas_galicia.webp
 ---
 
 # 🥖 Sandwiches of Galicia 🐙

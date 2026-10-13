@@ -1,9 +1,12 @@
 ---
-title: 🥗 Desafiament de Prep de Menjars 🍱
-date: 2026-09-03
-endDate: 2026-09-14T21:59:59
+title: "\U0001F957 Desafiament de Prep de Menjars \U0001F371"
+date: 2026-09-03T00:00:00.000Z
+endDate: 2026-09-14T21:59:59.000Z
 image: /images/events/meal_prep_challenge.webp
-description: Domina la cuina per lots saludable i comparteix les teves millors receptes de meal prep!
+description: >-
+  Domina la cuina per lots saludable i comparteix les teves millors receptes de
+  meal prep!
+badge: /badges/meal_prep_challenge.webp
 ---
 
 # 🥗 Desafiament de Prep de Menjars 🍱

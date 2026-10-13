@@ -1,9 +1,10 @@
 ---
-title: 🥑 Día Internacional del Aguacate 🥑
-date: 2026-07-31
-endDate: 2026-07-31T21:59:59
+title: "\U0001F951 Día Internacional del Aguacate \U0001F951"
+date: 2026-07-31T00:00:00.000Z
+endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/avocado_day.webp
 description: Evento del Día Internacional del Aguacate
+badge: /badges/avocado_day.webp
 ---
 
 # 🥑 Día Internacional del Aguacate 🥑

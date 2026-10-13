@@ -1,9 +1,10 @@
 ---
-title: 🇧🇬 Bulgarian Recipes 🍽️
-date: 2025-09-19
-endDate: 2025-09-30T21:59:59
+title: "\U0001F1E7\U0001F1EC Bulgarian Recipes \U0001F37D️"
+date: 2025-09-19T00:00:00.000Z
+endDate: 2025-09-30T21:59:59.000Z
 image: /images/events/bulgarian_recipes.webp
 description: Celebrate Bulgarian cuisine with regional classics and modern twists
+badge: /badges/bulgarian_recipes.webp
 ---
 
 # 🇧🇬 Bulgarian Recipes 🍽️

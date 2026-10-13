@@ -1,9 +1,12 @@
 ---
-title: 🥖 Entrepans d'Extremadura 🌳
-date: 2027-04-19
-endDate: 2027-05-02T23:59:59
+title: "\U0001F956 Entrepans d'Extremadura \U0001F333"
+date: 2027-04-19T00:00:00.000Z
+endDate: 2027-05-02T23:59:59.000Z
 image: /images/events/bocatas_extremadura.webp
-description: La devesa d'alzines en la seva màxima expressió! El pernil ibèric de gla i la cremositat única de la Torta del Casar creen entrepans insuperables.
+description: >-
+  La devesa d'alzines en la seva màxima expressió! El pernil ibèric de gla i la
+  cremositat única de la Torta del Casar creen entrepans insuperables.
+badge: /badges/bocatas_extremadura.webp
 ---
 
 # 🥖 Entrepans d'Extremadura 🌳

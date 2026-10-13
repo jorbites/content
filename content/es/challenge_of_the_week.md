@@ -1,10 +1,11 @@
 ---
-title: 🏆 Reto de la Semana 🏆
-date: 2024-03-20
-endDate: 2024-12-31
+title: "\U0001F3C6 Reto de la Semana \U0001F3C6"
+date: 2024-03-20T00:00:00.000Z
+endDate: 2024-12-31T00:00:00.000Z
 image: /images/events/challenge_of_the_week.webp
 description: Retos semanales de cocina para mostrar tus habilidades culinarias
 permanent: true
+badge: /badges/challenge_of_the_week.webp
 ---
 
 # 🏆 Reto de la Semana 🏆

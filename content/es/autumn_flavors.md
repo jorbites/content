@@ -1,9 +1,12 @@
 ---
-title: 🍂 Sabores de Otoño 🍎
-date: 2026-10-07
-endDate: 2026-10-30T21:59:59
+title: "\U0001F342 Sabores de Otoño \U0001F34E"
+date: 2026-10-07T00:00:00.000Z
+endDate: 2026-10-30T21:59:59.000Z
 image: /images/events/autumn_flavors.webp
-description: Celebra el otoño con recetas de temporada usando los mejores ingredientes del otoño
+description: >-
+  Celebra el otoño con recetas de temporada usando los mejores ingredientes del
+  otoño
+badge: /badges/autumn_flavors.webp
 ---
 
 # 🍂 Festival de Sabores de Otoño 🍎
