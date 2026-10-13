@@ -219,11 +219,6 @@ export async function translateEvents(dryRun = false) {
     console.log('🌐 [translate-events] Checking for missing event translations across locales...\n');
 
     const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-        console.warn(
-            '⚠️ [translate-events] GEMINI_API_KEY is not set. If any missing translations are found, source locale will be duplicated as fallback.\n'
-        );
-    }
 
     const slugs = getTargetSlugs();
     if (slugs.size === 0) {
@@ -232,7 +227,6 @@ export async function translateEvents(dryRun = false) {
     }
 
     let translatedCount = 0;
-    let fallbackCount = 0;
 
     for (const slug of Array.from(slugs).sort()) {
         const existing: Record<string, { path: string; data: any; content: string }> = {};
@@ -275,52 +269,43 @@ export async function translateEvents(dryRun = false) {
                     continue;
                 }
 
-                if (apiKey) {
-                    try {
-                        const translated = await callGeminiTranslate(
-                            apiKey,
-                            sourceLoc,
-                            targetLoc,
-                            source.data.title || '',
-                            source.data.description || '',
-                            source.content || ''
-                        );
+                if (!apiKey) {
+                    throw new Error(
+                        `GEMINI_API_KEY is not set. Missing translation for "${slug}" [${targetLoc}] cannot be generated.`
+                    );
+                }
 
-                        const newData = cleanFrontmatter({
-                            ...source.data,
-                            title: translated.title || source.data.title,
-                            description: translated.description || source.data.description,
-                        });
+                try {
+                    const translated = await callGeminiTranslate(
+                        apiKey,
+                        sourceLoc,
+                        targetLoc,
+                        source.data.title || '',
+                        source.data.description || '',
+                        source.content || ''
+                    );
 
-                        const newContent = matter.stringify(translated.body || source.content, newData);
-                        fs.mkdirSync(path.join(CONTENT_DIR, targetLoc), { recursive: true });
-                        fs.writeFileSync(targetPath, newContent);
-                        console.log(`   ✅ Successfully translated into [${targetLoc}]!`);
-                        translatedCount++;
-                    } catch (err: any) {
-                        console.error(`   ❌ Translation API failed for ${slug} -> ${targetLoc}: ${err.message}`);
-                        // Fallback to duplicating source
-                        const fallbackData = cleanFrontmatter({ ...source.data });
-                        const fallbackContent = matter.stringify(source.content, fallbackData);
-                        fs.writeFileSync(targetPath, fallbackContent);
-                        fallbackCount++;
-                    }
-                } else {
-                    // Fallback when no API key is provided
-                    const fallbackData = cleanFrontmatter({ ...source.data });
-                    const fallbackContent = matter.stringify(source.content, fallbackData);
+                    const newData = cleanFrontmatter({
+                        ...source.data,
+                        title: translated.title || source.data.title,
+                        description: translated.description || source.data.description,
+                    });
+
+                    const newContent = matter.stringify(translated.body || source.content, newData);
                     fs.mkdirSync(path.join(CONTENT_DIR, targetLoc), { recursive: true });
-                    fs.writeFileSync(targetPath, fallbackContent);
-                    console.log(`   ℹ️ Copied [${sourceLoc}] to [${targetLoc}] (set GEMINI_API_KEY in GitHub Secrets for AI translation).`);
-                    fallbackCount++;
+                    fs.writeFileSync(targetPath, newContent);
+                    console.log(`   ✅ Successfully translated into [${targetLoc}]!`);
+                    translatedCount++;
+                } catch (err: any) {
+                    console.error(`   ❌ Translation failed for "${slug}" -> [${targetLoc}]: ${err.message}`);
+                    throw err;
                 }
             }
         }
     }
 
     console.log(`\n🎉 [translate-events] Finished checking translations:`);
-    console.log(`   - AI Translations created: ${translatedCount}`);
-    console.log(`   - Fallbacks copied: ${fallbackCount}\n`);
+    console.log(`   - AI Translations created: ${translatedCount}\n`);
 }
 
 if (require.main === module) {
