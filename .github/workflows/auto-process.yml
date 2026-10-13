@@ -34,8 +34,8 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Python rembg
-        run: pip install "rembg[cli]" onnxruntime
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
 
       - name: Install Node dependencies
         run: npm install
