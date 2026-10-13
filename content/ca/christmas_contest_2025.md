@@ -1,8 +1,8 @@
 ---
-title: 🎄 Concurs de Nadal 2025 🎄
-date: 2025-12-24
-endDate: 2025-12-29T23:59:59
-image: /images/events/christmas_contest.webp
+title: "\U0001F384 Concurs de Nadal 2025 \U0001F384"
+date: 2025-12-24T00:00:00.000Z
+endDate: 2025-12-29T23:59:59.000Z
+image: /images/events/christmas_contest_2025.webp
 description: Un concurs festiu i deliciós per celebrar Nadal a Jorbites
 ---
 

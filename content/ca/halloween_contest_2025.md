@@ -1,8 +1,8 @@
 ---
-title: 🎃 Concurs de Halloween 🎃
-date: 2026-10-31
-endDate: 2026-10-31T21:59:59
-image: /images/events/halloween_contest.webp
+title: "\U0001F383 Concurs de Halloween \U0001F383"
+date: 2026-10-31T00:00:00.000Z
+endDate: 2026-10-31T21:59:59.000Z
+image: /images/events/halloween_contest_2025.webp
 description: Un concurs deliciós i terrorífic per celebrar Halloween a Jorbites
 ---
 

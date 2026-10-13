@@ -1,8 +1,8 @@
 ---
-title: 🇵🇹 Recetas de Portugal 🇵🇹
-date: 2026-03-17
-endDate: 2026-03-31T21:59:59
-image: /images/events/portuguese_event.webp
+title: "\U0001F1F5\U0001F1F9 Recetas de Portugal \U0001F1F5\U0001F1F9"
+date: 2026-03-17T00:00:00.000Z
+endDate: 2026-03-31T21:59:59.000Z
+image: /images/events/portuguese-recipes.webp
 description: Evento de Recetas de Portugal
 ---
 

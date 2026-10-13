@@ -86,16 +86,18 @@ export async function autoProcessAssets() {
             const rawExt = path.extname(rawBase).toLowerCase();
             const rawName = path.parse(rawBase).name;
 
-            // Search for candidate image file in images/
+            // Search for candidate image file across root images/ and content/*/images/
             const candidates = [
                 path.join(IMAGES_DIR, rawBase),
-                path.join(IMAGES_DIR, `${rawName}.webp`),
-                path.join(IMAGES_DIR, `${rawName}.png`),
-                path.join(IMAGES_DIR, `${rawName}.jpg`),
-                path.join(IMAGES_DIR, `${rawName}.jpeg`),
                 path.join(IMAGES_DIR, `${slug}.webp`),
                 path.join(IMAGES_DIR, `${slug}.png`),
                 path.join(IMAGES_DIR, `${slug}.jpg`),
+                path.join(IMAGES_DIR, `${rawName}.webp`),
+                path.join(IMAGES_DIR, `${rawName}.png`),
+                path.join(IMAGES_DIR, `${rawName}.jpg`),
+                path.join(CONTENT_DIR, 'es/images', rawBase),
+                path.join(CONTENT_DIR, 'ca/images', rawBase),
+                path.join(CONTENT_DIR, 'en/images', rawBase),
             ];
 
             let existingFile: string | null = null;
@@ -108,25 +110,41 @@ export async function autoProcessAssets() {
 
             if (existingFile) {
                 const stats = fs.statSync(existingFile);
-                const isWebp = existingFile.endsWith('.webp');
+                const isFinalWebp = existingFile === path.join(IMAGES_DIR, `${slug}.webp`);
                 const isUnder100k = stats.size <= MAX_COVER_BYTES;
 
-                // Needs optimization if not webp or exceeds 100KB
-                if (!isWebp || !isUnder100k) {
+                // Needs optimization if not final webp in root images/ or exceeds 100KB
+                if (!isFinalWebp || !isUnder100k) {
                     console.log(`🖼️ [auto-process] Optimizing cover for "${slug}" (${path.basename(existingFile)})...`);
-                    const outputSlug = rawName || slug;
-                    await processCoverImage(existingFile, outputSlug);
+                    await processCoverImage(existingFile, slug);
                     optimizedCoverCount++;
 
-                    const newWebpPath = path.join(IMAGES_DIR, `${outputSlug}.webp`);
-                    if (existingFile !== newWebpPath && fs.existsSync(existingFile)) {
+                    const finalWebpPath = path.join(IMAGES_DIR, `${slug}.webp`);
+                    if (existingFile !== finalWebpPath && fs.existsSync(existingFile)) {
                         fs.unlinkSync(existingFile);
                     }
-                    resolvedCoverPath = newWebpPath;
-                    frontmatter.image = `/images/events/${outputSlug}.webp`;
+
+                    // Clean up any duplicate uploads in content/*/images/
+                    for (const loc of LOCALES) {
+                        const dup = path.join(CONTENT_DIR, loc, 'images', rawBase);
+                        if (fs.existsSync(dup)) {
+                            fs.unlinkSync(dup);
+                        }
+                        const locImgDir = path.join(CONTENT_DIR, loc, 'images');
+                        if (fs.existsSync(locImgDir) && fs.readdirSync(locImgDir).length === 0) {
+                            fs.rmdirSync(locImgDir);
+                        }
+                    }
+
+                    resolvedCoverPath = finalWebpPath;
+                    frontmatter.image = `/images/events/${slug}.webp`;
                     modified = true;
                 } else {
                     resolvedCoverPath = existingFile;
+                    if (frontmatter.image !== `/images/events/${slug}.webp`) {
+                        frontmatter.image = `/images/events/${slug}.webp`;
+                        modified = true;
+                    }
                 }
             }
         }

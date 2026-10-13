@@ -1,9 +1,11 @@
 ---
-title: 🥖 La Volta a Espanya en Entrepans
-date: 2026-09-21
-endDate: 2027-05-16T23:59:59
-image: /images/events/la_vuelta_espana_en_bocatas.webp
-description: Recorre les 17 Comunitats Autònomes d'Espanya a través dels seus entrepans més emblemàtics!
+title: "\U0001F956 La Volta a Espanya en Entrepans"
+date: 2026-09-21T00:00:00.000Z
+endDate: 2027-05-16T23:59:59.000Z
+image: /images/events/la_vuelta_en_bocatas.webp
+description: >-
+  Recorre les 17 Comunitats Autònomes d'Espanya a través dels seus entrepans més
+  emblemàtics!
 ---
 
 # 🥖 La Volta a Espanya en Entrepans

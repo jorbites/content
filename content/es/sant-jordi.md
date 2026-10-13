@@ -2,7 +2,7 @@
 title: "Sant Jordi 2025 \U0001F339\U0001F409"
 date: 2025-04-23T00:00:00.000Z
 endDate: 2025-04-23T00:00:00.000Z
-image: /images/events/sant_jordi_2025.webp
+image: /images/events/sant-jordi.webp
 description: Evento de Sant Jordi 2025
 ---
 
