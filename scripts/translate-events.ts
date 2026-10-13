@@ -31,29 +31,12 @@ function cleanFrontmatter(data: Record<string, any>): Record<string, any> {
 /**
  * Call Gemini 2.0 Flash to translate title, description, and markdown body
  */
-async function callGeminiTranslate(
+async function requestGeminiModel(
     apiKey: string,
-    sourceLocale: string,
-    targetLocale: string,
-    title: string,
-    description: string,
-    body: string
+    model: string,
+    prompt: string
 ): Promise<TranslationResult> {
-    const prompt = `You are a culinary translator for Jorbites, an avocado-themed recipe and food sharing platform.
-Translate the following event content from ${LOCALE_NAMES[sourceLocale] || sourceLocale} to ${LOCALE_NAMES[targetLocale] || targetLocale}.
-
-Guidelines:
-- Keep the friendly, engaging culinary tone of Jorbites (Spanish, Catalan, and English recipe terminology).
-- Preserve all emojis, Markdown structures (headers, bullet points, bold/italic), and links.
-- Return ONLY a valid JSON object with the exact keys "title", "description", and "body". Do NOT wrap in markdown fences or backticks.
-
-Content to translate:
-TITLE: ${title || ''}
-DESCRIPTION: ${description || ''}
-BODY:
-${body || ''}`;
-
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
     const requestBody = JSON.stringify({
         contents: [
@@ -63,7 +46,6 @@ ${body || ''}`;
         ],
         generationConfig: {
             responseMimeType: 'application/json',
-            temperature: 0.2,
         },
     });
 
@@ -93,7 +75,12 @@ ${body || ''}`;
                         if (!text) {
                             return reject(new Error('No text returned in Gemini response'));
                         }
-                        const result: TranslationResult = JSON.parse(text);
+                        const cleanText = text
+                            .trim()
+                            .replace(/^```(?:json)?\s*/i, '')
+                            .replace(/\s*```$/i, '')
+                            .trim();
+                        const result: TranslationResult = JSON.parse(cleanText);
                         resolve(result);
                     } catch (err: any) {
                         reject(new Error(`Failed to parse Gemini output: ${err.message}`));
@@ -106,6 +93,53 @@ ${body || ''}`;
         req.write(requestBody);
         req.end();
     });
+}
+
+/**
+ * Call Gemini Flash Lite (500 RPD, 15 RPM) with candidate fallback
+ */
+async function callGeminiTranslate(
+    apiKey: string,
+    sourceLocale: string,
+    targetLocale: string,
+    title: string,
+    description: string,
+    body: string
+): Promise<TranslationResult> {
+    const prompt = `You are a culinary translator for Jorbites, an avocado-themed recipe and food sharing platform.
+Translate the following event content from ${LOCALE_NAMES[sourceLocale] || sourceLocale} to ${LOCALE_NAMES[targetLocale] || targetLocale}.
+
+Guidelines:
+- Keep the friendly, engaging culinary tone of Jorbites (Spanish, Catalan, and English recipe terminology).
+- Preserve all emojis, Markdown structures (headers, bullet points, bold/italic), and links.
+- Return ONLY a valid JSON object with the exact keys "title", "description", and "body". Do NOT wrap in markdown fences or backticks.
+
+Content to translate:
+TITLE: ${title || ''}
+DESCRIPTION: ${description || ''}
+BODY:
+${body || ''}`;
+
+    const candidateModels = [
+        process.env.GEMINI_MODEL,
+        'gemini-3.5-flash-lite',
+        'gemini-3.1-flash-lite',
+        'gemini-2.5-flash-lite',
+    ].filter(Boolean) as string[];
+
+    let lastError: Error | null = null;
+    for (const model of candidateModels) {
+        try {
+            console.log(`   🤖 Requesting Gemini model "${model}"...`);
+            return await requestGeminiModel(apiKey, model, prompt);
+        } catch (err: any) {
+            lastError = err;
+            console.warn(`   ⚠️ Model "${model}" failed (${err.message.slice(0, 120)}), trying next candidate...`);
+            continue;
+        }
+    }
+
+    throw lastError || new Error('All Gemini candidate models failed');
 }
 
 function getTargetSlugs(): Set<string> {
@@ -218,15 +252,22 @@ export async function translateEvents(dryRun = false) {
 
         const source = existing[sourceLoc];
 
+        const force = process.argv.includes('--force');
+
         for (const targetLoc of LOCALES) {
             if (targetLoc === sourceLoc) continue;
 
             const targetPath = path.join(CONTENT_DIR, targetLoc, `${slug}.md`);
-            const targetMissing = !existing[targetLoc];
+            const isFallbackCopy =
+                Boolean(existing[targetLoc]) &&
+                existing[targetLoc].data.title === source.data.title &&
+                existing[targetLoc].content.trim() === source.content.trim();
 
-            if (targetMissing) {
+            const targetNeedsTranslation = !existing[targetLoc] || isFallbackCopy || force;
+
+            if (targetNeedsTranslation) {
                 console.log(
-                    `📝 [translate-events] Missing [${targetLoc}] for "${slug}" (translating from [${sourceLoc}])...`
+                    `📝 [translate-events] Translating [${targetLoc}] for "${slug}" from [${sourceLoc}]${isFallbackCopy ? ' (replacing previous fallback)' : ''}...`
                 );
 
                 if (dryRun) {
