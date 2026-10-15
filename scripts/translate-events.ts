@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import https from 'https';
 
-const CONTENT_DIR = path.resolve(__dirname, '../content');
+const CONTENT_DIR = path.resolve(__dirname, '../content/events');
 const LOCALES = ['es', 'ca', 'en'];
 
 const LOCALE_NAMES: Record<string, string> = {
@@ -181,7 +181,7 @@ function getTargetSlugs(): Set<string> {
                 stdio: ['pipe', 'pipe', 'ignore'],
             });
             for (const line of output.split('\n')) {
-                const m = line.trim().match(/^content\/(?:es|ca|en)\/(.+)\.md$/);
+                const m = line.trim().match(/^content\/(?:events\/)?(?:es|ca|en)\/(.+)\.md$/);
                 if (m) {
                     changedSlugs.add(m[1]);
                 }
@@ -202,7 +202,7 @@ function getTargetSlugs(): Set<string> {
         });
         for (const line of status.split('\n')) {
             const file = line.trim().slice(3).trim();
-            const m = file.match(/^content\/(?:es|ca|en)\/(.+)\.md$/);
+            const m = file.match(/^content\/(?:events\/)?(?:es|ca|en)\/(.+)\.md$/);
             if (m) {
                 changedSlugs.add(m[1]);
             }

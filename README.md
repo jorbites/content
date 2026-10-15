@@ -1,24 +1,25 @@
-# Jorbites Events, Badges & Challenges 🍳📅
+# Jorbites Content: Events, Blogs, Badges & Challenges 🥑📅
 
-This repository holds the community-contributed events, weekly challenges, cover images, and badge assets for [Jorbites](https://jorbites.com).
+This repository holds the community-contributed events, blog posts, weekly challenges, images, and badge assets for [Jorbites](https://jorbites.com).
 
 ## 👥 How to Contribute (Non-Technical Guide)
 
-You do **not** need to install Git or know how to code to contribute events!
+You do **not** need to install Git or know how to code to contribute events or blog posts!
 
 ### Option 1: Web CMS (Recommended)
-1. Open [Jorbites Events Admin](https://jorbites.github.io/events/admin/).
+1. Open [Jorbites Content Admin](https://jorbites.github.io/content/admin/).
 2. Click **Sign in with GitHub**.
-3. Choose or create an event — **Català**, **Español**, and **English** are displayed side-by-side!
-4. Fill in the event title, description, and dates. Upload your cover image and badge.
-5. Click **Publish**. A pull request or commit will be created automatically!
+3. Choose a collection:
+   - **Events**: Català, Español, and English side-by-side. Upload your cover image; the badge will be auto-extracted!
+   - **Blog Posts**: Català, Español, and English side-by-side. Embed images; they will be auto-optimized to WebP `<100KB`!
+4. Click **Publish**. A pull request or commit will be created automatically, and CI will handle optimization and translation!
 
 ### Option 2: Editing Directly on GitHub
-1. Browse to `content/ca/`, `content/es/`, or `content/en/`.
-2. Click on any event file, then click the **Pencil icon** (✏️) to edit.
+1. Browse to `content/events/{ca,es,en}/` or `content/blogs/{ca,es,en}/`.
+2. Click on any markdown file, then click the **Pencil icon** (✏️) to edit.
 3. Make your changes and commit.
 
-For detailed guidelines on generating event artwork and badges, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+For detailed guidelines on artwork, image optimization, and automation pipelines, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ---
 
@@ -30,18 +31,33 @@ For detailed guidelines on generating event artwork and badges, see [CONTRIBUTIN
 │   ├── config.yml
 │   └── index.html
 ├── content/
-│   ├── ca/                    # Events in Catalan
-│   ├── en/                    # Events in English
-│   ├── es/                    # Events in Spanish
-│   └── weekly-challenges.json # Weekly recipe challenge presets
-├── images/                    # Cover images (~750x750 WebP < 100KB)
+│   ├── events/
+│   │   ├── ca/                # Events in Catalan
+│   │   ├── en/                # Events in English
+│   │   ├── es/                # Events in Spanish
+│   │   └── weekly-challenges.json # Weekly recipe challenge presets
+│   └── blogs/
+│       ├── ca/                # Blog posts in Catalan
+│       ├── en/                # Blog posts in English
+│       └── es/                # Blog posts in Spanish
+├── images/
+│   ├── events/                # Event cover images (~750x750 WebP < 100KB)
+│   └── blogs/                 # Blog body images (WebP < 100KB)
 ├── badges/                    # Transparent badge assets (256x256 WebP)
 ├── scripts/
-│   ├── process-asset.ts       # Sharp asset processing CLI
-│   └── validate.ts            # Schema, image, and badge validator
+│   ├── validate.ts            # Master validator
+│   ├── validate-events.ts     # Dedicated events validator
+│   ├── validate-blogs.ts      # Dedicated blogs validator
+│   ├── process-event.ts       # Event cover optimization & badge generation
+│   ├── process-blog.ts        # Blog image optimizer & markdown link updater
+│   ├── auto-process.ts        # Git diff inspector & pipeline dispatcher
+│   ├── translate.ts           # Master AI translation orchestrator
+│   ├── translate-events.ts    # Events translation via Gemini Flash
+│   └── translate-blogs.ts     # Blogs translation via Gemini Flash
 └── .github/
     └── workflows/
-        ├── validate.yml       # Automated PR checks
+        ├── auto-process.yml   # Auto-optimize, badge extraction & translation
+        ├── validate.yml       # PR validation checks
         └── deploy.yml         # Vercel deployment trigger on merge
 ```
 
@@ -52,15 +68,24 @@ For detailed guidelines on generating event artwork and badges, see [CONTRIBUTIN
 ```bash
 npm install
 
-# Validate all content, images (<100KB), and badges (256x256 transparent)
+# Run full validation
 npm run validate
 
-# Process raw cover image (resizes to 750x750, converts to WebP <100KB)
-npm run process:cover /path/to/raw-image.png <event_slug>
+# Run isolated validations
+npm run validate:events
+npm run validate:blogs
 
-# Process badge asset (resizes to 256x256 WebP with alpha)
-npm run process:badge /path/to/transparent-badge.png <event_slug>
+# Process assets locally
+npm run process:auto                           # Inspect git diff & process changed assets
+npm run process:cover /path/to/img.png <slug>  # Optimize cover (750x750 WebP < 100KB)
+npm run process:generate-badge <cover> <slug>  # Extract badge using AI rembg
+npm run process:blog /path/to/img.png          # Optimize blog image to WebP < 100KB
 
-# Format markdown and JSON files
+# Auto-translate missing locales using Gemini Flash
+GEMINI_API_KEY=<key> npm run translate
+GEMINI_API_KEY=<key> npm run translate:events
+GEMINI_API_KEY=<key> npm run translate:blogs
+
+# Format markdown, json, yaml
 npm run format
 ```

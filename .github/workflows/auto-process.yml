@@ -1,4 +1,4 @@
-name: Auto Process Events & Assets
+name: Auto Process Content & Assets
 
 on:
   push:

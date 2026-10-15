@@ -1,16 +1,21 @@
 {
-  "name": "@jorbites/events",
+  "name": "@jorbites/content",
   "version": "1.0.0",
-  "description": "Jorbites events content, weekly challenges, images, and badges repository",
+  "description": "Jorbites events, blog articles, weekly challenges, images, and badges repository",
   "private": true,
   "scripts": {
     "validate": "tsx scripts/validate.ts",
-    "process:cover": "tsx scripts/process-asset.ts --cover",
-    "process:badge": "tsx scripts/process-asset.ts --badge",
-    "process:generate-badge": "tsx scripts/process-asset.ts --generate-badge",
+    "validate:events": "tsx scripts/validate-events.ts",
+    "validate:blogs": "tsx scripts/validate-blogs.ts",
     "process:auto": "tsx scripts/auto-process.ts",
-    "translate": "tsx scripts/translate-events.ts",
-    "process:test": "tsx scripts/process-asset.ts --test",
+    "process:cover": "tsx scripts/process-event.ts --cover",
+    "process:badge": "tsx scripts/process-event.ts --badge",
+    "process:generate-badge": "tsx scripts/process-event.ts --generate-badge",
+    "process:blog": "tsx scripts/process-blog.ts",
+    "translate": "tsx scripts/translate.ts",
+    "translate:events": "tsx scripts/translate-events.ts",
+    "translate:blogs": "tsx scripts/translate-blogs.ts",
+    "process:test": "tsx scripts/process-event.ts --test",
     "format": "prettier --write \"**/*.{md,json,yml,yaml}\""
   },
   "devDependencies": {

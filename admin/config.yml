@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jorbites/events
+  repo: jorbites/content
   branch: main
   # Set base_url to your Cloudflare Worker URL (e.g. https://jorbites-cms-auth.<your-subdomain>.workers.dev)
   base_url: https://jorbites-cms-auth.jbonetv5.workers.dev
@@ -15,34 +15,52 @@ i18n:
   locales: [ca, es, en]
   default_locale: es
 
-# Media storage: images/ folder mapped to /images/events for main app
+# Default Media storage
 media_folder: 'images'
-public_folder: '/images/events'
+public_folder: '/images'
 
 collections:
   - name: 'events'
     label: 'Events'
     label_singular: 'Event'
-    folder: 'content/{{locale}}'
+    folder: 'content/events/{{locale}}'
     create: true
     slug: '{{slug}}'
     i18n: true
+    media_folder: '/images/events'
+    public_folder: '/images/events'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: false, i18n: true }
       - { label: 'Description', name: 'description', widget: 'text', required: false, i18n: true }
       - { label: 'Start Date (YYYY-MM-DD)', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false, required: false, i18n: duplicate }
       - { label: 'End Date (YYYY-MM-DDTHH:mm:ss)', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', required: false, i18n: duplicate }
-      - { label: 'Cover Image (Auto-optimized to 750x750 WebP <100KB upon publish)', name: 'image', widget: 'image', media_folder: '/images', public_folder: '/images/events', required: false, i18n: duplicate }
+      - { label: 'Cover Image (Auto-optimized to 750x750 WebP <100KB upon publish)', name: 'image', widget: 'image', media_folder: '/images/events', public_folder: '/images/events', required: false, i18n: duplicate }
       - { label: 'Badge Asset (Optional — auto-generated from Cover Image if omitted)', name: 'badge', widget: 'image', media_folder: '/badges', public_folder: '/badges', required: false, i18n: duplicate }
       - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false, i18n: duplicate }
       - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false, i18n: duplicate }
       - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false, i18n: duplicate }
       - { label: 'Content (Markdown)', name: 'body', widget: 'markdown', required: false, i18n: true }
 
+  - name: 'blogs'
+    label: 'Blog Posts'
+    label_singular: 'Blog Post'
+    folder: 'content/blogs/{{locale}}'
+    create: true
+    slug: '{{slug}}'
+    i18n: true
+    media_folder: '/images/blogs'
+    public_folder: '/images/blogs'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: false, i18n: true }
+      - { label: 'Description', name: 'description', widget: 'text', required: false, i18n: true }
+      - { label: 'Publication Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', required: false, i18n: duplicate }
+      - { label: 'Author User ID (MongoDB ObjectId)', name: 'user_id', widget: 'string', required: false, i18n: duplicate }
+      - { label: 'Body (Markdown)', name: 'body', widget: 'markdown', required: false, i18n: true }
+
   - name: 'challenges'
     label: 'Weekly Challenges'
     files:
-      - file: 'content/weekly-challenges.json'
+      - file: 'content/events/weekly-challenges.json'
         name: 'weekly_challenges'
         label: 'Weekly Challenges Settings'
         fields:
