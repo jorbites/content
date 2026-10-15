@@ -232,9 +232,27 @@ export async function translateBlogs(dryRun = false) {
             }
         }
 
-        const sourceLoc = existing['es'] ? 'es' : existing['en'] ? 'en' : existing['ca'] ? 'ca' : null;
-        if (!sourceLoc) continue;
+        // Find the best source locale: candidates with non-empty title, ranked by total content length
+        const candidates = Object.keys(existing).filter((loc) => {
+            const e = existing[loc];
+            return Boolean(e.data.title && String(e.data.title).trim().length > 0);
+        });
 
+        if (candidates.length === 0) continue;
+
+        candidates.sort((a, b) => {
+            const lenA =
+                (existing[a].data.title || '').length +
+                (existing[a].data.description || '').length +
+                existing[a].content.trim().length;
+            const lenB =
+                (existing[b].data.title || '').length +
+                (existing[b].data.description || '').length +
+                existing[b].content.trim().length;
+            return lenB - lenA;
+        });
+
+        const sourceLoc = candidates[0];
         const source = existing[sourceLoc];
         const force = process.argv.includes('--force');
 
@@ -242,7 +260,19 @@ export async function translateBlogs(dryRun = false) {
             if (targetLoc === sourceLoc) continue;
 
             const targetPath = path.join(CONTENT_DIR, targetLoc, `${slug}.md`);
-            const targetNeedsTranslation = !existing[targetLoc] || force;
+            const targetEntry = existing[targetLoc];
+            const isFallbackCopy =
+                Boolean(targetEntry) &&
+                targetEntry.data.title === source.data.title &&
+                targetEntry.content.trim() === source.content.trim();
+
+            const targetNeedsTranslation =
+                !targetEntry ||
+                !targetEntry.data.title?.trim() ||
+                !targetEntry.data.description?.trim() ||
+                !targetEntry.content?.trim() ||
+                isFallbackCopy ||
+                force;
 
             if (targetNeedsTranslation) {
                 console.log(

@@ -37,13 +37,13 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: false, i18n: true }
       - { label: 'Description', name: 'description', widget: 'text', required: false, i18n: true }
-      - { label: 'Start Date (YYYY-MM-DD)', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false, required: false, i18n: duplicate }
-      - { label: 'End Date (YYYY-MM-DDTHH:mm:ss)', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', required: false, i18n: duplicate }
-      - { label: 'Cover Image (Auto-optimized to 750x750 WebP <100KB upon publish)', name: 'image', widget: 'image', media_folder: '/images/events', public_folder: '/images/events', required: false, i18n: duplicate }
-      - { label: 'Badge Asset (Optional — auto-generated from Cover Image if omitted)', name: 'badge', widget: 'image', media_folder: '/badges', public_folder: '/badges', required: false, i18n: duplicate }
-      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false, i18n: duplicate }
-      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false, i18n: duplicate }
-      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false, i18n: duplicate }
+      - { label: 'Start Date (YYYY-MM-DD)', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false, required: false, i18n: true }
+      - { label: 'End Date (YYYY-MM-DDTHH:mm:ss)', name: 'endDate', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', required: false, i18n: true }
+      - { label: 'Cover Image (Auto-optimized to 750x750 WebP <100KB upon publish)', name: 'image', widget: 'image', media_folder: '/images/events', public_folder: '/images/events', required: false, i18n: true }
+      - { label: 'Badge Asset (Optional — auto-generated from Cover Image if omitted)', name: 'badge', widget: 'image', media_folder: '/badges', public_folder: '/badges', required: false, i18n: true }
+      - { label: 'Permanent Event', name: 'permanent', widget: 'boolean', default: false, required: false, i18n: true }
+      - { label: 'Recurrent Event', name: 'recurrent', widget: 'boolean', default: false, required: false, i18n: true }
+      - { label: 'Day of Month (1-31)', name: 'dayOfMonth', widget: 'number', value_type: 'int', min: 1, max: 31, required: false, i18n: true }
       - { label: 'Content (Markdown)', name: 'body', widget: 'markdown', required: false, i18n: true }
 
   - name: 'blogs'
@@ -58,8 +58,8 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: false, i18n: true }
       - { label: 'Description', name: 'description', widget: 'text', required: false, i18n: true }
-      - { label: 'Publication Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', default: '{{now}}', required: false, i18n: duplicate }
-      - { label: 'Author Profile URL (e.g. https://jorbites.com/profile/...)', name: 'user_id', widget: 'string', required: true, i18n: duplicate, hint: 'Paste your Jorbites profile URL or 24-character user ID (Required)' }
+      - { label: 'Publication Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', default: '{{now}}', required: false, i18n: true }
+      - { label: 'Author Profile URL (e.g. https://jorbites.com/profile/...)', name: 'user_id', widget: 'string', required: false, i18n: true, hint: 'Paste your Jorbites profile URL or 24-character user ID' }
       - { label: 'Body (Markdown)', name: 'body', widget: 'markdown', required: false, i18n: true }
 
   - name: 'challenges'

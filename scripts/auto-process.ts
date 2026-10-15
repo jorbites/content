@@ -49,6 +49,21 @@ function getChangedItems(): { eventSlugs: Set<string>; blogSlugs: Set<string>; p
 
     const explicitSlug = args.find((a) => !a.startsWith('--'));
     if (explicitSlug) {
+        const isEvent =
+            fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'es', `${explicitSlug}.md`)) ||
+            fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'ca', `${explicitSlug}.md`)) ||
+            fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'en', `${explicitSlug}.md`));
+        const isBlog =
+            fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'es', `${explicitSlug}.md`)) ||
+            fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'ca', `${explicitSlug}.md`)) ||
+            fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'en', `${explicitSlug}.md`));
+
+        if (isBlog && !isEvent) {
+            return { eventSlugs: new Set(), blogSlugs: new Set([explicitSlug]), processAll: false };
+        }
+        if (isEvent && !isBlog) {
+            return { eventSlugs: new Set([explicitSlug]), blogSlugs: new Set(), processAll: false };
+        }
         return {
             eventSlugs: new Set([explicitSlug]),
             blogSlugs: new Set([explicitSlug]),
@@ -148,12 +163,21 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
             const locPath = path.join(EVENTS_CONTENT_DIR, loc, `${slug}.md`);
             if (fs.existsSync(locPath)) {
                 const parsed = matter(fs.readFileSync(locPath, 'utf8'));
-                if (!frontmatter) frontmatter = { ...parsed.data };
                 localizedFiles.push({ locale: loc, filePath: locPath, parsed });
             }
         }
 
-        if (!frontmatter) continue;
+        if (localizedFiles.length === 0) continue;
+
+        const combinedFrontmatter: Record<string, any> = {};
+        for (const locFile of localizedFiles) {
+            for (const [key, val] of Object.entries(locFile.parsed.data)) {
+                if (val !== undefined && val !== null && val !== '' && combinedFrontmatter[key] === undefined) {
+                    combinedFrontmatter[key] = val;
+                }
+            }
+        }
+        frontmatter = combinedFrontmatter;
 
         let needsCoverOptimization = false;
         let coverSourcePath: string | null = null;
@@ -214,6 +238,11 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
         for (const locFile of localizedFiles) {
             const updatedData = cleanFrontmatter({
                 ...locFile.parsed.data,
+                date: frontmatter.date || locFile.parsed.data.date,
+                endDate: frontmatter.endDate || locFile.parsed.data.endDate,
+                permanent: frontmatter.permanent !== undefined ? frontmatter.permanent : locFile.parsed.data.permanent,
+                recurrent: frontmatter.recurrent !== undefined ? frontmatter.recurrent : locFile.parsed.data.recurrent,
+                dayOfMonth: frontmatter.dayOfMonth !== undefined ? frontmatter.dayOfMonth : locFile.parsed.data.dayOfMonth,
                 image: frontmatter.image || locFile.parsed.data.image,
                 badge: frontmatter.badge !== undefined ? frontmatter.badge : locFile.parsed.data.badge,
             });

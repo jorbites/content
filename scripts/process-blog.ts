@@ -16,12 +16,30 @@ export interface BlogProcessResult {
     replacedReferencesCount?: number;
 }
 
+function parseIsoDate(val: any): string | null {
+    if (!val) return null;
+    if (val instanceof Date && !isNaN(val.getTime())) {
+        return val.toISOString();
+    }
+    const str = String(val).trim();
+    if (!str) return null;
+    const d = new Date(str);
+    if (!isNaN(d.getTime())) {
+        return d.toISOString();
+    }
+    return str;
+}
+
 /**
  * Normalizes frontmatter for a single blog markdown file:
- * 1. user_id: extracts 24-char ObjectId if full URL or username given; defaults to Jorbites Official if empty
- * 2. date: defaults to current ISO string if empty or missing
+ * 1. user_id: extracts 24-char ObjectId if full URL given; synchronizes canonicalUserId if provided
+ * 2. date: synchronizes canonicalDate if provided; defaults to current ISO string if empty or missing
  */
-export function normalizeBlogFrontmatter(filePath: string): boolean {
+export function normalizeBlogFrontmatter(
+    filePath: string,
+    canonicalUserId?: string,
+    canonicalDate?: string
+): boolean {
     if (!fs.existsSync(filePath)) return false;
     const raw = fs.readFileSync(filePath, 'utf8');
     let parsed: matter.GrayMatterFile<string>;
@@ -34,7 +52,7 @@ export function normalizeBlogFrontmatter(filePath: string): boolean {
     let modified = false;
     const data = { ...parsed.data };
 
-    // 1. Normalize user_id from profile URL if provided
+    // 1. Normalize user_id from profile URL or canonicalUserId
     const rawUserId = String(data.user_id || '').trim();
     if (rawUserId) {
         const idMatch = rawUserId.match(/([0-9a-fA-F]{24})/);
@@ -42,12 +60,18 @@ export function normalizeBlogFrontmatter(filePath: string): boolean {
             data.user_id = idMatch[1];
             modified = true;
         }
+    } else if (canonicalUserId && data.user_id !== canonicalUserId) {
+        data.user_id = canonicalUserId;
+        modified = true;
     }
 
     // 2. Normalize date
-    const rawDate = String(data.date || '').trim();
-    if (!rawDate) {
-        data.date = new Date().toISOString();
+    const currentIsoDate = parseIsoDate(data.date);
+    if (!currentIsoDate) {
+        data.date = canonicalDate || new Date().toISOString();
+        modified = true;
+    } else if (canonicalDate && currentIsoDate !== canonicalDate) {
+        data.date = canonicalDate;
         modified = true;
     }
 
@@ -63,12 +87,15 @@ export function normalizeBlogFrontmatter(filePath: string): boolean {
 }
 
 /**
- * Normalize frontmatter for specified blog slugs or all blogs
+ * Normalize frontmatter for specified blog slugs or all blogs.
+ * Scans all 3 locales ('ca', 'en', 'es') for each slug, extracts canonical user_id (from profile URL)
+ * and publication date from whichever locale has them, and propagates them across all locales.
  */
 export function normalizeBlogFiles(targetSlugs?: Set<string>): number {
     if (!fs.existsSync(BLOGS_CONTENT_DIR)) return 0;
     let count = 0;
 
+    const allSlugs = new Set<string>();
     for (const locale of ['ca', 'en', 'es']) {
         const dir = path.join(BLOGS_CONTENT_DIR, locale);
         if (!fs.existsSync(dir)) continue;
@@ -79,10 +106,44 @@ export function normalizeBlogFiles(targetSlugs?: Set<string>): number {
             if (targetSlugs && targetSlugs.size > 0 && !targetSlugs.has(slug)) {
                 continue;
             }
+            allSlugs.add(slug);
+        }
+    }
 
-            const filePath = path.join(dir, file);
-            if (normalizeBlogFrontmatter(filePath)) {
-                count++;
+    for (const slug of Array.from(allSlugs).sort()) {
+        let canonicalUserId: string | undefined;
+        let canonicalDate: string | undefined;
+
+        for (const locale of ['ca', 'en', 'es']) {
+            const filePath = path.join(BLOGS_CONTENT_DIR, locale, `${slug}.md`);
+            if (!fs.existsSync(filePath)) continue;
+
+            try {
+                const parsed = matter(fs.readFileSync(filePath, 'utf8'));
+                const rawUserId = String(parsed.data.user_id || '').trim();
+                if (rawUserId && !canonicalUserId) {
+                    const match = rawUserId.match(/([0-9a-fA-F]{24})/);
+                    if (match) {
+                        canonicalUserId = match[1];
+                    }
+                }
+                const rawDate = parseIsoDate(parsed.data.date);
+                if (rawDate && !canonicalDate) {
+                    canonicalDate = rawDate;
+                }
+            } catch {}
+        }
+
+        if (!canonicalDate) {
+            canonicalDate = new Date().toISOString();
+        }
+
+        for (const locale of ['ca', 'en', 'es']) {
+            const filePath = path.join(BLOGS_CONTENT_DIR, locale, `${slug}.md`);
+            if (fs.existsSync(filePath)) {
+                if (normalizeBlogFrontmatter(filePath, canonicalUserId, canonicalDate)) {
+                    count++;
+                }
             }
         }
     }
