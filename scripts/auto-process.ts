@@ -41,10 +41,20 @@ function cleanFrontmatter(data: Record<string, any>): Record<string, any> {
     return cleaned;
 }
 
-function getChangedItems(): { eventSlugs: Set<string>; blogSlugs: Set<string>; processAll: boolean } {
+function getChangedItems(): {
+    eventSlugs: Set<string>;
+    blogSlugs: Set<string>;
+    changedBlogImages: Set<string>;
+    processAll: boolean;
+} {
     const args = process.argv.slice(2);
     if (args.includes('--all')) {
-        return { eventSlugs: new Set(), blogSlugs: new Set(), processAll: true };
+        return {
+            eventSlugs: new Set(),
+            blogSlugs: new Set(),
+            changedBlogImages: new Set(),
+            processAll: true,
+        };
     }
 
     const explicitSlug = args.find((a) => !a.startsWith('--'));
@@ -59,20 +69,32 @@ function getChangedItems(): { eventSlugs: Set<string>; blogSlugs: Set<string>; p
             fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'en', `${explicitSlug}.md`));
 
         if (isBlog && !isEvent) {
-            return { eventSlugs: new Set(), blogSlugs: new Set([explicitSlug]), processAll: false };
+            return {
+                eventSlugs: new Set(),
+                blogSlugs: new Set([explicitSlug]),
+                changedBlogImages: new Set(),
+                processAll: false,
+            };
         }
         if (isEvent && !isBlog) {
-            return { eventSlugs: new Set([explicitSlug]), blogSlugs: new Set(), processAll: false };
+            return {
+                eventSlugs: new Set([explicitSlug]),
+                blogSlugs: new Set(),
+                changedBlogImages: new Set(),
+                processAll: false,
+            };
         }
         return {
             eventSlugs: new Set([explicitSlug]),
             blogSlugs: new Set([explicitSlug]),
+            changedBlogImages: new Set(),
             processAll: false,
         };
     }
 
     const eventSlugs = new Set<string>();
     const blogSlugs = new Set<string>();
+    const changedBlogImages = new Set<string>();
 
     const diffTargets = [
         process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}...HEAD` : null,
@@ -87,17 +109,36 @@ function getChangedItems(): { eventSlugs: Set<string>; blogSlugs: Set<string>; p
                 stdio: ['pipe', 'pipe', 'ignore'],
             });
             for (const line of output.split('\n')) {
-                const eventMatch = line.trim().match(/^(?:content\/events|images\/events)\/(?:es|ca|en\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-                if (eventMatch && !eventMatch[1].includes('/')) {
+                const trimmed = line.trim();
+                if (!trimmed) continue;
+
+                const eventMatch = trimmed.match(/^content\/events\/(?:es|ca|en)\/(.+)\.md$/);
+                if (eventMatch) {
                     eventSlugs.add(eventMatch[1]);
+                    continue;
                 }
-                const blogMatch = line.trim().match(/^(?:content\/blogs|images\/blogs)\/(?:es|ca|en\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-                if (blogMatch && !blogMatch[1].includes('/')) {
+                const eventImgMatch = trimmed.match(/^(?:images\/events|badges)\/(?:.+?\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
+                if (eventImgMatch && !eventImgMatch[1].includes('/')) {
+                    eventSlugs.add(eventImgMatch[1]);
+                    continue;
+                }
+
+                // Blog markdown (ONLY markdown files define blog slugs)
+                const blogMatch = trimmed.match(/^content\/blogs\/(?:es|ca|en)\/(.+)\.md$/);
+                if (blogMatch) {
                     blogSlugs.add(blogMatch[1]);
+                    continue;
+                }
+
+                // Blog images (assets, NOT blog slugs!)
+                const blogImgMatch = trimmed.match(/^images\/blogs\/(.+)$/);
+                if (blogImgMatch) {
+                    changedBlogImages.add(path.basename(blogImgMatch[1]));
+                    continue;
                 }
             }
-            if (eventSlugs.size > 0 || blogSlugs.size > 0) {
-                return { eventSlugs, blogSlugs, processAll: false };
+            if (eventSlugs.size > 0 || blogSlugs.size > 0 || changedBlogImages.size > 0) {
+                return { eventSlugs, blogSlugs, changedBlogImages, processAll: false };
             }
         } catch {}
     }
@@ -109,18 +150,34 @@ function getChangedItems(): { eventSlugs: Set<string>; blogSlugs: Set<string>; p
         });
         for (const line of status.split('\n')) {
             const file = line.trim().slice(3).trim();
-            const eventMatch = file.match(/^(?:content\/events|images\/events)\/(?:es|ca|en\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-            if (eventMatch && !eventMatch[1].includes('/')) {
+            if (!file) continue;
+
+            const eventMatch = file.match(/^content\/events\/(?:es|ca|en)\/(.+)\.md$/);
+            if (eventMatch) {
                 eventSlugs.add(eventMatch[1]);
+                continue;
             }
-            const blogMatch = file.match(/^(?:content\/blogs|images\/blogs)\/(?:es|ca|en\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-            if (blogMatch && !blogMatch[1].includes('/')) {
+            const eventImgMatch = file.match(/^(?:images\/events|badges)\/(?:.+?\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
+            if (eventImgMatch && !eventImgMatch[1].includes('/')) {
+                eventSlugs.add(eventImgMatch[1]);
+                continue;
+            }
+
+            const blogMatch = file.match(/^content\/blogs\/(?:es|ca|en)\/(.+)\.md$/);
+            if (blogMatch) {
                 blogSlugs.add(blogMatch[1]);
+                continue;
+            }
+
+            const blogImgMatch = file.match(/^images\/blogs\/(.+)$/);
+            if (blogImgMatch) {
+                changedBlogImages.add(path.basename(blogImgMatch[1]));
+                continue;
             }
         }
     } catch {}
 
-    return { eventSlugs, blogSlugs, processAll: false };
+    return { eventSlugs, blogSlugs, changedBlogImages, processAll: false };
 }
 
 /**
@@ -257,7 +314,11 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
 /**
  * Process blogs: frontmatter normalization (user_id from profile, date default) & image optimization
  */
-async function processBlogs(targetSlugs: Set<string>, processAll: boolean) {
+async function processBlogs(
+    targetSlugs: Set<string>,
+    changedBlogImages: Set<string>,
+    processAll: boolean
+) {
     if (!fs.existsSync(BLOGS_CONTENT_DIR)) return { blogImagesOptimized: 0 };
 
     // 1. Normalize frontmatter (user_id from profile URL / default, and date)
@@ -272,6 +333,8 @@ async function processBlogs(targetSlugs: Set<string>, processAll: boolean) {
     }
 
     let blogImagesOptimized = 0;
+    const handledImages = new Set<string>();
+
     for (const slug of Array.from(targetSlugs)) {
         for (const loc of LOCALES) {
             const locPath = path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`);
@@ -287,7 +350,8 @@ async function processBlogs(targetSlugs: Set<string>, processAll: boolean) {
                     const cleanName = imgUrl.replace(/^\/images\/blogs\//, '').replace(/^\/images\//, '');
                     const localFile = path.join(BLOGS_IMAGES_DIR, cleanName);
 
-                    if (fs.existsSync(localFile)) {
+                    if (fs.existsSync(localFile) && !handledImages.has(cleanName)) {
+                        handledImages.add(cleanName);
                         const ext = path.extname(localFile).toLowerCase();
                         const size = fs.statSync(localFile).size;
                         if (ext !== '.webp' || size > MAX_COVER_BYTES) {
@@ -301,16 +365,35 @@ async function processBlogs(targetSlugs: Set<string>, processAll: boolean) {
         }
     }
 
+    // Also optimize any changed images that weren't already handled from markdown references
+    for (const imgName of Array.from(changedBlogImages)) {
+        if (handledImages.has(imgName)) continue;
+        const localFile = path.join(BLOGS_IMAGES_DIR, imgName);
+        if (fs.existsSync(localFile)) {
+            handledImages.add(imgName);
+            const ext = path.extname(localFile).toLowerCase();
+            const size = fs.statSync(localFile).size;
+            if (ext !== '.webp' || size > MAX_COVER_BYTES) {
+                console.log(`🖼️  Optimizing blog image: ${imgName}...`);
+                await optimizeBlogImage(localFile);
+                blogImagesOptimized++;
+            }
+        }
+    }
+
     return { blogImagesOptimized };
 }
 
 export async function autoProcess() {
     console.log('⚡ [auto-process] Scanning repository for changed events and blog assets...\n');
 
-    const { eventSlugs, blogSlugs, processAll } = getChangedItems();
+    const { eventSlugs, blogSlugs, changedBlogImages, processAll } = getChangedItems();
 
     if (!processAll) {
-        if (eventSlugs.size > 0 && blogSlugs.size > 0) {
+        const hasEvents = eventSlugs.size > 0;
+        const hasBlogs = blogSlugs.size > 0 || changedBlogImages.size > 0;
+
+        if (hasEvents && hasBlogs) {
             console.error(
                 '❌ [auto-process] Mixed content submission detected! Events and Blog Posts must be submitted in separate PRs.'
             );
@@ -331,7 +414,7 @@ export async function autoProcess() {
     }
 
     const eventResult = await processEvents(eventSlugs, processAll);
-    const blogResult = await processBlogs(blogSlugs, processAll);
+    const blogResult = await processBlogs(blogSlugs, changedBlogImages, processAll);
 
     console.log('\n🎉 [auto-process] Completed:');
     console.log(`   - Event Covers optimized: ${eventResult.coversOptimized}`);
