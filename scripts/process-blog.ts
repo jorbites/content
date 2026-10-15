@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
+import matter from 'gray-matter';
 
 const BLOGS_IMAGES_DIR = path.resolve(__dirname, '../images/blogs');
 const BLOGS_CONTENT_DIR = path.resolve(__dirname, '../content/blogs');
@@ -13,6 +14,80 @@ export interface BlogProcessResult {
     height: number;
     sizeKb: number;
     replacedReferencesCount?: number;
+}
+
+/**
+ * Normalizes frontmatter for a single blog markdown file:
+ * 1. user_id: extracts 24-char ObjectId if full URL or username given; defaults to Jorbites Official if empty
+ * 2. date: defaults to current ISO string if empty or missing
+ */
+export function normalizeBlogFrontmatter(filePath: string): boolean {
+    if (!fs.existsSync(filePath)) return false;
+    const raw = fs.readFileSync(filePath, 'utf8');
+    let parsed: matter.GrayMatterFile<string>;
+    try {
+        parsed = matter(raw);
+    } catch {
+        return false;
+    }
+
+    let modified = false;
+    const data = { ...parsed.data };
+
+    // 1. Normalize user_id from profile URL if provided
+    const rawUserId = String(data.user_id || '').trim();
+    if (rawUserId) {
+        const idMatch = rawUserId.match(/([0-9a-fA-F]{24})/);
+        if (idMatch && data.user_id !== idMatch[1]) {
+            data.user_id = idMatch[1];
+            modified = true;
+        }
+    }
+
+    // 2. Normalize date
+    const rawDate = String(data.date || '').trim();
+    if (!rawDate) {
+        data.date = new Date().toISOString();
+        modified = true;
+    }
+
+    if (modified) {
+        const updated = matter.stringify(parsed.content, data);
+        fs.writeFileSync(filePath, updated);
+        console.log(
+            `   ✨ Normalized frontmatter in ${path.relative(path.resolve(__dirname, '..'), filePath)} (user_id: ${data.user_id}, date: ${data.date})`
+        );
+    }
+
+    return modified;
+}
+
+/**
+ * Normalize frontmatter for specified blog slugs or all blogs
+ */
+export function normalizeBlogFiles(targetSlugs?: Set<string>): number {
+    if (!fs.existsSync(BLOGS_CONTENT_DIR)) return 0;
+    let count = 0;
+
+    for (const locale of ['ca', 'en', 'es']) {
+        const dir = path.join(BLOGS_CONTENT_DIR, locale);
+        if (!fs.existsSync(dir)) continue;
+
+        for (const file of fs.readdirSync(dir)) {
+            if (!file.endsWith('.md')) continue;
+            const slug = file.replace(/\.md$/, '');
+            if (targetSlugs && targetSlugs.size > 0 && !targetSlugs.has(slug)) {
+                continue;
+            }
+
+            const filePath = path.join(dir, file);
+            if (normalizeBlogFrontmatter(filePath)) {
+                count++;
+            }
+        }
+    }
+
+    return count;
 }
 
 /**

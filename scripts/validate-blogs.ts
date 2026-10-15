@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import sharp from 'sharp';
+import https from 'https';
 
 const LOCALES = ['ca', 'en', 'es'];
 const BLOGS_CONTENT_DIR = path.resolve(__dirname, '../content/blogs');
@@ -9,6 +10,62 @@ const BLOGS_IMAGES_DIR = path.resolve(__dirname, '../images/blogs');
 
 const MAX_IMAGE_BYTES = 100 * 1024; // 100 KB
 const OBJECT_ID_REGEX = /^[0-9a-fA-F]{24}$/;
+
+const verifiedUserCache = new Map<string, { exists: boolean; name?: string }>();
+
+/**
+ * Verify whether a user exists on Jorbites via public API
+ */
+async function verifyJorbitesUserExists(
+    userId: string
+): Promise<{ exists: boolean; name?: string }> {
+    if (verifiedUserCache.has(userId)) {
+        return verifiedUserCache.get(userId)!;
+    }
+
+    const url = `https://jorbites.com/api/user/${userId}`;
+    return new Promise((resolve) => {
+        const req = https.get(
+            url,
+            { headers: { 'User-Agent': 'Jorbites-Content-Validator' } },
+            (res) => {
+                if (res.statusCode === 200) {
+                    let raw = '';
+                    res.on('data', (chunk) => (raw += chunk));
+                    res.on('end', () => {
+                        try {
+                            const parsed = JSON.parse(raw);
+                            const result = { exists: true, name: parsed.name };
+                            verifiedUserCache.set(userId, result);
+                            resolve(result);
+                        } catch {
+                            const result = { exists: true };
+                            verifiedUserCache.set(userId, result);
+                            resolve(result);
+                        }
+                    });
+                } else if (res.statusCode === 404) {
+                    const result = { exists: false };
+                    verifiedUserCache.set(userId, result);
+                    resolve(result);
+                } else {
+                    // Non-404 status (rate limit, maintenance) does not block
+                    resolve({ exists: true });
+                }
+            }
+        );
+
+        req.on('error', () => {
+            // Offline or network error does not block validation
+            resolve({ exists: true });
+        });
+
+        req.setTimeout(4000, () => {
+            req.destroy();
+            resolve({ exists: true });
+        });
+    });
+}
 
 export interface ValidationIssue {
     file: string;
@@ -148,15 +205,31 @@ export async function validateBlogs(): Promise<ValidationIssue[]> {
                 issues.push({ file: relPath, message: 'Missing required "date" in frontmatter', type: 'error' });
             }
 
-            // 4. Author user_id validation
-            if (!data.user_id || typeof data.user_id !== 'string') {
-                issues.push({ file: relPath, message: 'Missing or empty required "user_id" (author ID)', type: 'error' });
-            } else if (!OBJECT_ID_REGEX.test(data.user_id)) {
+            // 4. Author user_id validation & live profile check
+            const rawUserId = String(data.user_id || '').trim();
+            const idMatch = rawUserId.match(/([0-9a-fA-F]{24})/);
+            if (!rawUserId) {
                 issues.push({
                     file: relPath,
-                    message: `Invalid "user_id" format: "${data.user_id}". Expected 24-character hexadecimal MongoDB ObjectId.`,
+                    message: 'Missing required "user_id" (Author Profile URL is required)',
                     type: 'error',
                 });
+            } else if (!idMatch) {
+                issues.push({
+                    file: relPath,
+                    message: `Invalid Author Profile URL: "${data.user_id}". Expected a valid Jorbites Profile URL (e.g. https://jorbites.com/profile/<id>) containing a 24-character user ID.`,
+                    type: 'error',
+                });
+            } else {
+                const targetId = idMatch[1];
+                const verification = await verifyJorbitesUserExists(targetId);
+                if (!verification.exists) {
+                    issues.push({
+                        file: relPath,
+                        message: `Author profile verification failed: No Jorbites user exists with ID "${targetId}". Please verify your profile URL.`,
+                        type: 'error',
+                    });
+                }
             }
 
             // 5. Body image validation

@@ -274,6 +274,8 @@ export async function translateBlogs(dryRun = false) {
                         ...source.data,
                         title: translated.title || source.data.title,
                         description: translated.description || source.data.description,
+                        user_id: source.data.user_id,
+                        date: source.data.date || new Date().toISOString(),
                     };
 
                     const newContent = matter.stringify(translated.body || source.content, newData);

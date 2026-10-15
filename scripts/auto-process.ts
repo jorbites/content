@@ -10,6 +10,7 @@ import {
 import {
     optimizeBlogImage,
     scanAndOptimizeAllBlogImages,
+    normalizeBlogFiles,
 } from './process-blog';
 
 const EVENTS_CONTENT_DIR = path.resolve(__dirname, '../content/events');
@@ -225,10 +226,16 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
 }
 
 /**
- * Process blogs: image optimization
+ * Process blogs: frontmatter normalization (user_id from profile, date default) & image optimization
  */
 async function processBlogs(targetSlugs: Set<string>, processAll: boolean) {
     if (!fs.existsSync(BLOGS_CONTENT_DIR)) return { blogImagesOptimized: 0 };
+
+    // 1. Normalize frontmatter (user_id from profile URL / default, and date)
+    const normalizedCount = normalizeBlogFiles(processAll ? undefined : targetSlugs);
+    if (normalizedCount > 0) {
+        console.log(`✨ [auto-process] Normalized frontmatter for ${normalizedCount} blog file(s).`);
+    }
 
     if (processAll) {
         const count = await scanAndOptimizeAllBlogImages();
@@ -272,6 +279,27 @@ export async function autoProcess() {
     console.log('⚡ [auto-process] Scanning repository for changed events and blog assets...\n');
 
     const { eventSlugs, blogSlugs, processAll } = getChangedItems();
+
+    if (!processAll) {
+        if (eventSlugs.size > 0 && blogSlugs.size > 0) {
+            console.error(
+                '❌ [auto-process] Mixed content submission detected! Events and Blog Posts must be submitted in separate PRs.'
+            );
+            process.exit(1);
+        }
+        if (eventSlugs.size > 1) {
+            console.error(
+                `❌ [auto-process] Multiple events detected in a single submission (${Array.from(eventSlugs).join(', ')}). Only one event can be submitted per PR.`
+            );
+            process.exit(1);
+        }
+        if (blogSlugs.size > 1) {
+            console.error(
+                `❌ [auto-process] Multiple blog posts detected in a single submission (${Array.from(blogSlugs).join(', ')}). Only one blog post can be submitted per PR.`
+            );
+            process.exit(1);
+        }
+    }
 
     const eventResult = await processEvents(eventSlugs, processAll);
     const blogResult = await processBlogs(blogSlugs, processAll);

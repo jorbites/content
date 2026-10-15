@@ -15,6 +15,11 @@ i18n:
   locales: [ca, es, en]
   default_locale: es
 
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '_'
+
 # Default Media storage
 media_folder: 'images'
 public_folder: '/images'
@@ -25,7 +30,7 @@ collections:
     label_singular: 'Event'
     folder: 'content/events/{{locale}}'
     create: true
-    slug: '{{slug}}'
+    slug: '{{title}}'
     i18n: true
     media_folder: '/images/events'
     public_folder: '/images/events'
@@ -46,15 +51,15 @@ collections:
     label_singular: 'Blog Post'
     folder: 'content/blogs/{{locale}}'
     create: true
-    slug: '{{slug}}'
+    slug: '{{title}}'
     i18n: true
     media_folder: '/images/blogs'
     public_folder: '/images/blogs'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: false, i18n: true }
       - { label: 'Description', name: 'description', widget: 'text', required: false, i18n: true }
-      - { label: 'Publication Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', required: false, i18n: duplicate }
-      - { label: 'Author User ID (MongoDB ObjectId)', name: 'user_id', widget: 'string', required: false, i18n: duplicate }
+      - { label: 'Publication Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]', date_format: 'YYYY-MM-DD', time_format: 'HH:mm:ss', default: '{{now}}', required: false, i18n: duplicate }
+      - { label: 'Author Profile URL (e.g. https://jorbites.com/profile/...)', name: 'user_id', widget: 'string', required: true, i18n: duplicate, hint: 'Paste your Jorbites profile URL or 24-character user ID (Required)' }
       - { label: 'Body (Markdown)', name: 'body', widget: 'markdown', required: false, i18n: true }
 
   - name: 'challenges'
