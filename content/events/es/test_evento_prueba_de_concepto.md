@@ -3,7 +3,7 @@ title: test evento prueba de concepto
 description: test evento prueba de concepto
 date: 2026-10-16T00:00:00.000Z
 endDate: 2026-10-30T08:13:00.000Z
-image: /images/events/57581ba97eca.webp
+image: /images/events/test_evento_prueba_de_concepto.webp
 badge: ''
 permanent: false
 recurrent: false
