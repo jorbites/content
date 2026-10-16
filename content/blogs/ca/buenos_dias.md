@@ -16,6 +16,6 @@ doncs per provar aquesta nova funcionalitat
 ei mira aquesta foto:
 
 
-![](/images/blogs/eea825fd3e3101354b5101492a67c38b.webp)
+![](/images/blogs/buenos_dias.webp)
 
 es veu bé?

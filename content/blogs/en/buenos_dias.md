@@ -15,6 +15,6 @@ well, to test this new feature
 hey look at this photo:
 
 
-![](/images/blogs/eea825fd3e3101354b5101492a67c38b.webp)
+![](/images/blogs/buenos_dias.webp)
 
 does it look good?
