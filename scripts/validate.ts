@@ -29,6 +29,23 @@ export function validateSubmissionScope(): ValidationIssue[] {
         } catch {}
     }
 
+    const fs = require('fs');
+    const path = require('path');
+    const LOCALES = ['ca', 'en', 'es'];
+    const EVENTS_DIR = path.resolve(__dirname, '../content/events');
+    const BLOGS_DIR = path.resolve(__dirname, '../content/blogs');
+
+    try {
+        const status = execSync('git status --porcelain', {
+            encoding: 'utf8',
+            stdio: ['pipe', 'pipe', 'ignore'],
+        });
+        for (const line of status.split('\n')) {
+            const file = line.trim().slice(3).trim();
+            if (file) changedFiles.push(file);
+        }
+    } catch {}
+
     if (changedFiles.length === 0) {
         return issues;
     }
@@ -42,12 +59,22 @@ export function validateSubmissionScope(): ValidationIssue[] {
         if (/^(?:content\/events|images\/events|badges)\//.test(file)) {
             hasEventChanges = true;
             const m = file.match(/^content\/events\/(?:ca|en|es)\/(.+)\.md$/);
-            if (m) eventSlugs.add(m[1]);
+            if (m) {
+                const slug = m[1];
+                if (LOCALES.some((loc: string) => fs.existsSync(path.join(EVENTS_DIR, loc, `${slug}.md`)))) {
+                    eventSlugs.add(slug);
+                }
+            }
         }
         if (/^(?:content\/blogs|images\/blogs)\//.test(file)) {
             hasBlogChanges = true;
             const m = file.match(/^content\/blogs\/(?:ca|en|es)\/(.+)\.md$/);
-            if (m) blogSlugs.add(m[1]);
+            if (m) {
+                const slug = m[1];
+                if (LOCALES.some((loc: string) => fs.existsSync(path.join(BLOGS_DIR, loc, `${slug}.md`)))) {
+                    blogSlugs.add(slug);
+                }
+            }
         }
     }
 
