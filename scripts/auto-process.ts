@@ -492,8 +492,17 @@ async function processBlogs(
             }
 
             if (candidateTitle) {
-                const newSlug = slugify(candidateTitle);
+                let newSlug = slugify(candidateTitle);
                 if (newSlug && newSlug !== slug) {
+                    // Safeguard against overwriting an existing blog post
+                    if (
+                        fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'es', `${newSlug}.md`)) ||
+                        fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'ca', `${newSlug}.md`)) ||
+                        fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'en', `${newSlug}.md`))
+                    ) {
+                        newSlug = `${newSlug}_${slug.slice(0, 6)}`;
+                    }
+
                     console.log(`🏷️  Renaming blog slug from "${slug}" to "${newSlug}" (derived from title "${candidateTitle}")...`);
                     for (const loc of LOCALES) {
                         const oldLocPath = path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`);
