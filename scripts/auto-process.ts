@@ -41,10 +41,27 @@ function cleanFrontmatter(data: Record<string, any>): Record<string, any> {
     return cleaned;
 }
 
+export function slugify(text: string): string {
+    return text
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_+|_+$/g, '');
+}
+
+export function isGeneratedHashSlug(slug: string): boolean {
+    const isHexHash = /^[0-9a-f]{10,32}$/i.test(slug) && !slug.includes('_') && !slug.includes('-');
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(slug);
+    return isHexHash || isUuid;
+}
+
 function getChangedItems(): {
     eventSlugs: Set<string>;
     blogSlugs: Set<string>;
     changedBlogImages: Set<string>;
+    changedEventImages: Set<string>;
     processAll: boolean;
 } {
     const args = process.argv.slice(2);
@@ -53,6 +70,7 @@ function getChangedItems(): {
             eventSlugs: new Set(),
             blogSlugs: new Set(),
             changedBlogImages: new Set(),
+            changedEventImages: new Set(),
             processAll: true,
         };
     }
@@ -73,6 +91,7 @@ function getChangedItems(): {
                 eventSlugs: new Set(),
                 blogSlugs: new Set([explicitSlug]),
                 changedBlogImages: new Set(),
+                changedEventImages: new Set(),
                 processAll: false,
             };
         }
@@ -81,6 +100,7 @@ function getChangedItems(): {
                 eventSlugs: new Set([explicitSlug]),
                 blogSlugs: new Set(),
                 changedBlogImages: new Set(),
+                changedEventImages: new Set(),
                 processAll: false,
             };
         }
@@ -88,6 +108,7 @@ function getChangedItems(): {
             eventSlugs: new Set([explicitSlug]),
             blogSlugs: new Set([explicitSlug]),
             changedBlogImages: new Set(),
+            changedEventImages: new Set(),
             processAll: false,
         };
     }
@@ -95,6 +116,7 @@ function getChangedItems(): {
     const eventSlugs = new Set<string>();
     const blogSlugs = new Set<string>();
     const changedBlogImages = new Set<string>();
+    const changedEventImages = new Set<string>();
 
     const diffTargets = [
         process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}...HEAD` : null,
@@ -112,14 +134,16 @@ function getChangedItems(): {
                 const trimmed = line.trim();
                 if (!trimmed) continue;
 
+                // Event markdown (ONLY markdown files define event slugs)
                 const eventMatch = trimmed.match(/^content\/events\/(?:es|ca|en)\/(.+)\.md$/);
                 if (eventMatch) {
                     eventSlugs.add(eventMatch[1]);
                     continue;
                 }
-                const eventImgMatch = trimmed.match(/^(?:images\/events|badges)\/(?:.+?\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-                if (eventImgMatch && !eventImgMatch[1].includes('/')) {
-                    eventSlugs.add(eventImgMatch[1]);
+                // Event images & badges (assets, NOT event slugs!)
+                const eventImgMatch = trimmed.match(/^(?:images\/events|badges)\/(.+)$/);
+                if (eventImgMatch) {
+                    changedEventImages.add(path.basename(eventImgMatch[1]));
                     continue;
                 }
 
@@ -137,12 +161,18 @@ function getChangedItems(): {
                     continue;
                 }
             }
-            if (eventSlugs.size > 0 || blogSlugs.size > 0 || changedBlogImages.size > 0) {
-                return { eventSlugs, blogSlugs, changedBlogImages, processAll: false };
+            if (
+                eventSlugs.size > 0 ||
+                blogSlugs.size > 0 ||
+                changedBlogImages.size > 0 ||
+                changedEventImages.size > 0
+            ) {
+                break;
             }
         } catch {}
     }
 
+    // Always inspect working tree status (for untracked or renamed files)
     try {
         const status = execSync('git status --porcelain', {
             encoding: 'utf8',
@@ -157,9 +187,9 @@ function getChangedItems(): {
                 eventSlugs.add(eventMatch[1]);
                 continue;
             }
-            const eventImgMatch = file.match(/^(?:images\/events|badges)\/(?:.+?\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-            if (eventImgMatch && !eventImgMatch[1].includes('/')) {
-                eventSlugs.add(eventImgMatch[1]);
+            const eventImgMatch = file.match(/^(?:images\/events|badges)\/(.+)$/);
+            if (eventImgMatch) {
+                changedEventImages.add(path.basename(eventImgMatch[1]));
                 continue;
             }
 
@@ -177,7 +207,36 @@ function getChangedItems(): {
         }
     } catch {}
 
-    return { eventSlugs, blogSlugs, changedBlogImages, processAll: false };
+    // Filter out event/blog slugs that do not exist on disk in any locale (e.g. deleted or already renamed)
+    for (const slug of Array.from(eventSlugs)) {
+        const exists = LOCALES.some((loc) =>
+            fs.existsSync(path.join(EVENTS_CONTENT_DIR, loc, `${slug}.md`))
+        );
+        if (!exists) {
+            eventSlugs.delete(slug);
+        }
+    }
+
+    for (const slug of Array.from(blogSlugs)) {
+        const exists = LOCALES.some((loc) =>
+            fs.existsSync(path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`))
+        );
+        if (!exists) {
+            blogSlugs.delete(slug);
+        }
+    }
+
+    // If an image changed without markdown, map to matching event slug if possible
+    if (eventSlugs.size === 0 && changedEventImages.size > 0) {
+        for (const imgName of Array.from(changedEventImages)) {
+            const base = imgName.replace(/\.(png|jpe?g|webp)$/i, '');
+            if (fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'es', `${base}.md`))) {
+                eventSlugs.add(base);
+            }
+        }
+    }
+
+    return { eventSlugs, blogSlugs, changedBlogImages, changedEventImages, processAll: false };
 }
 
 /**
@@ -212,7 +271,7 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
     let coversOptimized = 0;
     let badgesGenerated = 0;
 
-    for (const slug of slugsToProcess) {
+    for (let slug of slugsToProcess) {
         let frontmatter: any = null;
         const localizedFiles: { locale: string; filePath: string; parsed: matter.GrayMatterFile<string> }[] = [];
 
@@ -229,12 +288,68 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
         const combinedFrontmatter: Record<string, any> = {};
         for (const locFile of localizedFiles) {
             for (const [key, val] of Object.entries(locFile.parsed.data)) {
-                if (val !== undefined && val !== null && val !== '' && combinedFrontmatter[key] === undefined) {
-                    combinedFrontmatter[key] = val;
+                if (val !== undefined && val !== null && combinedFrontmatter[key] === undefined) {
+                    if (typeof val === 'string' && val.trim() === '') {
+                        if (key === 'badge') combinedFrontmatter[key] = '';
+                    } else {
+                        combinedFrontmatter[key] = val;
+                    }
                 }
             }
         }
         frontmatter = combinedFrontmatter;
+
+        // Auto-rename hash slugs (e.g. 57581ba97eca) to clean title slug
+        const candidateTitle =
+            localizedFiles.find((f) => f.locale === 'es' && f.parsed.data.title?.trim())?.parsed.data.title ||
+            localizedFiles.find((f) => f.locale === 'ca' && f.parsed.data.title?.trim())?.parsed.data.title ||
+            localizedFiles.find((f) => f.locale === 'en' && f.parsed.data.title?.trim())?.parsed.data.title ||
+            combinedFrontmatter.title ||
+            '';
+
+        if (isGeneratedHashSlug(slug) && candidateTitle) {
+            let newSlug = slugify(candidateTitle);
+            if (newSlug && newSlug !== slug) {
+                // Safeguard against overwriting an existing event
+                if (
+                    fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'es', `${newSlug}.md`)) ||
+                    fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'ca', `${newSlug}.md`)) ||
+                    fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'en', `${newSlug}.md`))
+                ) {
+                    newSlug = `${newSlug}_${slug.slice(0, 6)}`;
+                }
+
+                console.log(`🏷️  Renaming event slug from "${slug}" to "${newSlug}" (derived from title "${candidateTitle}")...`);
+
+                for (const locFile of localizedFiles) {
+                    const newLocPath = path.join(EVENTS_CONTENT_DIR, locFile.locale, `${newSlug}.md`);
+                    if (fs.existsSync(locFile.filePath)) {
+                        fs.renameSync(locFile.filePath, newLocPath);
+                        locFile.filePath = newLocPath;
+                    }
+                }
+
+                // Rename existing cover if present (all common image extensions)
+                for (const ext of ['.webp', '.png', '.jpg', '.jpeg']) {
+                    const oldCover = path.join(EVENTS_IMAGES_DIR, `${slug}${ext}`);
+                    const newCover = path.join(EVENTS_IMAGES_DIR, `${newSlug}${ext}`);
+                    if (fs.existsSync(oldCover)) {
+                        fs.renameSync(oldCover, newCover);
+                    }
+                }
+
+                // Rename existing badge if present (all common image extensions)
+                for (const ext of ['.webp', '.png', '.jpg', '.jpeg']) {
+                    const oldBadge = path.join(BADGES_DIR, `${slug}${ext}`);
+                    const newBadge = path.join(BADGES_DIR, `${newSlug}${ext}`);
+                    if (fs.existsSync(oldBadge)) {
+                        fs.renameSync(oldBadge, newBadge);
+                    }
+                }
+
+                slug = newSlug;
+            }
+        }
 
         let needsCoverOptimization = false;
         let coverSourcePath: string | null = null;
@@ -247,8 +362,22 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
                 needsCoverOptimization = true;
                 coverSourcePath = targetCoverPath;
             }
-        } else {
-            // Check for raw uploaded image
+        }
+
+        // Check if frontmatter.image points to an existing file in images/events/ that needs optimization or renaming
+        if (!coverSourcePath && frontmatter.image && typeof frontmatter.image === 'string') {
+            const cleanImageName = frontmatter.image
+                .replace(/^\/images\/events\//, '')
+                .replace(/^\/images\//, '');
+            const candidate = path.join(EVENTS_IMAGES_DIR, cleanImageName);
+            if (fs.existsSync(candidate) && path.resolve(candidate) !== path.resolve(targetCoverPath)) {
+                needsCoverOptimization = true;
+                coverSourcePath = candidate;
+            }
+        }
+
+        // Check for raw uploaded image matching slug
+        if (!coverSourcePath) {
             for (const ext of ['.png', '.jpg', '.jpeg', '.webp']) {
                 const candidate = path.join(EVENTS_IMAGES_DIR, `${slug}${ext}`);
                 if (fs.existsSync(candidate)) {
@@ -267,11 +396,19 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
                 fs.unlinkSync(coverSourcePath);
             }
             frontmatter.image = `/images/events/${slug}.webp`;
+        } else if (fs.existsSync(targetCoverPath)) {
+            frontmatter.image = `/images/events/${slug}.webp`;
         }
 
         // Badge extraction (events only)
         const badgePath = path.join(BADGES_DIR, `${slug}.webp`);
-        const wantsBadge = frontmatter.badge === '' || (frontmatter.badge && typeof frontmatter.badge === 'string');
+        const wantsBadge =
+            frontmatter.badge === undefined ||
+            frontmatter.badge === null ||
+            frontmatter.badge === '' ||
+            (typeof frontmatter.badge === 'string' &&
+                (!frontmatter.badge.endsWith('.webp') ||
+                    frontmatter.badge === `/badges/${slug}.webp`));
 
         if (wantsBadge && !fs.existsSync(badgePath)) {
             const currentCover = fs.existsSync(targetCoverPath) ? targetCoverPath : coverSourcePath;
@@ -289,6 +426,8 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
                     console.warn(`⚠️ rembg not installed. Skipping auto-badge for ${slug}.`);
                 }
             }
+        } else if (fs.existsSync(badgePath)) {
+            frontmatter.badge = `/badges/${slug}.webp`;
         }
 
         // Update frontmatter across locales if needed
@@ -334,8 +473,50 @@ async function processBlogs(
 
     let blogImagesOptimized = 0;
     const handledImages = new Set<string>();
+    const processedSlugs = new Set<string>();
 
-    for (const slug of Array.from(targetSlugs)) {
+    for (let slug of Array.from(targetSlugs)) {
+        if (isGeneratedHashSlug(slug)) {
+            let candidateTitle = '';
+            for (const loc of ['es', 'ca', 'en']) {
+                const locPath = path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`);
+                if (fs.existsSync(locPath)) {
+                    try {
+                        const parsed = matter(fs.readFileSync(locPath, 'utf8'));
+                        if (parsed.data.title && typeof parsed.data.title === 'string' && parsed.data.title.trim()) {
+                            candidateTitle = parsed.data.title.trim();
+                            break;
+                        }
+                    } catch {}
+                }
+            }
+
+            if (candidateTitle) {
+                let newSlug = slugify(candidateTitle);
+                if (newSlug && newSlug !== slug) {
+                    // Safeguard against overwriting an existing blog post
+                    if (
+                        fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'es', `${newSlug}.md`)) ||
+                        fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'ca', `${newSlug}.md`)) ||
+                        fs.existsSync(path.join(BLOGS_CONTENT_DIR, 'en', `${newSlug}.md`))
+                    ) {
+                        newSlug = `${newSlug}_${slug.slice(0, 6)}`;
+                    }
+
+                    console.log(`🏷️  Renaming blog slug from "${slug}" to "${newSlug}" (derived from title "${candidateTitle}")...`);
+                    for (const loc of LOCALES) {
+                        const oldLocPath = path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`);
+                        const newLocPath = path.join(BLOGS_CONTENT_DIR, loc, `${newSlug}.md`);
+                        if (fs.existsSync(oldLocPath)) {
+                            fs.renameSync(oldLocPath, newLocPath);
+                        }
+                    }
+                    slug = newSlug;
+                }
+            }
+        }
+        processedSlugs.add(slug);
+
         for (const loc of LOCALES) {
             const locPath = path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`);
             if (fs.existsSync(locPath)) {
@@ -387,10 +568,10 @@ async function processBlogs(
 export async function autoProcess() {
     console.log('⚡ [auto-process] Scanning repository for changed events and blog assets...\n');
 
-    const { eventSlugs, blogSlugs, changedBlogImages, processAll } = getChangedItems();
+    const { eventSlugs, blogSlugs, changedBlogImages, changedEventImages, processAll } = getChangedItems();
 
     if (!processAll) {
-        const hasEvents = eventSlugs.size > 0;
+        const hasEvents = eventSlugs.size > 0 || changedEventImages.size > 0;
         const hasBlogs = blogSlugs.size > 0 || changedBlogImages.size > 0;
 
         if (hasEvents && hasBlogs) {

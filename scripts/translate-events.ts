@@ -167,7 +167,7 @@ function getTargetSlugs(): Set<string> {
     }
 
     const { execSync } = require('child_process');
-    const changedSlugs = new Set<string>();
+    const rawSlugs = new Set<string>();
     const diffTargets = [
         process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}...HEAD` : null,
         'origin/main...HEAD',
@@ -183,15 +183,10 @@ function getTargetSlugs(): Set<string> {
             for (const line of output.split('\n')) {
                 const m = line.trim().match(/^content\/(?:events\/)?(?:es|ca|en)\/(.+)\.md$/);
                 if (m) {
-                    changedSlugs.add(m[1]);
+                    rawSlugs.add(m[1]);
                 }
             }
-            if (changedSlugs.size > 0) {
-                console.log(
-                    `🎯 [translate-events] Detected ${changedSlugs.size} changed event(s) via git diff (${target}): ${Array.from(changedSlugs).join(', ')}`
-                );
-                return changedSlugs;
-            }
+            if (rawSlugs.size > 0) break;
         } catch {}
     }
 
@@ -204,13 +199,24 @@ function getTargetSlugs(): Set<string> {
             const file = line.trim().slice(3).trim();
             const m = file.match(/^content\/(?:events\/)?(?:es|ca|en)\/(.+)\.md$/);
             if (m) {
-                changedSlugs.add(m[1]);
+                rawSlugs.add(m[1]);
             }
         }
-        if (changedSlugs.size > 0) {
-            return changedSlugs;
-        }
     } catch {}
+
+    const validSlugs = new Set<string>();
+    for (const slug of Array.from(rawSlugs)) {
+        if (LOCALES.some((loc) => fs.existsSync(path.join(CONTENT_DIR, loc, `${slug}.md`)))) {
+            validSlugs.add(slug);
+        }
+    }
+
+    if (validSlugs.size > 0) {
+        console.log(
+            `🎯 [translate-events] Detected ${validSlugs.size} changed event(s) to check: ${Array.from(validSlugs).join(', ')}`
+        );
+        return validSlugs;
+    }
 
     return new Set<string>();
 }
