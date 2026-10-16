@@ -45,6 +45,7 @@ function getChangedItems(): {
     eventSlugs: Set<string>;
     blogSlugs: Set<string>;
     changedBlogImages: Set<string>;
+    changedEventImages: Set<string>;
     processAll: boolean;
 } {
     const args = process.argv.slice(2);
@@ -53,6 +54,7 @@ function getChangedItems(): {
             eventSlugs: new Set(),
             blogSlugs: new Set(),
             changedBlogImages: new Set(),
+            changedEventImages: new Set(),
             processAll: true,
         };
     }
@@ -73,6 +75,7 @@ function getChangedItems(): {
                 eventSlugs: new Set(),
                 blogSlugs: new Set([explicitSlug]),
                 changedBlogImages: new Set(),
+                changedEventImages: new Set(),
                 processAll: false,
             };
         }
@@ -81,6 +84,7 @@ function getChangedItems(): {
                 eventSlugs: new Set([explicitSlug]),
                 blogSlugs: new Set(),
                 changedBlogImages: new Set(),
+                changedEventImages: new Set(),
                 processAll: false,
             };
         }
@@ -88,6 +92,7 @@ function getChangedItems(): {
             eventSlugs: new Set([explicitSlug]),
             blogSlugs: new Set([explicitSlug]),
             changedBlogImages: new Set(),
+            changedEventImages: new Set(),
             processAll: false,
         };
     }
@@ -95,6 +100,7 @@ function getChangedItems(): {
     const eventSlugs = new Set<string>();
     const blogSlugs = new Set<string>();
     const changedBlogImages = new Set<string>();
+    const changedEventImages = new Set<string>();
 
     const diffTargets = [
         process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}...HEAD` : null,
@@ -112,14 +118,16 @@ function getChangedItems(): {
                 const trimmed = line.trim();
                 if (!trimmed) continue;
 
+                // Event markdown (ONLY markdown files define event slugs)
                 const eventMatch = trimmed.match(/^content\/events\/(?:es|ca|en)\/(.+)\.md$/);
                 if (eventMatch) {
                     eventSlugs.add(eventMatch[1]);
                     continue;
                 }
-                const eventImgMatch = trimmed.match(/^(?:images\/events|badges)\/(?:.+?\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-                if (eventImgMatch && !eventImgMatch[1].includes('/')) {
-                    eventSlugs.add(eventImgMatch[1]);
+                // Event images & badges (assets, NOT event slugs!)
+                const eventImgMatch = trimmed.match(/^(?:images\/events|badges)\/(.+)$/);
+                if (eventImgMatch) {
+                    changedEventImages.add(path.basename(eventImgMatch[1]));
                     continue;
                 }
 
@@ -137,47 +145,69 @@ function getChangedItems(): {
                     continue;
                 }
             }
-            if (eventSlugs.size > 0 || blogSlugs.size > 0 || changedBlogImages.size > 0) {
-                return { eventSlugs, blogSlugs, changedBlogImages, processAll: false };
+            if (
+                eventSlugs.size > 0 ||
+                blogSlugs.size > 0 ||
+                changedBlogImages.size > 0 ||
+                changedEventImages.size > 0
+            ) {
+                break;
             }
         } catch {}
     }
 
-    try {
-        const status = execSync('git status --porcelain', {
-            encoding: 'utf8',
-            stdio: ['pipe', 'pipe', 'ignore'],
-        });
-        for (const line of status.split('\n')) {
-            const file = line.trim().slice(3).trim();
-            if (!file) continue;
+    if (
+        eventSlugs.size === 0 &&
+        blogSlugs.size === 0 &&
+        changedBlogImages.size === 0 &&
+        changedEventImages.size === 0
+    ) {
+        try {
+            const status = execSync('git status --porcelain', {
+                encoding: 'utf8',
+                stdio: ['pipe', 'pipe', 'ignore'],
+            });
+            for (const line of status.split('\n')) {
+                const file = line.trim().slice(3).trim();
+                if (!file) continue;
 
-            const eventMatch = file.match(/^content\/events\/(?:es|ca|en)\/(.+)\.md$/);
-            if (eventMatch) {
-                eventSlugs.add(eventMatch[1]);
-                continue;
-            }
-            const eventImgMatch = file.match(/^(?:images\/events|badges)\/(?:.+?\/)?(.+?)(?:\.md|\.webp|\.png|\.jpe?g)?$/);
-            if (eventImgMatch && !eventImgMatch[1].includes('/')) {
-                eventSlugs.add(eventImgMatch[1]);
-                continue;
-            }
+                const eventMatch = file.match(/^content\/events\/(?:es|ca|en)\/(.+)\.md$/);
+                if (eventMatch) {
+                    eventSlugs.add(eventMatch[1]);
+                    continue;
+                }
+                const eventImgMatch = file.match(/^(?:images\/events|badges)\/(.+)$/);
+                if (eventImgMatch) {
+                    changedEventImages.add(path.basename(eventImgMatch[1]));
+                    continue;
+                }
 
-            const blogMatch = file.match(/^content\/blogs\/(?:es|ca|en)\/(.+)\.md$/);
-            if (blogMatch) {
-                blogSlugs.add(blogMatch[1]);
-                continue;
-            }
+                const blogMatch = file.match(/^content\/blogs\/(?:es|ca|en)\/(.+)\.md$/);
+                if (blogMatch) {
+                    blogSlugs.add(blogMatch[1]);
+                    continue;
+                }
 
-            const blogImgMatch = file.match(/^images\/blogs\/(.+)$/);
-            if (blogImgMatch) {
-                changedBlogImages.add(path.basename(blogImgMatch[1]));
-                continue;
+                const blogImgMatch = file.match(/^images\/blogs\/(.+)$/);
+                if (blogImgMatch) {
+                    changedBlogImages.add(path.basename(blogImgMatch[1]));
+                    continue;
+                }
+            }
+        } catch {}
+    }
+
+    // If an image changed without markdown, map to matching event slug if possible
+    if (eventSlugs.size === 0 && changedEventImages.size > 0) {
+        for (const imgName of Array.from(changedEventImages)) {
+            const base = imgName.replace(/\.(png|jpe?g|webp)$/i, '');
+            if (fs.existsSync(path.join(EVENTS_CONTENT_DIR, 'es', `${base}.md`))) {
+                eventSlugs.add(base);
             }
         }
-    } catch {}
+    }
 
-    return { eventSlugs, blogSlugs, changedBlogImages, processAll: false };
+    return { eventSlugs, blogSlugs, changedBlogImages, changedEventImages, processAll: false };
 }
 
 /**
@@ -247,8 +277,22 @@ async function processEvents(targetSlugs: Set<string>, processAll: boolean) {
                 needsCoverOptimization = true;
                 coverSourcePath = targetCoverPath;
             }
-        } else {
-            // Check for raw uploaded image
+        }
+
+        // Check if frontmatter.image points to an existing file in images/events/ that needs optimization or renaming
+        if (!coverSourcePath && frontmatter.image && typeof frontmatter.image === 'string') {
+            const cleanImageName = frontmatter.image
+                .replace(/^\/images\/events\//, '')
+                .replace(/^\/images\//, '');
+            const candidate = path.join(EVENTS_IMAGES_DIR, cleanImageName);
+            if (fs.existsSync(candidate)) {
+                needsCoverOptimization = true;
+                coverSourcePath = candidate;
+            }
+        }
+
+        // Check for raw uploaded image matching slug
+        if (!coverSourcePath) {
             for (const ext of ['.png', '.jpg', '.jpeg', '.webp']) {
                 const candidate = path.join(EVENTS_IMAGES_DIR, `${slug}${ext}`);
                 if (fs.existsSync(candidate)) {
@@ -387,10 +431,10 @@ async function processBlogs(
 export async function autoProcess() {
     console.log('⚡ [auto-process] Scanning repository for changed events and blog assets...\n');
 
-    const { eventSlugs, blogSlugs, changedBlogImages, processAll } = getChangedItems();
+    const { eventSlugs, blogSlugs, changedBlogImages, changedEventImages, processAll } = getChangedItems();
 
     if (!processAll) {
-        const hasEvents = eventSlugs.size > 0;
+        const hasEvents = eventSlugs.size > 0 || changedEventImages.size > 0;
         const hasBlogs = blogSlugs.size > 0 || changedBlogImages.size > 0;
 
         if (hasEvents && hasBlogs) {
