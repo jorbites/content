@@ -197,7 +197,7 @@ function getTargetBlogSlugs(): Set<string> {
 
     const validSlugs = new Set<string>();
     for (const slug of Array.from(rawSlugs)) {
-        if (LOCALES.some((loc) => fs.existsSync(path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`)))) {
+        if (LOCALES.some((loc) => fs.existsSync(path.join(CONTENT_DIR, loc, `${slug}.md`)))) {
             validSlugs.add(slug);
         }
     }
