@@ -168,16 +168,26 @@ export function updateBlogMarkdownImageReferences(
         for (const file of fs.readdirSync(dir)) {
             if (!file.endsWith('.md')) continue;
             const filePath = path.join(dir, file);
-            const content = fs.readFileSync(filePath, 'utf8');
+            let content = fs.readFileSync(filePath, 'utf8');
 
-            const oldRef = `/images/blogs/${oldFilename}`;
+            const oldRef1 = `/images/blogs/${oldFilename}`;
+            const oldRef2 = `/images/${oldFilename}`;
             const newRef = `/images/blogs/${newFilename}`;
 
-            if (content.includes(oldRef)) {
-                const updated = content.split(oldRef).join(newRef);
-                fs.writeFileSync(filePath, updated);
+            let changed = false;
+            if (content.includes(oldRef1)) {
+                content = content.split(oldRef1).join(newRef);
+                changed = true;
+            }
+            if (content.includes(oldRef2)) {
+                content = content.split(oldRef2).join(newRef);
+                changed = true;
+            }
+
+            if (changed) {
+                fs.writeFileSync(filePath, content);
                 replacedCount++;
-                console.log(`   📝 Updated reference in ${locale}/${file}: ${oldRef} -> ${newRef}`);
+                console.log(`   📝 Updated reference in ${locale}/${file}: ${oldFilename} -> ${newRef}`);
             }
         }
     }
@@ -189,7 +199,7 @@ export function updateBlogMarkdownImageReferences(
  * - Resizes to max width 1200px (responsive content image)
  * - Converts to WebP
  * - Optimizes quality until < 100KB
- * - Updates markdown references if extension changed (e.g. .png -> .webp)
+ * - Updates markdown references if extension changed (e.g. .png -> .webp) or name changed
  */
 export async function optimizeBlogImage(
     inputPath: string,
@@ -237,13 +247,14 @@ export async function optimizeBlogImage(
     console.log(`   Dimensions: ${metadata.width}x${metadata.height}px`);
     console.log(`   Size: ${sizeKb} KB (quality: ${quality}%)`);
 
-    // If original was a PNG or JPG in images/blogs, update markdown references and delete old file
+    // If original was non-webp or if name changed, update markdown references and delete old file
     let replacedCount = 0;
-    if (parsed.ext.toLowerCase() !== '.webp') {
+    const hasNameChanged = path.resolve(inputPath) !== path.resolve(outputPath);
+    if (parsed.ext.toLowerCase() !== '.webp' || hasNameChanged) {
         replacedCount = updateBlogMarkdownImageReferences(parsed.base, `${baseName}.webp`);
-        if (path.resolve(inputPath) !== path.resolve(outputPath) && fs.existsSync(inputPath)) {
+        if (hasNameChanged && fs.existsSync(inputPath)) {
             fs.unlinkSync(inputPath);
-            console.log(`   🗑️ Deleted old non-webp source: ${inputPath}`);
+            console.log(`   🗑️ Deleted old image source: ${inputPath}`);
         }
     }
 
