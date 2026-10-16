@@ -517,6 +517,9 @@ async function processBlogs(
         }
         processedSlugs.add(slug);
 
+        let blogPostImageIndex = 0;
+        const blogPostImages = new Set<string>();
+
         for (const loc of LOCALES) {
             const locPath = path.join(BLOGS_CONTENT_DIR, loc, `${slug}.md`);
             if (fs.existsSync(locPath)) {
@@ -529,19 +532,33 @@ async function processBlogs(
                     if (imgUrl.startsWith('http')) continue;
 
                     const cleanName = imgUrl.replace(/^\/images\/blogs\//, '').replace(/^\/images\//, '');
-                    const localFile = path.join(BLOGS_IMAGES_DIR, cleanName);
-
-                    if (fs.existsSync(localFile) && !handledImages.has(cleanName)) {
-                        handledImages.add(cleanName);
-                        const ext = path.extname(localFile).toLowerCase();
-                        const size = fs.statSync(localFile).size;
-                        if (ext !== '.webp' || size > MAX_COVER_BYTES) {
-                            console.log(`🖼️  Optimizing blog image: ${cleanName}...`);
-                            await optimizeBlogImage(localFile);
-                            blogImagesOptimized++;
-                        }
-                    }
+                    blogPostImages.add(cleanName);
                 }
+            }
+        }
+
+        for (const cleanName of Array.from(blogPostImages)) {
+            const localFile = path.join(BLOGS_IMAGES_DIR, cleanName);
+            if (!fs.existsSync(localFile)) continue;
+
+            const targetBaseName = blogPostImageIndex === 0 ? slug : `${slug}_${blogPostImageIndex + 1}`;
+            blogPostImageIndex++;
+            const targetFileName = `${targetBaseName}.webp`;
+
+            handledImages.add(cleanName);
+            handledImages.add(targetFileName);
+
+            const ext = path.extname(localFile).toLowerCase();
+            const size = fs.statSync(localFile).size;
+            const needsRename = cleanName !== targetFileName;
+            const needsOptimization = ext !== '.webp' || size > MAX_COVER_BYTES;
+
+            if (needsRename || needsOptimization) {
+                console.log(
+                    `🖼️  ${needsRename ? 'Renaming and optimizing' : 'Optimizing'} blog image: ${cleanName} -> ${targetFileName}...`
+                );
+                await optimizeBlogImage(localFile, targetBaseName);
+                blogImagesOptimized++;
             }
         }
     }
