@@ -1,8 +1,11 @@
 ---
 title: Insignias de Cooksnap
-image: /images/events/cooksnap_badges/cooksnap_badges.webp
+image: /images/events/cooksnap_badges.webp
 permanent: true
-description: ¡Cocina recetas de la comunidad, sube fotos de tus platos y desbloquea insignias exclusivas de chef!
+description: >-
+  ¡Cocina recetas de la comunidad, sube fotos de tus platos y desbloquea
+  insignias exclusivas de chef!
+badge: /badges/cooksnap_badges.webp
 ---
 
 ### 📸🍳 ¡Insignias Cooksnap en Jorbites! 🍳📸

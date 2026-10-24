@@ -1,8 +1,11 @@
 ---
 title: Cooksnap Badges
-image: /images/events/cooksnap_badges/cooksnap_badges.webp
+image: /images/events/cooksnap_badges.webp
 permanent: true
-description: Cook community recipes, upload your dish photos, and unlock exclusive chef badges!
+description: >-
+  Cook community recipes, upload your dish photos, and unlock exclusive chef
+  badges!
+badge: /badges/cooksnap_badges.webp
 ---
 
 ### 📸🍳 Cooksnap Badges in Jorbites! 🍳📸
