@@ -5,7 +5,6 @@ permanent: true
 description: >-
   Cook community recipes, upload your dish photos, and unlock exclusive chef
   badges!
-badge: /badges/cooksnap_badges.webp
 ---
 
 ### 📸🍳 Cooksnap Badges in Jorbites! 🍳📸

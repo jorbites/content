@@ -5,7 +5,6 @@ permanent: true
 description: >-
   ¡Cocina recetas de la comunidad, sube fotos de tus platos y desbloquea
   insignias exclusivas de chef!
-badge: /badges/cooksnap_badges.webp
 ---
 
 ### 📸🍳 ¡Insignias Cooksnap en Jorbites! 🍳📸

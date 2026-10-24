@@ -5,7 +5,6 @@ permanent: true
 description: >-
   Cuina receptes de la comunitat, puja fotos dels teus plats i desbloqueja
   insígnies exclusives de xef!
-badge: /badges/cooksnap_badges.webp
 ---
 
 ### 📸🍳 Insígnies Cooksnap a Jorbites! 🍳📸
