@@ -1,5 +1,5 @@
 ---
-title: '🎃 Halloween Contest 🎃'
+title: "\U0001F383 Halloween Contest \U0001F383"
 date: 2026-10-31T00:00:00.000Z
 endDate: 2026-10-31T21:59:59.000Z
 image: /images/events/halloween_contest.webp
