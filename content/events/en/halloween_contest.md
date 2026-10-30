@@ -1,7 +1,7 @@
 ---
 title: "\U0001F383 Halloween Contest \U0001F383"
-date: 2026-10-31T00:00:00.000Z
-endDate: 2026-10-31T21:59:59.000Z
+date: 2026-10-30T00:00:00.000Z
+endDate: 2026-10-30T21:59:59.000Z
 image: /images/events/halloween_contest.webp
 badge: /badges/halloween_contest.webp
 description: 'A spooky, tasty contest to celebrate Halloween on Jorbites'
@@ -19,7 +19,7 @@ Mini snacks, themed mains, and desserts with personality—all are welcome.
 
 ## 📆 Date
 
-October 31
+October 30
 
 ## 🏆 Prize
 

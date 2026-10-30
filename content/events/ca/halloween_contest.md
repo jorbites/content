@@ -1,7 +1,7 @@
 ---
 title: "\U0001F383 Concurs de Halloween \U0001F383"
-date: 2026-10-31T00:00:00.000Z
-endDate: 2026-10-31T21:59:59.000Z
+date: 2026-10-30T00:00:00.000Z
+endDate: 2026-10-30T21:59:59.000Z
 image: /images/events/halloween_contest.webp
 badge: /badges/halloween_contest.webp
 description: Un concurs deliciós i terrorífic per celebrar Halloween a Jorbites
@@ -19,7 +19,7 @@ Aperitius mini, principals temàtics i postres amb personalitat—tot hi té cab
 
 ## 📆 Dates
 
-31 d'octubre
+30 d'octubre
 
 ## 🏆 Premi
 
