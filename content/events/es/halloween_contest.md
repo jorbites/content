@@ -1,7 +1,7 @@
 ---
-title: "\U0001F383 Concurso de Halloween \U0001F383"
-date: 2026-10-30T00:00:00.000Z
-endDate: 2026-10-30T21:59:59.000Z
+title: '🎃 Concurso de Halloween 🎃'
+date: 2027-10-31T00:00:00.000Z
+endDate: 2027-10-31T21:59:59.000Z
 image: /images/events/halloween_contest.webp
 badge: /badges/halloween_contest.webp
 description: Un concurso delicioso y terrorífico para celebrar Halloween en Jorbites
@@ -19,7 +19,7 @@ Snacks mini, principales temáticos y postres con personalidad—todo es bienven
 
 ## 📆 Fechas
 
-30 de octubre
+Domingo, 31 de octubre de 2027
 
 ## 🏆 Premio
 
@@ -38,9 +38,45 @@ Trae a la mesa tu creatividad más terrorífica. ¡Feliz susto y feliz cocina! �
 
 ---
 
+## 👻 Hall of Fame: Edición 2026 🏆
+
+¡La edición de 2026 nos dejó un derroche de creatividad escalofriante y sabores increíbles! Aquí tenéis la clasificación final y sus notas:
+
+### 🥇 Ganadora
+
+- **[Calabaza empanada](https://jorbites.com/recipes/6ae4f5a648ade43ea977f168)** por **Laura Sánchez** (⭐ 4,66)
+  Una espectacular empanada con pisto de calabaza, huevo duro, atún y aceitunas negras. ¡La campeona absoluta de Halloween 2026!
+
+### 🥈 Segundo Puesto
+
+- **[Brownie fantasmagòric 👻🎃🍫](https://jorbites.com/recipes/6ae4f369a22044514f98eabb)** por **María Poveda** (⭐ 4,54)
+  Una combinación irresistible marmoleada de chocolate denso y calabaza especiada con canela, nuez moscada y clavo.
+
+### 🥉 Tercer Puesto
+
+- **[Panellets de tardor](https://jorbites.com/recipes/6ae5145fe32261dfcdb115d0)** por **Amèlia Martorell** (⭐ 4,51)
+  Un homenaje a la tradición de la castanyada catalana con un delicioso giro otoñal.
+
+### 🍴 Recetas participantes
+
+- **[Truita fantasmagòrica👻](https://jorbites.com/recipes/6ae5039bd3e7869c68cca749)** por **carlessjd** (⭐ 4,26)
+  Una tortilla espeluznante digna de investigar en Cuarto Milenio.
+- **[Madalenes pumpkin](https://jorbites.com/recipes/6ae50784f4e9a0accc40d7d5)** por **Amèlia Martorell** (⭐ 4,21)
+  Ricas magdalenas de boniato y calabaza con un aroma otoñal encantador.
+- **[Cucarachas de chocolate](https://jorbites.com/recipes/6ae50382184f1743d0e04848)** por **jorbush** (⭐ 3,35)
+  Dátiles con chocolate que parecen auténticas y crujientes cucarachas.
+- **[Fantasmas de frankfurt](https://jorbites.com/recipes/6ae5037a184f1743d0e04847)** por **jorbush** (⭐ 3,15)
+  Divertidos y terroríficos fantasmitas de salchicha frankfurt y hojaldre dorado.
+- **[Fingers de Bruja Muerta](https://jorbites.com/recipes/6ae4bca9b2c4da476ce9fd02)** por **Jack** (⭐ 3,11)
+  Un snack crujiente, fácil y bien spookycito para asustar al paladar.
+- **[Dedos horripilantes](https://jorbites.com/recipes/6ae5036f38f3049fa959c2d8)** por **jorbush** (⭐ 2,60)
+  Salchichas frankfurt simulando dedos ensangrentados con uñas de cheddar y ketchup.
+
+---
+
 ## 👻 Hall of Fame: Edición 2025 🏆
 
-¡La edición del año pasado nos dejó el listón altísimo con platos espeluznantemente deliciosos y muchísima creatividad! Recordamos las creaciones que nos pusieron los pelos de punta:
+¡La primera edición nos dejó el listón altísimo con platos espeluznantemente deliciosos y muchísima creatividad! Recordamos las creaciones que nos pusieron los pelos de punta:
 
 ### 🥇 Ganadora
 

@@ -1,7 +1,7 @@
 ---
-title: "\U0001F383 Concurs de Halloween \U0001F383"
-date: 2026-10-30T00:00:00.000Z
-endDate: 2026-10-30T21:59:59.000Z
+title: '🎃 Concurs de Halloween 🎃'
+date: 2027-10-31T00:00:00.000Z
+endDate: 2027-10-31T21:59:59.000Z
 image: /images/events/halloween_contest.webp
 badge: /badges/halloween_contest.webp
 description: Un concurs deliciós i terrorífic per celebrar Halloween a Jorbites
@@ -19,7 +19,7 @@ Aperitius mini, principals temàtics i postres amb personalitat—tot hi té cab
 
 ## 📆 Dates
 
-30 d'octubre
+Diumenge, 31 d'octubre de 2027
 
 ## 🏆 Premi
 
@@ -38,9 +38,45 @@ Porta a taula la teva creativitat més terrorífica. Bona por i bona cuina! 👻
 
 ---
 
+## 👻 Hall of Fame: Edició 2026 🏆
+
+L'edició del 2026 ens va portar una explosió de creativitat terrorífica i receptes per llepar-se'n els dits! Aquí teniu la classificació i les notes:
+
+### 🥇 Guanyadora
+
+- **[Calabaza empanada](https://jorbites.com/recipes/6ae4f5a648ade43ea977f168)** per **Laura Sánchez** (⭐ 4,66)
+  Una espectacular empanada farcida de samfaina de carbassa, ou dur, tonyina i olives negres. La gran campiona de Halloween 2026!
+
+### 🥈 Segon Lloc
+
+- **[Brownie fantasmagòric 👻🎃🍫](https://jorbites.com/recipes/6ae4f369a22044514f98eabb)** per **María Poveda** (⭐ 4,54)
+  Un brownie marbrejat temptador que uneix una capa de xocolata densa i una altra de carbassa especiada amb canyella, nou moscada i clau d’olor.
+
+### 🥉 Tercer Lloc
+
+- **[Panellets de tardor](https://jorbites.com/recipes/6ae5145fe32261dfcdb115d0)** per **Amèlia Martorell** (⭐ 4,51)
+  La tradició de la castanyada catalana portada a taula amb una deliciosa barreja de tardor.
+
+### 🍴 Receptes participants
+
+- **[Truita fantasmagòrica👻](https://jorbites.com/recipes/6ae5039bd3e7869c68cca749)** per **carlessjd** (⭐ 4,26)
+  Una truita esgarrifosa i temptadora digna de sortir a Cuarto Milenio.
+- **[Madalenes pumpkin](https://jorbites.com/recipes/6ae50784f4e9a0accc40d7d5)** per **Amèlia Martorell** (⭐ 4,21)
+  Madalenes de moniato acarbassades, flonges i amb tota la dolçor de la temporada.
+- **[Cucarachas de chocolate](https://jorbites.com/recipes/6ae50382184f1743d0e04848)** per **jorbush** (⭐ 3,35)
+  Dàtils banyats en xocolata que semblen autèntiques i cruixents paneroles.
+- **[Fantasmas de frankfurt](https://jorbites.com/recipes/6ae5037a184f1743d0e04847)** per **jorbush** (⭐ 3,15)
+  Divertits i simpàtics fantasmetes de salsitxa frankfurt embolcallats en pasta de full daurada.
+- **[Fingers de Bruja Muerta](https://jorbites.com/recipes/6ae4bca9b2c4da476ce9fd02)** per **Jack** (⭐ 3,11)
+  Un snack cruixent, fàcil i ben spookycito per picar sense parar.
+- **[Dedos horripilantes](https://jorbites.com/recipes/6ae5036f38f3049fa959c2d8)** per **jorbush** (⭐ 2,60)
+  Salsitxes frankfurt simulant dits ensangonats amb ungles de cheddar i quètxup.
+
+---
+
 ## 👻 Hall of Fame: Edició 2025 🏆
 
-L'edició de l'any passat ens va deixar el llistó ben alt amb propostes esgarrifosament delicioses i una creativitat desbordant! Recordem les creacions que van triomfar als fogons:
+L'edició del 2025 ens va deixar el llistó ben alt amb propostes esgarrifosament delicioses i una creativitat desbordant! Recordem les creacions que van triomfar als fogons:
 
 ### 🥇 Guanyadora
 

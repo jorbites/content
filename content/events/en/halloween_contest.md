@@ -1,7 +1,7 @@
 ---
-title: "\U0001F383 Halloween Contest \U0001F383"
-date: 2026-10-30T00:00:00.000Z
-endDate: 2026-10-30T21:59:59.000Z
+title: '🎃 Halloween Contest 🎃'
+date: 2027-10-31T00:00:00.000Z
+endDate: 2027-10-31T21:59:59.000Z
 image: /images/events/halloween_contest.webp
 badge: /badges/halloween_contest.webp
 description: 'A spooky, tasty contest to celebrate Halloween on Jorbites'
@@ -19,7 +19,7 @@ Mini snacks, themed mains, and desserts with personality—all are welcome.
 
 ## 📆 Date
 
-October 30
+Sunday, October 31, 2027
 
 ## 🏆 Prize
 
@@ -35,6 +35,42 @@ October 30
 - 🎭 Bonus? Yes: Costumes can add +1 to +2 points depending on effort
 
 Bring your scariest creativity to the table. Happy haunting and happy cooking! 👻🕸️
+
+---
+
+## 👻 Hall of Fame: 2026 Edition 🏆
+
+The 2026 edition brought frightening flavor and thrilling culinary imagination to the table! Here are the recipes and their final ratings:
+
+### 🥇 Winner
+
+- **[Calabaza empanada](https://jorbites.com/recipes/6ae4f5a648ade43ea977f168)** by **Laura Sánchez** (⭐ 4.66)
+  A magnificent homemade empanada loaded with sweet pumpkin pisto, tuna, hard-boiled egg, and black olives. The undisputed 2026 Halloween champion!
+
+### 🥈 Runner-up
+
+- **[Brownie fantasmagòric 👻🎃🍫](https://jorbites.com/recipes/6ae4f369a22044514f98eabb)** by **María Poveda** (⭐ 4.54)
+  An irresistible marbled brownie combining rich, fudgy chocolate with spiced pumpkin batter (cinnamon, nutmeg, and cloves).
+
+### 🥉 Third Place
+
+- **[Panellets de tardor](https://jorbites.com/recipes/6ae5145fe32261dfcdb115d0)** by **Amèlia Martorell** (⭐ 4.51)
+  Honoring the Catalan Castanyada tradition with an inventive, delicious autumn blend.
+
+### 🍴 Participating Recipes
+
+- **[Truita fantasmagòrica👻](https://jorbites.com/recipes/6ae5039bd3e7869c68cca749)** by **carlessjd** (⭐ 4.26)
+  A spooky tortilla so eerily good it could easily star on mystery TV!
+- **[Madalenes pumpkin](https://jorbites.com/recipes/6ae50784f4e9a0accc40d7d5)** by **Amèlia Martorell** (⭐ 4.21)
+  Scrumptious sweet potato and pumpkin muffins baked with cozy fall sweetness.
+- **[Cucarachas de chocolate](https://jorbites.com/recipes/6ae50382184f1743d0e04848)** by **jorbush** (⭐ 3.35)
+  Chocolate-dipped dates ingeniously crafted to look like spooky, crunchy roaches.
+- **[Fantasmas de frankfurt](https://jorbites.com/recipes/6ae5037a184f1743d0e04847)** by **jorbush** (⭐ 3.15)
+  Cute, bite-sized frankfurt mummies wrapped in crispy golden puff pastry.
+- **[Fingers de Bruja Muerta](https://jorbites.com/recipes/6ae4bca9b2c4da476ce9fd02)** by **Jack** (⭐ 3.11)
+  A dead-simple, crispy, and spookily fun witch-finger appetizer.
+- **[Dedos horripilantes](https://jorbites.com/recipes/6ae5036f38f3049fa959c2d8)** by **jorbush** (⭐ 2.60)
+  Chilling bloody frankfurt fingers complete with cheddar nails and a splash of ketchup gore.
 
 ---
 
