@@ -1,17 +1,17 @@
 ---
-title: "\U0001F983 Thanksgiving Feast \U0001F967"
-date: 2025-11-25T00:00:00.000Z
-endDate: 2025-11-30T21:59:59.000Z
+title: "🦃 Thanksgiving 🦃"
+date: 2026-11-23T00:00:00.000Z
+endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
 description: Join us for a Thanksgiving celebration of gratitude and delicious food!
 badge: /badges/thanksgiving_feast.webp
 ---
 
-# 🦃 Thanksgiving Feast 🥧
+# 🦃 Thanksgiving 🦃
 
 Join us for a celebration of gratitude and delicious food on Jorbites!
 
-From November 25-30, share your favorite Thanksgiving recipes. Whether you're roasting a turkey, baking a classic pumpkin pie, or preparing your favorite side dishes, this is your chance to share the warmth and flavors of the holiday.
+From November 23 to 29, share your favorite Thanksgiving recipes. Whether you're roasting a turkey, baking a classic pumpkin pie, or preparing comforting side dishes, this is your chance to share the warmth and flavors of the holiday.
 
 ### 🏆 Earn your exclusive badge!
 

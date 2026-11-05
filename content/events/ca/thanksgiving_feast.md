@@ -1,7 +1,7 @@
 ---
-title: "\U0001F983 Festí d'Acció de Gràcies \U0001F967"
-date: 2025-11-25T00:00:00.000Z
-endDate: 2025-11-30T21:59:59.000Z
+title: "🦃 Acció de Gràcies 🦃"
+date: 2026-11-23T00:00:00.000Z
+endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
 description: >-
   Uneix-te a nosaltres per a una celebració d'Acció de Gràcies plena de gratitud
@@ -9,11 +9,11 @@ description: >-
 badge: /badges/thanksgiving_feast.webp
 ---
 
-# 🦃 Festí d'Acció de Gràcies 🥧
+# 🦃 Acció de Gràcies 🦃
 
 Uneix-te a nosaltres per a una celebració de gratitud i menjar deliciós a Jorbites!
 
-Del 25 al 30 de novembre, comparteix les teves receptes preferides d'Acció de Gràcies. Ja sigui que estiguis rostint un gall dindi, fornejant un clàssic pastís de carbassa o preparant els teus acompanyaments preferits, aquesta és la teva oportunitat de compartir la calidesa i els sabors de la festivitat.
+Del 23 al 29 de novembre, comparteix les teves receptes preferides d'Acció de Gràcies. Ja sigui que estiguis rostint un gall dindi, fornejant un clàssic pastís de carbassa o preparant els teus acompanyaments preferits, aquesta és la teva oportunitat de compartir la calidesa i els sabors de la festivitat.
 
 ### 🏆 Guanya la teva insígnia exclusiva!
 
