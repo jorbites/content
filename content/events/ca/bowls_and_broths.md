@@ -2,6 +2,7 @@
 title: "🥣 Bowls i Caldos 🥗"
 date: 2027-01-08T00:00:00.000Z
 endDate: 2027-01-22T23:59:59.000Z
+image: /images/events/bowls_and_broths.webp
 description: 'Bowls nutritius i caldos reconfortants per reiniciar l''any al gener!'
 ---
 
