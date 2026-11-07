@@ -2,6 +2,7 @@
 title: "🌰 Castañada 🌰"
 date: 2026-11-10T00:00:00.000Z
 endDate: 2026-11-22T23:59:59.000Z
+image: /images/events/castanyada.webp
 description: '¡Celebra el otoño con castañas asadas, boniatos y delicias tradicionales!'
 ---
 
