@@ -1,9 +1,12 @@
 ---
-title: "🌰 Castanyada 🌰"
+title: "\U0001F330 Castanyada \U0001F330"
 date: 2026-11-10T00:00:00.000Z
 endDate: 2026-11-22T23:59:59.000Z
 image: /images/events/castanyada.webp
-description: 'Celebrate autumn with roasted chestnuts, sweet potatoes, and traditional fall treats!'
+description: >-
+  Celebrate autumn with roasted chestnuts, sweet potatoes, and traditional fall
+  treats!
+badge: /badges/castanyada.webp
 ---
 
 # 🌰 Castanyada 🌰
