@@ -1,9 +1,10 @@
 ---
-title: "🍪 Christmas Sweets 🍪"
+title: "\U0001F36A Christmas Sweets \U0001F36A"
 date: 2026-12-01T00:00:00.000Z
 endDate: 2026-12-18T23:59:59.000Z
 image: /images/events/christmas_sweets.webp
 description: 'Bake and share holiday cookies, turrones, gingerbread, and festive sweets!'
+badge: /badges/christmas_sweets.webp
 ---
 
 # 🍪 Christmas Sweets 🍪

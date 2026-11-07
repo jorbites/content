@@ -1,9 +1,10 @@
 ---
-title: "🍪 Dulces Navideños 🍪"
+title: "\U0001F36A Dulces Navideños \U0001F36A"
 date: 2026-12-01T00:00:00.000Z
 endDate: 2026-12-18T23:59:59.000Z
 image: /images/events/christmas_sweets.webp
 description: '¡Hornea y comparte galletas navideñas, turrones, polvorones y dulces festivos!'
+badge: /badges/christmas_sweets.webp
 ---
 
 # 🍪 Dulces Navideños 🍪
