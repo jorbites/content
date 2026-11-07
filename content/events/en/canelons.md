@@ -1,9 +1,12 @@
 ---
-title: "🥘 Canelons 🥘"
+title: "\U0001F958 Canelons \U0001F958"
 date: 2026-12-25T00:00:00.000Z
 endDate: 2026-12-30T23:59:59.000Z
 image: /images/events/canelons.webp
-description: 'Celebrate the festive tradition of roast-stuffed cannelloni baked in velvety béchamel!'
+description: >-
+  Celebrate the festive tradition of roast-stuffed cannelloni baked in velvety
+  béchamel!
+badge: /badges/canelons.webp
 ---
 
 # 🥘 Canelons 🥘
