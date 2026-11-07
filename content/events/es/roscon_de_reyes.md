@@ -2,6 +2,7 @@
 title: "👑 Roscón de Reyes 👑"
 date: 2027-01-01T00:00:00.000Z
 endDate: 2027-01-07T23:59:59.000Z
+image: /images/events/roscon_de_reyes.webp
 description: '¡Hornea tu roscón o tortell casero para recibir a los Reyes Magos!'
 ---
 
