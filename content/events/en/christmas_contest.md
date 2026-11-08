@@ -1,5 +1,5 @@
 ---
-title: '🎄 Christmas Contest 🎄'
+title: "\U0001F384 Christmas Contest \U0001F384"
 date: 2026-12-20T00:00:00.000Z
 endDate: 2026-12-29T23:59:59.000Z
 image: /images/events/christmas_contest.webp
