@@ -1,9 +1,9 @@
 ---
 title: "\U0001F954 Dia de la Croqueta \U0001F954"
-date: 2026-01-15T00:00:00.000Z
-endDate: 2026-01-18T21:59:59.000Z
+date: 2027-01-16T00:00:00.000Z
+endDate: 2027-01-16T23:59:59.000Z
 image: /images/events/dia_de_la_croqueta.webp
-description: Esdeveniment del Dia de la Croqueta
+description: Celebra el Dia Internacional de la Croqueta a Jorbites!
 badge: /badges/dia_de_la_croqueta.webp
 ---
 
@@ -11,29 +11,27 @@ badge: /badges/dia_de_la_croqueta.webp
 
 Uneix-te a nosaltres per celebrar el Dia Internacional de la Croqueta a Jorbites!
 
-**El 15 de gener** és el Dia Internacional de la Croqueta, honrant un dels plats més estimats i reconfortants de la gastronomia espanyola. Les croquetes són cruixents per fora, cremoses per dins i absolutament irresistibles!
+El **16 de gener** és el Dia Internacional de la Croqueta, retent homenatge a un dels menjars més estimats i reconfortants de la nostra cuina. Les croquetes són cruixents per fora, cremoses per dins i absolutament irresistibles!
 
 ### 🏆 Guanya la teva insígnia exclusiva!
 
-Tots els Jorbiters que publiquin una recepta amb croquetes com a plat principal **entre el 15 i el 18 de gener** seran recompensats amb la insígnia exclusiva del Dia de la Croqueta.
-
-Et donem temps extra per perfeccionar la teva recepta i compartir les teves creacions croqueteres amb la comunitat!
+Tots els Jorbiters que publiquin una recepta de croquetes el **16 de gener** seran recompensats amb la insígnia exclusiva del Dia de la Croqueta.
 
 ### 🥔 Idees per inspirar-te:
 
-- **Croquetes clàssiques de pernil**: El favorit tradicional que mai falla
-- **Croquetes cremoses de bolets**: Sabors terrosos a cada mos
-- **Croquetes de marisc**: Delícies de bacallà, gambes o marisc variat
-- **Croquetes de formatge**: Perfecció fosa i deliciosa
-- **Croquetes veganes innovadores**: Espinacs, carbassa o moniato
-- **Croquetes fusió**: Barreja cultures i crea combinacions úniques
+- **Croquetes clàssiques de pernil**: El clàssic que mai falla a cap taula
+- **Croquetes cremoses de bolets**: El sabor profund dels ceps a cada mossec
+- **Croquetes de marisc**: Delícies de bacallà dessalat, gambes o marisc
+- **Croquetes de formatge**: Textura fosa i potent amb formatges de pastor
+- **Croquetes veganes innovadores**: D'espinacs amb pinyons, carbassa o moniato
+- **Croquetes fusió**: Combina sabors del món per sorprendre a tothom
 
 ### 💛 Per què celebrem les croquetes?
 
 Les croquetes són més que una tapa; són una tradició culinària que:
 - Uneix les famílies a la cuina
-- Transforma sobres en creacions delicioses
+- Transforma sobres en autèntiques delícies
 - Ofereix infinites possibilitats de sabor
 - Representa el menjar reconfortant en la seva màxima expressió
 
-Celebra amb nosaltres i comparteix les teves obres mestres croqueteres! 🥔✨
+Celebra amb nosaltres i comparteix les teves creacions croqueteres! 🥔✨

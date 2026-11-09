@@ -1,9 +1,9 @@
 ---
 title: "\U0001F954 Día de la Croqueta \U0001F954"
-date: 2026-01-15T00:00:00.000Z
-endDate: 2026-01-18T21:59:59.000Z
+date: 2027-01-16T00:00:00.000Z
+endDate: 2027-01-16T23:59:59.000Z
 image: /images/events/dia_de_la_croqueta.webp
-description: Evento del Día de la Croqueta
+description: ¡Celebra el Día Internacional de la Croqueta en Jorbites!
 badge: /badges/dia_de_la_croqueta.webp
 ---
 
@@ -11,22 +11,20 @@ badge: /badges/dia_de_la_croqueta.webp
 
 ¡Únete a nosotros para celebrar el Día Internacional de la Croqueta en Jorbites!
 
-**El 15 de enero** es el Día Internacional de la Croqueta, honrando uno de los platos más queridos y reconfortantes de la gastronomía española. ¡Las croquetas son crujientes por fuera, cremosas por dentro y absolutamente irresistibles!
+El **16 de enero** es el Día Internacional de la Croqueta, honrando uno de los bocados más queridos y reconfortantes de nuestra gastronomía. ¡Las croquetas son crujientes por fuera, cremosas por dentro y absolutamente irresistibles!
 
 ### 🏆 ¡Gana tu insignia exclusiva!
 
-Todos los Jorbiters que publiquen una receta con croquetas como plato principal **entre el 15 y el 18 de enero** serán recompensados con la insignia exclusiva del Día de la Croqueta.
-
-¡Te damos tiempo extra para perfeccionar tu receta y compartir tus creaciones croqueteras con la comunidad!
+Todos los Jorbiters que publiquen una receta de croquetas el **16 de enero** recibirán la insignia exclusiva del Día de la Croqueta.
 
 ### 🥔 Ideas para inspirarte:
 
 - **Croquetas clásicas de jamón**: El favorito tradicional que nunca falla
-- **Croquetas cremosas de setas**: Sabores terrosos en cada bocado
+- **Croquetas cremosas de setas**: Sabores terrosos de boletus en cada bocado
 - **Croquetas de marisco**: Delicias de bacalao, gambas o marisco variado
-- **Croquetas de queso**: Perfección fundente y deliciosa
-- **Croquetas veganas innovadoras**: Espinacas, calabaza o boniato
-- **Croquetas fusión**: Mezcla culturas y crea combinaciones únicas
+- **Croquetas de queso**: Perfección fundente con Cabrales, Idiazábal o Manchego
+- **Croquetas veganas innovadoras**: Espinacas, calabaza o boniato asado
+- **Croquetas fusión**: Mezcla culturas y crea combinaciones irresistibles
 
 ### 💛 ¿Por qué celebramos las croquetas?
 
