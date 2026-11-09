@@ -1,7 +1,7 @@
 ---
-title: "\U0001F983 Festín de Acción de Gracias \U0001F967"
-date: 2025-11-25T00:00:00.000Z
-endDate: 2025-11-30T21:59:59.000Z
+title: "\U0001F983 Acción de Gracias \U0001F983"
+date: 2026-11-23T00:00:00.000Z
+endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
 description: >-
   ¡Únete a nosotros para una celebración de Acción de Gracias llena de gratitud
@@ -9,11 +9,11 @@ description: >-
 badge: /badges/thanksgiving_feast.webp
 ---
 
-# 🦃 Festín de Acción de Gracias 🥧
+# 🦃 Acción de Gracias 🦃
 
 ¡Únete a nosotros para una celebración de gratitud y comida deliciosa en Jorbites!
 
-Del 25 al 30 de noviembre, comparte tus recetas favoritas de Acción de Gracias. Ya sea que estés asando un pavo, horneando un clásico pastel de calabaza o preparando tus guarniciones favoritas, esta es tu oportunidad de compartir la calidez y los sabores de la festividad.
+Del 23 al 29 de noviembre, comparte tus recetas favoritas de Acción de Gracias. Ya sea que estés asando un pavo, horneando un clásico pastel de calabaza o preparando tus guarniciones favoritas, esta es tu oportunidad de compartir la calidez y los sabores de la festividad.
 
 ### 🏆 ¡Gana tu insignia exclusiva!
 
