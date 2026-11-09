@@ -1,9 +1,10 @@
 ---
-title: "🥣 Bowls i Caldos 🥗"
+title: "\U0001F963 Bowls i Caldos \U0001F957"
 date: 2027-01-08T00:00:00.000Z
 endDate: 2027-01-22T23:59:59.000Z
 image: /images/events/bowls_and_broths.webp
-description: 'Bowls nutritius i caldos reconfortants per reiniciar l''any al gener!'
+description: Bowls nutritius i caldos reconfortants per reiniciar l'any al gener!
+badge: /badges/bowls_and_broths.webp
 ---
 
 # 🥣 Bowls i Caldos 🥗
