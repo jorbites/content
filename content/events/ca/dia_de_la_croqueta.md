@@ -1,9 +1,9 @@
 ---
-title: "🥔 Dia de la Croqueta 🥔"
+title: "\U0001F954 Dia de la Croqueta \U0001F954"
 date: 2027-01-16T00:00:00.000Z
 endDate: 2027-01-16T23:59:59.000Z
 image: /images/events/dia_de_la_croqueta.webp
-description: 'Celebra el Dia Internacional de la Croqueta a Jorbites!'
+description: Celebra el Dia Internacional de la Croqueta a Jorbites!
 badge: /badges/dia_de_la_croqueta.webp
 ---
 
