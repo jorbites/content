@@ -1,9 +1,10 @@
 ---
-title: "👑 King's Cake 👑"
+title: "\U0001F451 King's Cake \U0001F451"
 date: 2027-01-01T00:00:00.000Z
 endDate: 2027-01-07T23:59:59.000Z
 image: /images/events/tortell.webp
-description: 'Bake your homemade Roscón or Tortell to welcome the Three Kings!'
+description: Bake your homemade Roscón or Tortell to welcome the Three Kings!
+badge: /badges/tortell.webp
 ---
 
 # 👑 King's Cake 👑

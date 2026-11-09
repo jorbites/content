@@ -1,9 +1,10 @@
 ---
-title: "👑 Roscón de Reyes 👑"
+title: "\U0001F451 Roscón de Reyes \U0001F451"
 date: 2027-01-01T00:00:00.000Z
 endDate: 2027-01-07T23:59:59.000Z
 image: /images/events/tortell.webp
-description: '¡Hornea tu roscón o tortell casero para recibir a los Reyes Magos!'
+description: ¡Hornea tu roscón o tortell casero para recibir a los Reyes Magos!
+badge: /badges/tortell.webp
 ---
 
 # 👑 Roscón de Reyes 👑

@@ -1,9 +1,10 @@
 ---
-title: "👑 Tortell de Reis 👑"
+title: "\U0001F451 Tortell de Reis \U0001F451"
 date: 2027-01-01T00:00:00.000Z
 endDate: 2027-01-07T23:59:59.000Z
 image: /images/events/tortell.webp
-description: 'Enforna el teu tortell o roscó casolà per donar la benvinguda als Reis Mags!'
+description: Enforna el teu tortell o roscó casolà per donar la benvinguda als Reis Mags!
+badge: /badges/tortell.webp
 ---
 
 # 👑 Tortell de Reis 👑
