@@ -1,5 +1,5 @@
 ---
-title: "🦃 Acción de Gracias 🦃"
+title: "\U0001F983 Acción de Gracias \U0001F983"
 date: 2026-11-23T00:00:00.000Z
 endDate: 2026-11-29T23:59:59.000Z
 image: /images/events/thanksgiving_feast.webp
