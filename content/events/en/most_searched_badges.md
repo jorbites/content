@@ -1,10 +1,11 @@
 ---
 title: Most Searched Badges
-image: /images/events/most_searched/most_searched_badges.webp
+image: /images/events/most_searched_badges.webp
 permanent: true
 description: >-
-    Cook recipes that capture the community's curiosity and unlock exclusive
-    Most Searched badges!
+  Cook recipes that capture the community's curiosity and unlock exclusive Most
+  Searched badges!
+badge: /badges/most_searched_badges.webp
 ---
 
 ### 🔍🌟 Most Searched Badges in Jorbites! 🌟🔍

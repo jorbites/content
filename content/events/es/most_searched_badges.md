@@ -1,10 +1,11 @@
 ---
 title: Insignias de Más Buscadas
-image: /images/events/most_searched/most_searched_badges.webp
+image: /images/events/most_searched_badges.webp
 permanent: true
 description: >-
-    ¡Prepara recetas que despierten la curiosidad de la comunidad y desbloquea
-    insignias exclusivas de Más Buscadas!
+  ¡Prepara recetas que despierten la curiosidad de la comunidad y desbloquea
+  insignias exclusivas de Más Buscadas!
+badge: /badges/most_searched_badges.webp
 ---
 
 ### 🔍🌟 ¡Insignias de Más Buscadas en Jorbites! 🌟🔍

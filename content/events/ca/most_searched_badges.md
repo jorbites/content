@@ -1,10 +1,11 @@
 ---
 title: Insígnies de Més Cercades
-image: /images/events/most_searched/most_searched_badges.webp
+image: /images/events/most_searched_badges.webp
 permanent: true
 description: >-
-    Prepara receptes que despertin la curiositat de la comunitat i desbloqueja
-    insígnies exclusives de Més Cercades!
+  Prepara receptes que despertin la curiositat de la comunitat i desbloqueja
+  insígnies exclusives de Més Cercades!
+badge: /badges/most_searched_badges.webp
 ---
 
 ### 🔍🌟 Insígnies de Més Cercades a Jorbites! 🌟🔍
