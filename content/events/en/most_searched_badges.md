@@ -5,7 +5,6 @@ permanent: true
 description: >-
   Cook recipes that capture the community's curiosity and unlock exclusive Most
   Searched badges!
-badge: /badges/most_searched_badges.webp
 ---
 
 ### 🔍🌟 Most Searched Badges in Jorbites! 🌟🔍
