@@ -5,7 +5,6 @@ permanent: true
 description: >-
   ¡Prepara recetas que despierten la curiosidad de la comunidad y desbloquea
   insignias exclusivas de Más Buscadas!
-badge: /badges/most_searched_badges.webp
 ---
 
 ### 🔍🌟 ¡Insignias de Más Buscadas en Jorbites! 🌟🔍
