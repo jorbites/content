@@ -1,9 +1,12 @@
 ---
-title: "🇲🇦 Sabors del Marroc 🍲"
+title: "\U0001F1F2\U0001F1E6 Sabors del Marroc \U0001F372"
 date: 2026-11-17T00:00:00.000Z
 endDate: 2026-12-07T23:59:59.000Z
 image: /images/events/moroccan_recipes.webp
-description: 'Descobreix les aromes especiades, els tajins tradicionals i la cuina del Marroc a Jorbites!'
+description: >-
+  Descobreix les aromes especiades, els tajins tradicionals i la cuina del
+  Marroc a Jorbites!
+badge: /badges/moroccan_recipes.webp
 ---
 
 # 🇲🇦 Sabors del Marroc 🍲

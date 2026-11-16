@@ -1,9 +1,12 @@
 ---
-title: "🇲🇦 Moroccan Flavors 🍲"
+title: "\U0001F1F2\U0001F1E6 Moroccan Flavors \U0001F372"
 date: 2026-11-17T00:00:00.000Z
 endDate: 2026-12-07T23:59:59.000Z
 image: /images/events/moroccan_recipes.webp
-description: 'Discover the rich aromas, spices, and iconic tagines of Moroccan cuisine on Jorbites!'
+description: >-
+  Discover the rich aromas, spices, and iconic tagines of Moroccan cuisine on
+  Jorbites!
+badge: /badges/moroccan_recipes.webp
 ---
 
 # 🇲🇦 Moroccan Flavors 🍲
