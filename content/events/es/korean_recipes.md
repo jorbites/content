@@ -1,9 +1,12 @@
 ---
-title: "🇰🇷 Sabores de Corea 🥢"
+title: "\U0001F1F0\U0001F1F7 Sabores de Corea \U0001F962"
 date: 2026-12-08T00:00:00.000Z
 endDate: 2026-12-28T23:59:59.000Z
 image: /images/events/korean_recipes.webp
-description: '¡Sumérgete en la cocina coreana con sabrosos bibimbaps, guisos humeantes y kimchi en Jorbites!'
+description: >-
+  ¡Sumérgete en la cocina coreana con sabrosos bibimbaps, guisos humeantes y
+  kimchi en Jorbites!
+badge: /badges/korean_recipes.webp
 ---
 
 # 🇰🇷 Sabores de Corea 🥢

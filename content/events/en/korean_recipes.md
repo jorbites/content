@@ -1,9 +1,12 @@
 ---
-title: "🇰🇷 Korean Flavors 🥢"
+title: "\U0001F1F0\U0001F1F7 Korean Flavors \U0001F962"
 date: 2026-12-08T00:00:00.000Z
 endDate: 2026-12-28T23:59:59.000Z
 image: /images/events/korean_recipes.webp
-description: 'Dive into the world of K-Food with vibrant bibimbap, hearty stews, and kimchi on Jorbites!'
+description: >-
+  Dive into the world of K-Food with vibrant bibimbap, hearty stews, and kimchi
+  on Jorbites!
+badge: /badges/korean_recipes.webp
 ---
 
 # 🇰🇷 Korean Flavors 🥢
