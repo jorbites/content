@@ -5,7 +5,6 @@ permanent: true
 description: >-
   Prepara receptes que despertin la curiositat de la comunitat i desbloqueja
   insígnies exclusives de Més Cercades!
-badge: /badges/most_searched_badges.webp
 ---
 
 ### 🔍🌟 Insígnies de Més Cercades a Jorbites! 🌟🔍
