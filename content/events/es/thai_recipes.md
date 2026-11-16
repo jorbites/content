@@ -1,9 +1,12 @@
 ---
-title: "🇹🇭 Sabores de Tailandia 🍜"
+title: "\U0001F1F9\U0001F1ED Sabores de Tailandia \U0001F35C"
 date: 2026-12-29T00:00:00.000Z
 endDate: 2027-01-18T23:59:59.000Z
 image: /images/events/thai_recipes.webp
-description: '¡Disfruta del equilibrio perfecto entre dulce, ácido, salado y picante de la cocina tailandesa en Jorbites!'
+description: >-
+  ¡Disfruta del equilibrio perfecto entre dulce, ácido, salado y picante de la
+  cocina tailandesa en Jorbites!
+badge: /badges/thai_recipes.webp
 ---
 
 # 🇹🇭 Sabores de Tailandia 🍜

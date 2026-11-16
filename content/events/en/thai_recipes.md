@@ -1,9 +1,12 @@
 ---
-title: "🇹🇭 Thai Flavors 🍜"
+title: "\U0001F1F9\U0001F1ED Thai Flavors \U0001F35C"
 date: 2026-12-29T00:00:00.000Z
 endDate: 2027-01-18T23:59:59.000Z
 image: /images/events/thai_recipes.webp
-description: 'Savor the harmonious blend of sweet, sour, spicy, and salty in authentic Thai cooking on Jorbites!'
+description: >-
+  Savor the harmonious blend of sweet, sour, spicy, and salty in authentic Thai
+  cooking on Jorbites!
+badge: /badges/thai_recipes.webp
 ---
 
 # 🇹🇭 Thai Flavors 🍜
