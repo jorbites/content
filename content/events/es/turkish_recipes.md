@@ -1,9 +1,12 @@
 ---
-title: "🇹🇷 Sabores de Turquía 🫓"
+title: "\U0001F1F9\U0001F1F7 Sabores de Turquía \U0001FAD3"
 date: 2027-02-09T00:00:00.000Z
 endDate: 2027-03-01T23:59:59.000Z
 image: /images/events/turkish_recipes.webp
-description: '¡Disfruta de crujientes pides, reconfortantes sopas de lentejas y ricos mezes de Turquía en Jorbites!'
+description: >-
+  ¡Disfruta de crujientes pides, reconfortantes sopas de lentejas y ricos mezes
+  de Turquía en Jorbites!
+badge: /badges/turkish_recipes.webp
 ---
 
 # 🇹🇷 Sabores de Turquía 🫓

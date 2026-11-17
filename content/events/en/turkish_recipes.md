@@ -1,9 +1,12 @@
 ---
-title: "🇹🇷 Turkish Flavors 🫓"
+title: "\U0001F1F9\U0001F1F7 Turkish Flavors \U0001FAD3"
 date: 2027-02-09T00:00:00.000Z
 endDate: 2027-03-01T23:59:59.000Z
 image: /images/events/turkish_recipes.webp
-description: 'Savor aromatic pide flatbreads, comforting lentil soups, and rich mezes from Turkey on Jorbites!'
+description: >-
+  Savor aromatic pide flatbreads, comforting lentil soups, and rich mezes from
+  Turkey on Jorbites!
+badge: /badges/turkish_recipes.webp
 ---
 
 # 🇹🇷 Turkish Flavors 🫓

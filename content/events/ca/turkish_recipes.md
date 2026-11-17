@@ -1,9 +1,12 @@
 ---
-title: "🇹🇷 Sabors de Turquia 🫓"
+title: "\U0001F1F9\U0001F1F7 Sabors de Turquia \U0001FAD3"
 date: 2027-02-09T00:00:00.000Z
 endDate: 2027-03-01T23:59:59.000Z
 image: /images/events/turkish_recipes.webp
-description: 'Assaboreix les coques pide cruixents, les sopes de llenties i els rics mezes de Turquia a Jorbites!'
+description: >-
+  Assaboreix les coques pide cruixents, les sopes de llenties i els rics mezes
+  de Turquia a Jorbites!
+badge: /badges/turkish_recipes.webp
 ---
 
 # 🇹🇷 Sabors de Turquia 🫓
