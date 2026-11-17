@@ -1,9 +1,12 @@
 ---
-title: "🇻🇳 Vietnamese Flavors 🍜"
+title: "\U0001F1FB\U0001F1F3 Vietnamese Flavors \U0001F35C"
 date: 2027-01-19T00:00:00.000Z
 endDate: 2027-02-08T23:59:59.000Z
 image: /images/events/vietnamese_recipes.webp
-description: 'Experience steaming pho bowls, crispy banh mi, and fresh herbs from Vietnam on Jorbites!'
+description: >-
+  Experience steaming pho bowls, crispy banh mi, and fresh herbs from Vietnam on
+  Jorbites!
+badge: /badges/vietnamese_recipes.webp
 ---
 
 # 🇻🇳 Vietnamese Flavors 🍜

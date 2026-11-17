@@ -1,9 +1,12 @@
 ---
-title: "🇻🇳 Sabors del Vietnam 🍜"
+title: "\U0001F1FB\U0001F1F3 Sabors del Vietnam \U0001F35C"
 date: 2027-01-19T00:00:00.000Z
 endDate: 2027-02-08T23:59:59.000Z
 image: /images/events/vietnamese_recipes.webp
-description: 'Gaudeix de sopes fumades de pho, cruixents banh mi i herbes fresques del Vietnam a Jorbites!'
+description: >-
+  Gaudeix de sopes fumades de pho, cruixents banh mi i herbes fresques del
+  Vietnam a Jorbites!
+badge: /badges/vietnamese_recipes.webp
 ---
 
 # 🇻🇳 Sabors del Vietnam 🍜
