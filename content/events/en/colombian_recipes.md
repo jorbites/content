@@ -1,9 +1,12 @@
 ---
-title: "🇨🇴 Colombian Flavors 🫓"
+title: "\U0001F1E8\U0001F1F4 Colombian Flavors \U0001FAD3"
 date: 2027-03-02T00:00:00.000Z
 endDate: 2027-03-22T23:59:59.000Z
 image: /images/events/colombian_recipes.webp
-description: 'Enjoy rich ajiaco soups, golden arepas, and hearty comfort food from Colombia on Jorbites!'
+description: >-
+  Enjoy rich ajiaco soups, golden arepas, and hearty comfort food from Colombia
+  on Jorbites!
+badge: /badges/colombian_recipes.webp
 ---
 
 # 🇨🇴 Colombian Flavors 🫓

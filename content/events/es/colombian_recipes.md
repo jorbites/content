@@ -1,9 +1,12 @@
 ---
-title: "🇨🇴 Sabores de Colombia 🫓"
+title: "\U0001F1E8\U0001F1F4 Sabores de Colombia \U0001FAD3"
 date: 2027-03-02T00:00:00.000Z
 endDate: 2027-03-22T23:59:59.000Z
 image: /images/events/colombian_recipes.webp
-description: '¡Disfruta del ajiaco reconfortante, arepas doradas y rica cocina casera de Colombia en Jorbites!'
+description: >-
+  ¡Disfruta del ajiaco reconfortante, arepas doradas y rica cocina casera de
+  Colombia en Jorbites!
+badge: /badges/colombian_recipes.webp
 ---
 
 # 🇨🇴 Sabores de Colombia 🫓

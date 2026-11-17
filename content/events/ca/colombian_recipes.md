@@ -1,9 +1,12 @@
 ---
-title: "🇨🇴 Sabors de Colòmbia 🫓"
+title: "\U0001F1E8\U0001F1F4 Sabors de Colòmbia \U0001FAD3"
 date: 2027-03-02T00:00:00.000Z
 endDate: 2027-03-22T23:59:59.000Z
 image: /images/events/colombian_recipes.webp
-description: 'Gaudeix de l''ajiaco reconfortant, arepas daurades i la rica cuina casolana de Colòmbia a Jorbites!'
+description: >-
+  Gaudeix de l'ajiaco reconfortant, arepas daurades i la rica cuina casolana de
+  Colòmbia a Jorbites!
+badge: /badges/colombian_recipes.webp
 ---
 
 # 🇨🇴 Sabors de Colòmbia 🫓
