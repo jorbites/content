@@ -1,15 +1,14 @@
 ---
 title: "\U0001F91D Pass the Bite \U0001F91D"
-date: 2026-07-02T00:00:00.000Z
-endDate: 2026-07-31T21:59:59.000Z
 image: /images/events/pass_the_bite.webp
-description: A month to connect with your people and share recipes.
+permanent: true
+description: A permanent event to connect with your people and share recipes.
 badge: /badges/pass_the_bite.webp
 ---
 
 # 🤝 Pass the Bite 🤝
 
-Help us grow the Jorbites community! This July, we're launching "Pass the Bite" - an exciting event where you can win amazing rewards by inviting new people to join our platform.
+Help us grow the Jorbites community! "Pass the Bite" is a permanent event where you can win amazing rewards by inviting new people to join our platform.
 
 ### 🏆 How to participate and win!
 
@@ -39,6 +38,6 @@ Jorbites is more than just a recipe platform - it's a community of passionate fo
 
 ### 📅 Event Duration
 
-This event runs from **July 2nd to July 31st, 2026**. Don't miss out on this opportunity to share the love for cooking!
+This is a **permanent event**—you can participate anytime! Don't miss out on this opportunity to share the love for cooking!
 
 **Ready to Pass the Bite? Start inviting today! 🚀**
